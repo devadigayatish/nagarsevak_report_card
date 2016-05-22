@@ -30,18 +30,18 @@ We all have got our report cards since school and college. Even in the corporate
 
 ##About Parivartan
 
-    PARIVARTAN represents the citizens which are politically and socially active. PARIVARTAN was formed by a group like-minded youth with the sole aim of improving the political and social structure of our society. We aim at mobilizing the Indian masses and spreading political and social awareness. Most of the citizens today are ignorant and unaware. Through Parivartan we wish to bring about change in their mindsets. We also wish to unite all the people whose who wish to work for the betterment of our society.
+PARIVARTAN represents the citizens which are politically and socially active. PARIVARTAN was formed by a group like-minded youth with the sole aim of improving the political and social structure of our society. We aim at mobilizing the Indian masses and spreading political and social awareness. Most of the citizens today are ignorant and unaware. Through Parivartan we wish to bring about change in their mindsets. We also wish to unite all the people whose who wish to work for the betterment of our society.
 
 
 ##About Startup Partner
 
-    Startup Partner contributed for this project by developing the website.
-    StartupPartner(SP) is a trusted development partner for product startup companies across the globe. Our talent management and development processes are geared to meet the needs of rapidly evolving products and dynamic development cycles. We believe in partnering with pioneering start-ups, accelerating innovation and giving robust quality by providing them dedicated engineering unit without external investment. At the same time we create possibility for startups to carve out their own Indian subsidiary while keeping at-most transparency. Our Team has experience in working with cutting edge technology startups in storage, cloud and networking.
+Startup Partner contributed for this project by developing the website.
+StartupPartner(SP) is a trusted development partner for product startup companies across the globe. Our talent management and development processes are geared to meet the needs of rapidly evolving products and dynamic development cycles. We believe in partnering with pioneering start-ups, accelerating innovation and giving robust quality by providing them dedicated engineering unit without external investment. At the same time we create possibility for startups to carve out their own Indian subsidiary while keeping at-most transparency. Our Team has experience in working with cutting edge technology startups in storage, cloud and networking.
 
 ##Note :
 
-    This project is completely free. No Copyrights. You're welcome to fork this project and send pull requests. We would love you to contribute in this project and improve the code quality.
-    Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code !!!
+This project is completely free. No Copyrights. You're welcome to fork this project and send pull requests. We would love you to contribute in this project and improve the code quality.
+Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code !!!
 
 ##Contacts Us :
 
