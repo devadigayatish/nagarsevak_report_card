@@ -26,7 +26,7 @@ mysqli_select_db($con,"csv_db");
      {
     echo "<tr>";
     echo "<td>Prabhag :</td>";
-    // echo "".$q."";
+
     echo "<td>" . $row['Prabhag_Name']."</td>";
     echo"</tr>";
     echo"<tr>";

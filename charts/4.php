@@ -1,18 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-<title>Pie Chart Demo (Google VAPI) - http://codeofaninja.com/</title>
-</head>
 
 <!-- where the chart will be rendered -->
-<div id="visualization" style="width: 600px; height: 400px;"></div>
+<div id="visualization" style="width: 500px; height: 400px;"></div>
 
 
 
 <?php
 //include database connection
-$q = intval($_GET['z']);
+//$q = intval($_GET['z']);
 //print_r($q);
 $con = mysqli_connect('localhost','root','','csv_db');
 if (!$con) {
@@ -21,19 +15,19 @@ if (!$con) {
 
 mysqli_select_db($con,"csv_db");
 
-$prabhag_num = $q."A";
+//$prabhag_num = $q."A";
 //print_r($prabhag_num);
 //query all records from the database
-$query = "SELECT DOW ,SUM(Amount) AS Amount FROM `finaltable` WHERE Prabhag_No = '".$prabhag_num."' 
+$query = "SELECT DOW ,SUM(Amount) AS Amount FROM `finaltable` WHERE Prabhag_No = '21B'
 GROUP BY Code ORDER BY `Amount` DESC ";
-print_r($query);
+//print_r($query);
 //execute the query
 $result = mysqli_query($con,$query );
-print_r($result);
+//print_r($result);
  //get number of rows returned
 
 $num_results = $result->num_rows;
-print_r($num_results);
+//print_r($num_results);
 $Details_of_work = array();
 $Amount = array();
 for($i=0; $i<$num_results;$i++)
@@ -43,8 +37,8 @@ for($i=0; $i<$num_results;$i++)
 	$Details_of_work[$i] = $row['DOW'];
 	$Amount[$i] = $row['Amount'];
 }
-print_r($Details_of_work);
-print_r($Amount);
+//print_r($Details_of_work);
+//print_r($Amount);
 $combine_array = array_combine($Details_of_work, $Amount);
 $total_Amount = array_sum($Amount);
 $remaining_values = array_slice($Amount, 7);
@@ -58,7 +52,7 @@ for($i=0; $i<7; $i++)
 $chart_array[7][0] = "Others";
 $chart_array[7][1] = $remaining_total;
 
-print_r($chart_array);
+//print_r($chart_array);
 mysqli_close($con);
 ?>
 
@@ -81,11 +75,11 @@ for($i=0; $i<=7; $i++){
 }
 ?>
 ]);
-
+alert(data);
 //=============================================================================
 // Create and draw the visualization.
 new google.visualization.PieChart(document.getElementById('visualization')).
-draw(data, {title:"Tiobe Top Programming Languages for June 2012"});
+draw(data, {title:"Pie Chart for 2012 to 2016"});
 }
 google.setOnLoadCallback(drawVisualization);
 </script>
