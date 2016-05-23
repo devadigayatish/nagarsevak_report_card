@@ -6,7 +6,6 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script>
 function showUser(str) 
 {
@@ -191,8 +190,33 @@ function showUser(str)
 <div id="txtHint2"></div>
 </div>
 <div id="pie_chart">
-
+  
 </div>
+
+<div id="visualization" style="width: 600px; height: 400px;"></div>
+<!-- load api -->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+//load package
+google.load('visualization', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">
+
+function drawVisualization() {
+  //alert("data");
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['PL', 'Ratings'],
+['Benches', 701846.00],['', 525209.00],['', 396000.00],['Concretization', 369957.00],['', 200000.00],['Garden work', 200000.00],['Computers', 200000.00],['Others', 1742242]
+]);
+
+//=============================================================================
+// Create and draw the visualization.
+new google.visualization.PieChart(document.getElementById('visualization')).
+draw(data, {title:"Pie Chart"});
+}
+google.setOnLoadCallback(drawVisualization);
+</script>
 
 
 
