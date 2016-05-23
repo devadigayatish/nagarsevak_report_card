@@ -61,7 +61,7 @@ foreach( $scanned_directory as $value )
 			    $fieldVal_amount = mysqli_real_escape_string($connection,$row[$j][3]);
 			    $fieldVal_code = mysqli_real_escape_string($connection,$row[$j][4]);
     
-				$sql = "INSERT INTO phptry (Year,DOW ,Amount, Code, Prabhag_No) VALUES('".$fieldVal_year."','".$fieldVal_DOW."','".$fieldVal_amount."','".$fieldVal_code."','".$prabhag_no."')";
+				$sql = "INSERT INTO csv_data (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('".$fieldVal_year."','".$fieldVal_DOW."','".$fieldVal_amount."','".$fieldVal_code."','".$prabhag_no."')";
 
 				if(!mysqli_query($connection, $sql))
 				    {
