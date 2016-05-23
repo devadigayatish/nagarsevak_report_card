@@ -1,0 +1,19 @@
+<?php
+
+// Create a file named db_connection.php in the same directory as this file.
+// Copy the contents of this file in db_connection.php
+// Modify the hostname, username, password and database name for your connection.
+
+$host          = 'localhost';
+$username      = 'root';
+$password      = '';
+$database_name = 'nrc';
+
+$con = mysqli_connect($host, $username, $password, $database_name);
+if (!$con) {
+            die('Could not connect: ' . mysqli_error($con));
+           }
+
+mysqli_select_db($con,"nrc");
+
+?>

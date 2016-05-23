@@ -2,12 +2,9 @@
 //connection
 $q = intval($_GET['n']);
 
-$con = mysqli_connect('localhost','root','','csv_db');
-if (!$con) {
-            die('Could not connect: ' . mysqli_error($con));
-           }
+//MySQL Database Connect
+include 'db_connection.php';
 
-mysqli_select_db($con,"csv_db");
 //====================================================================================
 
  //FOR FETCHING IMAGE of Part A

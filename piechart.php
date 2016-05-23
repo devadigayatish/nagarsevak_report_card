@@ -4,12 +4,9 @@
 //include database connection
 $q = intval($_GET['z']);
 //print_r($q);
-$con = mysqli_connect('localhost','root','','csv_db');
-if (!$con) {
-            die('Could not connect: ' . mysqli_error($con));
-           }
 
-mysqli_select_db($con,"csv_db");
+//MySQL Database Connect
+include 'db_connection.php';
 
 $prabhag_num = $q."A";
 //print_r($prabhag_num);

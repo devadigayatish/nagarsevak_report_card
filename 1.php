@@ -1,13 +1,11 @@
 <?php
+//session_start();
 //connection
 $q = intval($_GET['q']);
 
-$con = mysqli_connect('localhost','root','','csv_db');
-if (!$con) {
-            die('Could not connect: ' . mysqli_error($con));
-           }
+//MySQL Database Connect
+include 'db_connection.php';
 
-mysqli_select_db($con,"csv_db");
 //====================================================================================
 
 { // prabhag name info

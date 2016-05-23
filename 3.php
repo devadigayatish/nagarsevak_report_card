@@ -3,12 +3,9 @@
 
 $q = intval($_GET['m']);
 
-$con = mysqli_connect('localhost','root','','csv_db');
-if (!$con) {
-            die('Could not connect: ' . mysqli_error($con));
-           }
+//MySQL Database Connect
+include 'db_connection.php';
 
-mysqli_select_db($con,"csv_db");
 //=============================================================================================
 echo "<div id='tables' style='width: 1076px;'>";
 $prabhag_num_A = $q."A";
