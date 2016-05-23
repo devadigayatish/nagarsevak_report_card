@@ -40,12 +40,12 @@
 
 
 
-	$sql = "SELECT Year, Prabhag_No, DOW ,SUM(Amount) AS Amount,Code FROM `phptry` GROUP BY Prabhag_No, Year ,Code " ;
+	$sql = "SELECT Year, Prabhag_No, Details_Of_Work ,SUM(Amount) AS Amount,Code FROM `csv_data` GROUP BY Prabhag_No, Year ,Code " ;
 
 	$result = mysqli_query($con,$sql);
 	while ($row = mysqli_fetch_array($result)) 
     	{ 
-    		$sql = "INSERT INTO finaltable (Year,DOW ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."'
+    		$sql = "INSERT INTO finaltable (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."'
  					,'". $Work_Against_Codes[$row['Code']] ."','". $row['Amount'] ."','". $row['Code'] ."','".
  					$row['Prabhag_No'] ."')";
      
