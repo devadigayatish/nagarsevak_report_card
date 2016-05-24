@@ -38,13 +38,11 @@ include 'db_connection.php';
     echo "<br>";
     echo "<div class='' style='width: 500px;'>";
     echo "<div align='center' style='width: 250px; float : left'>";
-    echo "".$prabhag_num_A." : ";
     $name_A = "". $row_A['Nagarsevak_Name']."";
     echo wordwrap($name_A,20,"<br>\n");
     echo "</div>";
 
     echo "<div align='center' style='width: 250px; float : right'>";
-    echo "".$prabhag_num_B." : ";
     $name_B = "". $row_B['Nagarsevak_Name']."";
     echo wordwrap($name_B,20,"<br>\n");
     echo "</div>";
@@ -66,6 +64,10 @@ include 'db_connection.php';
     while ($row = mysqli_fetch_array($result)) 
     {
     //fetch tha data from the database
+    echo "<tr>";
+    echo "<td>Prabhag No:</td>";
+    echo "<td>" . $prabhag_num_A."</td>";
+    echo "</tr>";
     echo "<tr>";
     echo "<td>Party:</td>";
     echo "<td>" . $row['Party']."</td>";
@@ -103,6 +105,10 @@ include 'db_connection.php';
     while ($row = mysqli_fetch_array($result)) 
     {
     //fetch tha data from the database
+    echo "<tr>";
+    echo "<td>Prabhag No:</td>";
+    echo "<td>" .$prabhag_num_B. "</td>";
+    echo "</tr>";
     echo "<tr>";
     echo "<td>Party:</td>";
     echo "<td>" . $row['Party']."</td>";

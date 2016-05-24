@@ -1,5 +1,5 @@
 <?php
-//session_start();
+
 //connection
 $q = intval($_GET['q']);
 

@@ -13,7 +13,7 @@ $prabhag_num_A = $q."A";
 $sql="SELECT Year , Details_Of_Work , Amount FROM work_details WHERE Prabhag_No = '".$prabhag_num_A."'";
 $result = mysqli_query($con,$sql);
 
-echo "<table  width='45%'align='left' border='1'style='margin-top: 25px;'>
+echo "<table  width='45%'align='left' border='1'style='margin-top: 43px;'>
 <tr>
 <th>Year</th>
 <th>Details Of Work</th>
@@ -34,7 +34,7 @@ $prabhag_num_B = $q."B";
 $sql="SELECT Year , Details_Of_Work , Amount FROM work_details WHERE Prabhag_No = '".$prabhag_num_B."'";
 $result = mysqli_query($con,$sql);
 
-echo "<table  width='45%'align='right' border='1' style='margin-top: 25px;'>
+echo "<table  width='45%'align='right' border='1' style='margin-top: 43px;'>
 <tr>
 <th>Year</th>
 <th>Details Of Work</th>

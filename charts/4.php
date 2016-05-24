@@ -18,12 +18,12 @@ mysqli_select_db($con,"csv_db");
 //$prabhag_num = $q."A";
 //print_r($prabhag_num);
 //query all records from the database
-$query = "SELECT DOW ,SUM(Amount) AS Amount FROM `finaltable` WHERE Prabhag_No = '21B'
+$query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` WHERE Prabhag_No = '21B'
 GROUP BY Code ORDER BY `Amount` DESC ";
 //print_r($query);
 //execute the query
 $result = mysqli_query($con,$query );
-//print_r($result);
+
  //get number of rows returned
 
 $num_results = $result->num_rows;
@@ -34,7 +34,7 @@ for($i=0; $i<$num_results;$i++)
 {
 	$row = mysqli_fetch_assoc($result);
 	
-	$Details_of_work[$i] = $row['DOW'];
+	$Details_of_work[$i] = $row['Details_Of_Work'];
 	$Amount[$i] = $row['Amount'];
 }
 //print_r($Details_of_work);
@@ -75,7 +75,7 @@ for($i=0; $i<=7; $i++){
 }
 ?>
 ]);
-alert(data);
+
 //=============================================================================
 // Create and draw the visualization.
 new google.visualization.PieChart(document.getElementById('visualization')).
