@@ -1,8 +1,10 @@
 <html>
 <head>
-<link rel="stylesheet" href="css/A.css" />
+<title>Nagarsevak Report Card</title>
+<link rel="stylesheet" href="css/map.css" />
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="css/name_box.css" />
+<link rel="stylesheet" href="css/popup.css" />
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
@@ -11,7 +13,7 @@
 <script>
 function showUser(str) 
 {
-
+	
 
     if (str == "") 
     {
@@ -26,7 +28,7 @@ function showUser(str)
             xmlhttp1 = new XMLHttpRequest();
             xmlhttp2 = new XMLHttpRequest();
             xmlhttp3 = new XMLHttpRequest();
-          //  xmlhttp4 = new XMLHttpRequest();
+          // xmlhttp4 = new XMLHttpRequest();
 
           } 
           else 
@@ -68,57 +70,29 @@ function showUser(str)
            //                                            if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200) 
            //                                            {
 
-           //                                                document.getElementById("pie_chart").innerHTML = xmlhttp4.responseText;
+           //                                                document.getElementById("pie-charts").innerHTML = xmlhttp4.responseText;
            //                                            }
 
            //                                          };                                         
 
           
-          xmlhttp1.open("GET","1.php?q="+str,true);
-          xmlhttp2.open("GET","2.php?n="+str,true);
-          xmlhttp3.open("GET","3.php?m="+str,true);
-        //  xmlhttp4.open("GET","piechart.php?z="+str,true);
+          xmlhttp1.open("GET","prabhag_ward_ofc_info.php?q="+str,true);
+          xmlhttp2.open("GET","photo_info_table.php?n="+str,true);
+          xmlhttp3.open("GET","details_of_work_table.php?m="+str,true);
+        //  xmlhttp4.open("POST","index.php?z="+str,true);
           xmlhttp1.send();
           xmlhttp2.send();
           xmlhttp3.send();
-         // xmlhttp4.send();
+        //  xmlhttp4.send();
     }
 }
 </script>
 </head>
 <body>
-<!-- =================================== header ======================================================== -->
-        <div class="main-header " style="height: 88px;">
-            <div class="container">
-                <div class="logo-box">
-                <div class="name-box" style="float:left; width: 100px;">
-                  <a href="http://nagarsevak.info/">
-                      <img class="site-logo normal_logo" alt="Nagarsevak report card" src="images/logo/PMC_logo.png" />
-                                                                 </a>
-                  </div>
-                <div class="name-box" style="float:center;">
-                  <a href="http://nagarsevak.info/"><h1 class="site-name">Nagarsevak Report Card</h1></a>
-                  <span class="site-tagline">Humara Paisa. Humara Hisabh.</span>
-                        
-                </div>
-                <div class="name-box" style="float:right;width: 500px; margin-right: 50px;">
-                <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">
-                      <img class="site-logo normal_logo" style="width: 100px; height: 60px; margin-left: 490px;" alt="Nagarsevak report card" src="images/logo/Parivartan_Logo.jpg" />
-                                                                 </a>
-                                                                 </div>
-                </div>
-            </div>
-        </div>
-<!-- ====================================================================================================== -->
- <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
-<!-- ===================================================================================================== -->
+<?php
+  include'header.php';
+?>
 
-<div id="temp" style="width: 1000px; text-align:center;">
-<h7>This website is under construction. The data is not real. Launching soon. Note : Please select <strong>Prabhag no - 35</strong> from dropdown.</h7>
-</div>
-<!-- ===================================================================================================== -->
-<hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
-<!-- ===================================================================================================== -->
 <div id="my-container-1" style="border-right-width: 10px; border-left-width: 10px; width:1076px;">
 <div class="col-sm-6" style="height: 350px;">
 
@@ -228,7 +202,8 @@ function showUser(str)
 <?php
     //include database connection
     include 'db_connection.php';
-
+    // $q = intval($_POST['z']);
+    // print_r($q);
     //query all records from the database
     $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` WHERE Prabhag_No ='35A' GROUP BY Code ORDER BY `Amount` DESC ";
     //execute the query
@@ -288,7 +263,7 @@ for($i=0; $i<=7; $i++){
 //=============================================================================
 // Create and draw the visualization.
 new google.visualization.PieChart(document.getElementById('visualization1')).
-draw(data, {title:"Pie Chart"});
+draw(data, {title:"Top 7 Expenditures :"});
 }
 google.setOnLoadCallback(drawVisualization);
 </script>
@@ -356,7 +331,7 @@ for($i=0; $i<=7; $i++){
 //=============================================================================
 // Create and draw the visualization.
 new google.visualization.PieChart(document.getElementById('visualization')).
-draw(data, {title:"Pie Chart"});
+draw(data, {title:"Top 7 Expenditures :"});
 }
 google.setOnLoadCallback(drawVisualization);
 </script>
@@ -466,54 +441,17 @@ showUser(strUser);
 <!-- ================================= download data ===================================================== -->
 
 <div style="text-align: center;">
-<h4 style="text-align: center;margin-top: 500px;">Download Data:</h4>
+<h4 style="text-align: center;">Download Data:</h4>
 <div id="downloadList" class="btn-group " style="text-align: center;">
 <a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Overall</a>
-<a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35A</a>
-<a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35B</a>
-<a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">RTI Data</a>
-<a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Criminal Data</a>
+<a class="btn btn-default " target="_self" rel="" href="csv/35A.csv" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35A</a>
+<a class="btn btn-default " target="_self" rel="" href="csv/35B.csv" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35B</a>
+<a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Original RTI Replies</a>
+
 </div>
 </div>
-
-<hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
-<!-- ===================================== footer ========================================================= -->
-<div id="footer">       
-
-<footer class="">
-                    
-<h4 style="margin-left: 20px;">Website designed, developed, hosted and maintained by 
-<a target="_blank" href="http://startuppartner.co.in/about.html">
-<strong style="color: blue">Startup Partner Pvt Ltd. </strong>
-</a>Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">
-<strong style="color: blue">Parivartan</strong>
-</a></h4>
-<h4 style="color: black; margin-left: 75px;">
-<nav>
-<a class="" target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a>
-|
-<a class="" target="_blank" href="#">About Narsevak Report Card</a>
-|
-<a class="" target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card">Source Code</a>
-|
-<a class="" target="_blank" href="#">Contributors</a>
-|
-<a class="" target="_blank" href="#">Disclaimer</a>
-|
-<a class="" target="_blank" href="#">Report Bug</a>
-</nav></h4>
-
-<h8 style="margin-left: 30px; margin-right: 30px;">
-<p style="text-align:center; margin-left: 30px; margin-right: 30px;">
-This project is completely free. No Copyrights. You're welcome to fork this project from 
-<a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card">
-<strong style="color: blue">Here</strong>
-</a> and send pull requests. We would love you to contribute in this project and improve the code quality. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
-</p>
-</h8>
-</footer>
-</div>
-
-<hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
+<?php
+include 'footer.php';
+?>
 
 </html>
