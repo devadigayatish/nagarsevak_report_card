@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2016 at 11:41 AM
+-- Generation Time: May 27, 2016 at 12:08 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -829,7 +829,7 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
   `Prabhag_Name` varchar(41) DEFAULT NULL,
   `Ward_ofc` varchar(21) DEFAULT NULL,
   `Party` varchar(3) DEFAULT NULL,
-  `Avg_Questions` float NOT NULL,
+  `Total_Questions` float NOT NULL,
   `Avg_Attendance` float NOT NULL,
   `Criminal_Records` varchar(10) NOT NULL,
   `Original_RTI_Link` varchar(100) NOT NULL,
@@ -840,7 +840,7 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
 -- Dumping data for table `nagarsevak`
 --
 
-INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prabhag_Name`, `Ward_ofc`, `Party`, `Avg_Questions`, `Avg_Attendance`, `Criminal_Records`, `Original_RTI_Link`, `Spreadsheet_Link`) VALUES
+INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prabhag_Name`, `Ward_ofc`, `Party`, `Total_Questions`, `Avg_Attendance`, `Criminal_Records`, `Original_RTI_Link`, `Spreadsheet_Link`) VALUES
 ('1A', 'MRS. REKHA TINGRE', '1A', 'images/photos/1A.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('1B', 'TINGRE ANIL (BOBY) VASANTRAO', '1B', 'images/photos/1B.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('2A', 'PATHARE MAHENDRA PNDHARINATH', '2A', 'images/photos/2A.jpg', 'Kharadi Infotech Park', 'Nagar Road ', 'NCP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
@@ -904,13 +904,13 @@ INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prab
 ('31A', 'BARATE DILIP PRABHAKAR', '31A', 'images/photos/31A.jpg', 'Shivane - Warje - Ramnagar', 'Warje Karvenagar ', 'INC', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('31B', 'MRS. DUDHANE LAXMI DEVRAM', '31B', 'images/photos/31B.jpg', 'Shivane - Warje - Ramnagar', 'Warje Karvenagar ', 'NCP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('32A', 'MRS. MAKWAN SUREKHA AVINASH', '32A', 'images/photos/32A.jpg', 'Karvenagar - Gosavivasti', 'Warje Karvenagar ', 'MNS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
-('32B', 'BARATE RAJABHAU KISHAN', '32B', 'images/photos/32B.jpg', 'Karvenagar - Gosavivasti', 'Warje Karvenagar ', 'MNS', 0.67, 58.73, 'Yes', 'www.google.com', 'www.gmail.com'),
+('32B', 'BARATE RAJABHAU KISHAN', '32B', 'images/photos/32B.jpg', 'Karvenagar - Gosavivasti', 'Warje Karvenagar ', 'MNS', 4, 58.73, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('33A', 'AD. MOKATE YOGESH SHRIKANT', '33A', 'images/photos/33A.jpg', 'Dahanukar Colony', 'Warje Karvenagar ', 'SS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('33B', 'MRS. DESHPANDE SANGITA SHAM', '33B', 'images/photos/33B.jpg', 'Dahanukar Colony', 'Warje Karvenagar ', 'SS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('34A', 'SUTAR PRUTHVIRAJ SHASHIKANT', '34A', 'images/photos/34A.jpg', 'Gujrat Colony', 'Kothrud ', 'SS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('34B', 'MRS. MOHOL MONIKA MURLIDHAR', '34B', 'images/photos/34B.jpg', 'Gujrat Colony', 'Kothrud ', 'BJP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('35A', 'BADHE PRASHANT LAXMAN', '35A', 'images/photos/35A.jpg', 'Deenanath Mangeshkar Hospital', 'Warje Karvenagar ', 'SS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
-('35B', 'MRS. KULKARNI MEDHA VISHRAM', '35B', 'images/photos/35B.jpg', 'Deenanath Mangeshkar Hospital', 'Warje Karvenagar ', 'BJP', 0.33, 62.73, 'Yes', 'www.google.com', 'www.gmail.com'),
+('35B', 'MRS. KULKARNI MEDHA VISHRAM', '35B', 'images/photos/35B.jpg', 'Deenanath Mangeshkar Hospital', 'Warje Karvenagar ', 'BJP', 2, 62.73, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('36A', 'RANE ANIL BABURAO', '36A', 'images/photos/36A.jpg', 'Kamla Nehru Park', 'Ghole Road ', 'MNS', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('36B', 'MRS. SAHASTRABUDHHE MADHURI SHRIRAM', '36B', 'images/photos/36B.jpg', 'Kamla Nehru Park', 'Ghole Road ', 'BJP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),
 ('37A', 'RASNE HEMANT NARAYAN', '37A', 'images/photos/37A.jpg', 'Shaniwarwada', 'Kasba Vishrambagwada ', 'BJP', 0, 0, 'Yes', 'www.google.com', 'www.gmail.com'),

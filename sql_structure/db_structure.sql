@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2016 at 11:45 AM
+-- Generation Time: May 27, 2016 at 12:10 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
   `Prabhag_Name` varchar(41) DEFAULT NULL,
   `Ward_ofc` varchar(21) DEFAULT NULL,
   `Party` varchar(3) DEFAULT NULL,
-  `Avg_Questions` float NOT NULL,
+  `Total_Questions` float NOT NULL,
   `Avg_Attendance` float NOT NULL,
   `Criminal_Records` varchar(10) NOT NULL,
   `Original_RTI_Link` varchar(100) NOT NULL,
