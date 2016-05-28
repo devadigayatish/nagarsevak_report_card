@@ -12,7 +12,9 @@ function get_pie_chart_data($prabhag_no = '35A') {
 
         //get number of rows returned
   $num_results = $result->num_rows;
-
+  if($num_results == 0) {
+      return json_encode([]);
+  }
   $Details_of_work = array();
   $Amount = array();
 

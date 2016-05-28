@@ -75,16 +75,10 @@
 <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        // pie chart 1
-        var piechart_data1 = '<?php echo $piechart_data1; ?>';
-        draw_piechart(piechart_data1, 'pie_chart_div1');
-        // pie chart 2
-        var piechart_data2 = '<?php echo $piechart_data2; ?>';
-        draw_piechart(piechart_data2, 'pie_chart_div2');
-    });
-
     function draw_piechart(data, element, showDatalabels, showLegends) {
+        if(!data) {
+            return $('#'+element).html('No data found');
+        }
         if (!showDatalabels) {
             showDatalabels = false;
         }
