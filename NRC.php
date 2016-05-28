@@ -1,3 +1,7 @@
+<?php
+require_once('includes/db_connection.php');
+require_once('includes/functions.php');
+?>
 <html>
 <head>
 <title>About Nagarsevak Report Card</title>

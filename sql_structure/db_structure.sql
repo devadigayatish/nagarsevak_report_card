@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2016 at 12:10 PM
+-- Generation Time: May 27, 2016 at 02:20 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -77,12 +77,13 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
   `Url` varchar(48) DEFAULT NULL,
   `Prabhag_Name` varchar(41) DEFAULT NULL,
   `Ward_ofc` varchar(21) DEFAULT NULL,
-  `Party` varchar(3) DEFAULT NULL,
-  `Total_Questions` float NOT NULL,
+  `Party` varchar(10) DEFAULT NULL,
+  `Total_Questions` int(11) NOT NULL,
   `Avg_Attendance` float NOT NULL,
   `Criminal_Records` varchar(10) NOT NULL,
   `Original_RTI_Link` varchar(100) NOT NULL,
-  `Spreadsheet_Link` varchar(100) NOT NULL
+  `Csv_Link` varchar(100) NOT NULL,
+  `Gender` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

@@ -8,7 +8,7 @@
       </div>
       <div class="name-box" style="float:right;width: 500px; margin-right: 50px;">
         <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">
-          <img class="site-logo normal_logo" style="width: 100px; height: 60px; margin-left: 490px;" alt="Nagarsevak report card" src="<?php echo SITE_URL;?>assets/images/logo/Parivartan_Logo.jpg" />
+          <img class="site-logo normal_logo" style="width: 100px; height: 60px; margin-left: 490px;" alt="Nagarsevak report card" src="<?php echo SITE_URL;?>assets/images/logo/parivartan-logo.jpg" />
         </a>
       </div>
     </div>
