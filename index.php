@@ -1,6 +1,6 @@
 <?php
 require_once('includes/db_connection.php');
-//require_once('includes/functions.php');
+require_once('includes/functions.php');
 ?>
 <html>
     <head>
@@ -14,6 +14,9 @@ require_once('includes/db_connection.php');
         <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
         <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="<?php echo SITE_URL ?>assets/js/lib/highcharts.js"></script>
         <script>
             function showUser(str)
             {
@@ -199,139 +202,27 @@ require_once('includes/db_connection.php');
             <div id="txtHint2"></div>
         </div>
 
+        <?php
+        //include database connection
+        $piechart_data1 = get_pie_chart_data('35A');
+        $piechart_data2 = get_pie_chart_data('35B');
+        ?>
+
         <div id="pie-charts" style="width: 1050px; height: 400px;">
             <!-- ==============================pie chart 1 ========================================= -->
-
             <div id="chart1" style="width: 500px; height: 400px; float: left;margin-top: 10px;">
-                <?php
-                //include database connection
-                
-                // $q = intval($_POST['z']);
-                // print_r($q);
-                //query all records from the database
-                $query  = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` WHERE Prabhag_No ='35A' GROUP BY Code ORDER BY `Amount` DESC ";
-                //execute the query
-                $result = mysqli_query($con, $query);
-
-                //get number of rows returned
-                $num_results = $result->num_rows;
-
-                $Details_of_work = array();
-                $Amount          = array();
-
-                for ($i = 0; $i < $num_results; $i++) {
-                    $row = mysqli_fetch_assoc($result);
-
-                    $Details_of_work[$i] = $row['Details_Of_Work'];
-                    $Amount[$i]          = $row['Amount'];
-                }
-
-                $combine_array    = array_combine($Details_of_work, $Amount);
-                $total_Amount     = array_sum($Amount);
-                $remaining_values = array_slice($Amount, 7);
-                $remaining_total  = array_sum($remaining_values);
-                $chart_array      = array(array());
-                for ($i = 0; $i < 7; $i++) {
-                    $chart_array[$i][0] = $Details_of_work[$i];
-                    $chart_array[$i][1] = $Amount[$i];
-                }
-                $chart_array[7][0] = "Others";
-                $chart_array[7][1] = $remaining_total;
-                ?>
-                <div id="visualization1" style="width: 450px; height: 400px; float: left;"></div>
-                <!-- load api -->
-                <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-                <script type="text/javascript">
-                    //load package
-                    google.load('visualization1', '1', {packages: ['corechart']});
-                </script>
-                <script type="text/javascript">
-
-                    function drawVisualization() {
-
-                        // Create and populate the data table.
-                        var data = google.visualization.arrayToDataTable([
-                            ['PL', 'Ratings'],
-<?php
-for ($i = 0; $i <= 7; $i++) {
-    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
-}
-?>
-
-                        ]);
-
-                        //=============================================================================
-                        // Create and draw the visualization.
-                        new google.visualization.PieChart(document.getElementById('visualization1')).
-                                draw(data, {title: "Top 7 Expenditures :"});
-                    }
-                    google.setOnLoadCallback(drawVisualization);
-                </script>
+                <!-- <div id="visualization1" style="width: 450px; height: 400px; float: left;"></div> -->
+                <div class="" id="pie_chart_div1" style="min-height: 250px;float:left;widht:50%">
+                    <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
+                </div>
             </div>
             <!-- ===================================pie chart 2====================================================== -->
             <div id="chart2" style="width: 500px; height: 400px; float: right;margin-top: 10px;">
-                <?php
-//include database connection
-
-//query all records from the database
-                $query       = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` WHERE Prabhag_No ='35B' GROUP BY Code ORDER BY `Amount` DESC ";
-//execute the query
-                $result      = mysqli_query($con, $query);
-//print_r($result);
-//get number of rows returned
-                $num_results = $result->num_rows;
-
-                $Details_of_work = array();
-                $Amount          = array();
-
-                for ($i = 0; $i < $num_results; $i++) {
-                    $row = mysqli_fetch_assoc($result);
-
-                    $Details_of_work[$i] = $row['Details_Of_Work'];
-                    $Amount[$i]          = $row['Amount'];
-                }
-
-                $combine_array    = array_combine($Details_of_work, $Amount);
-                $total_Amount     = array_sum($Amount);
-                $remaining_values = array_slice($Amount, 7);
-                $remaining_total  = array_sum($remaining_values);
-                $chart_array      = array(array());
-                for ($i = 0; $i < 7; $i++) {
-                    $chart_array[$i][0] = $Details_of_work[$i];
-                    $chart_array[$i][1] = $Amount[$i];
-                }
-                $chart_array[7][0] = "Others";
-                $chart_array[7][1] = $remaining_total;
-                ?>
-                <div id="visualization" style="float : right; width: 450px; height: 400px;"></div>
-                <!-- load api -->
-                <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-                <script type="text/javascript">
-                    //load package
-                    google.load('visualization', '1', {packages: ['corechart']});
-                </script>
-                <script type="text/javascript">
-
-                    function drawVisualization() {
-                        // Create and populate the data table.
-                        var data = google.visualization.arrayToDataTable([
-                            ['PL', 'Ratings'],
-<?php
-for ($i = 0; $i <= 7; $i++) {
-    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
-}
-?>
-                        ]);
-
-                        //=============================================================================
-                        // Create and draw the visualization.
-                        new google.visualization.PieChart(document.getElementById('visualization')).
-                                draw(data, {title: "Top 7 Expenditures :"});
-                    }
-                    google.setOnLoadCallback(drawVisualization);
-                </script>
+                <!-- <div id="visualization" style="float : right; width: 450px; height: 400px;"></div> -->
+                <div class="" id="pie_chart_div2" style="min-height: 250px;float:right;widht:50%">
+                    <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
+                </div>
             </div>
-            <!-- ======== -->
         </div>
         <!-- ================================== end of pie chart ================================================= -->
 
@@ -447,5 +338,3 @@ for ($i = 0; $i <= 7; $i++) {
     <?php
     require_once('footer.php');
     ?>
-
-</html>
