@@ -20,7 +20,7 @@
         <div id="light2" class="white_content1" style="text-align: justify; font-size: 15px;">
         <strong style="text-align: justify; font-size: 20px;">Contributors</strong>
         <button style="top: 0%; float: right;"onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'">
-        <img style="width:20px; height: 20px;" src="images/logo/close_button_red.png"></button>
+        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL;?>assets/images/logo/close_button_red.png"></button>
         <br><br>
         <ul>
         <li><strong>Sharvari Gaikwad </strong>(sharvari.v.gaikwad@gmail.com), Intern for Startup Partner. Main developer for this project.</li>
@@ -36,7 +36,7 @@
         <div id="light3" class="white_content2" style="text-align: justify; font-size: 15px;">
         <strong style="text-align: justify; font-size: 20px;">Disclaimer</strong>
         <button style="top: 0%; float: right;"onclick = "document.getElementById('light3').style.display='none';document.getElementById('fade3').style.display='none'">
-        <img style="width:20px; height: 20px;" src="images/logo/close_button_red.png"></button>
+        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL;?>assets/images/logo/close_button_red.png"></button>
         <br><br>
         This Website is designed, developed, hosted and maintained by Startup Partner Pvt Ltd. The content of this website is provided by Parivartan and it is for information purposes only, enabling the public at large to have a quick and an easy access to information and do not have any legal sanctity.
         </div>
@@ -46,7 +46,7 @@
 <div id="light4" class="white_content3" style="text-align: justify; font-size: 15px;">
         <strong style="text-align: justify; font-size: 20px;">Report Bug</strong>
         <button style="top: 0%; float: right;"onclick = "document.getElementById('light4').style.display='none';document.getElementById('fade4').style.display='none'">
-        <img style="width:20px; height: 20px;" src="images/logo/close_button_red.png"></button>
+        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL;?>assets/images/logo/close_button_red.png"></button>
         <br><br>
         We welcome your suggestions to improve this website and request that error(if any) may kindly be brought to our notice.
         <br><br>

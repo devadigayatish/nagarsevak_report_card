@@ -1,10 +1,10 @@
 <html>
 <head>
 <title>About Nagarsevak Report Card</title>
-<link rel="stylesheet" href="css/map.css" />
-<link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/name_box.css" />
-<link rel="stylesheet" href="css/popup.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/map.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/styles.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/name_box.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/popup.css" />
 </head>
 
 

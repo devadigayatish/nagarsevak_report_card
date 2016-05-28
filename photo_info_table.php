@@ -3,7 +3,7 @@
 $q = intval($_GET['n']);
 
 //MySQL Database Connect
-include 'db_connection.php';
+require_once('includes/db_connection.php');
 
 //====================================================================================
 
@@ -14,7 +14,7 @@ include 'db_connection.php';
     $row_A = mysqli_fetch_array($result);
     
     //fetch tha data from the database
-    echo "<div class=''><img width='100' align='left'  src=". $row_A['URL']." style='margin-left: 100px; margin-top: 10px;'></div>" ;
+    echo "<div class=''><img width='100' align='left'  src=".SITE_URL.'assets/'. $row_A['URL']." style='margin-left: 100px; margin-top: 10px;'></div>" ;
     
     
 //=====================================================================================
@@ -25,7 +25,7 @@ include 'db_connection.php';
     $result = mysqli_query($con,$sql);
     $row_B = mysqli_fetch_array($result);
     //fetch tha data from the database
-    echo "<div class=''><img width='100' align='right' src=". $row_B['URL']." style='margin-right: 100px; margin-top: 10px;'></div>" ;
+    echo "<div class=''><img width='100' align='right' src=".SITE_URL.'assets/'. $row_B['URL']." style='margin-right: 100px; margin-top: 10px;'></div>" ;
     
 
 

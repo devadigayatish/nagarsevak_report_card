@@ -1,10 +1,10 @@
 <html>
 <head>
 <title>Summary</title>
-<link rel="stylesheet" href="css/map.css" />
-<link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/name_box.css" />
-<link rel="stylesheet" href="css/popup.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/map.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/styles.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/name_box.css" />
+<link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/popup.css" />
 </head>
 
 <?php
@@ -18,7 +18,7 @@
 <div id="chart1" style="width: 500px; height: 400px; float: left;margin-top: 10px;">
 <?php
     //include database connection
-    include 'db_connection.php';
+    require_once('includes/db_connection.php');
     // $q = intval($_POST['z']);
     // print_r($q);
     //query all records from the database
@@ -89,7 +89,7 @@ google.setOnLoadCallback(drawVisualization);
 <div id="chart2" style="width: 500px; height: 400px; float: right;margin-top: 10px;">
 <?php
     //include database connection
-    include 'db_connection.php';
+    require_once('includes/db_connection.php');
 
     //query all records from the database
     $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` WHERE Prabhag_No ='35B' GROUP BY Code ORDER BY `Amount` DESC ";

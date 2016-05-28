@@ -4,7 +4,7 @@
 $q = intval($_GET['m']);
 
 //MySQL Database Connect
-include 'db_connection.php';
+require_once('includes/db_connection.php');
 echo "<div id= ='name_for_table' align='center' style='width: 1076px;margin-top: 410px; font-size:20px; ' >";
 echo "<strong>Utilization of Ward Level Funds</strong>";
 echo "</div>";
