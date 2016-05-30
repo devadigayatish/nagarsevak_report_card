@@ -81,14 +81,16 @@ require_once('includes/functions.php');
                     
                     // load piechart 1 for prabhag no A
                     xmlhttp5.onreadystatechange = function () {
-                        if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200) {
+                        if (xmlhttp5.readyState == 4 && xmlhttp5.status == 200)
+                        {
                             draw_piechart(xmlhttp5.responseText, 'pie_chart_div1');
                         }
                     };
                     
                     // load piechart 2 for prabhag no B
                     xmlhttp6.onreadystatechange = function () {
-                        if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200) {
+                        if (xmlhttp6.readyState == 4 && xmlhttp6.status == 200) 
+                        {
                             draw_piechart(xmlhttp6.responseText, 'pie_chart_div2');
                         }
                     };
