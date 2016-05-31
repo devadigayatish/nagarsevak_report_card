@@ -105,13 +105,13 @@ require_once('includes/functions.php');
                     //                                          };                                         
 
 
-                    xmlhttp1.open("GET", "prabhag_ward_ofc_info.php?q=" + str, true);
-                    xmlhttp2.open("GET", "photo_info_table.php?n=" + str, true);
-                    xmlhttp3.open("GET", "details_of_work_table.php?m=" + str, true);
+                    xmlhttp1.open("GET", "prabhag-ward-ofc-info.php?q=" + str, true);
+                    xmlhttp2.open("GET", "photo-info-table.php?n=" + str, true);
+                    xmlhttp3.open("GET", "details-of-work-table.php?m=" + str, true);
                     
                     
-                    xmlhttp5.open("GET", "pie_chart_data.php?prabhag_no=" + str + "A", true);
-                    xmlhttp6.open("GET", "pie_chart_data.php?prabhag_no=" + str + "B", true);
+                    xmlhttp5.open("GET", "pie-chart-data.php?prabhag_no=" + str + "A", true);
+                    xmlhttp6.open("GET", "pie-chart-data.php?prabhag_no=" + str + "B", true);
 //                    xmlhttp3.open("GET", "details_of_work_table.php?m=" + str, true);
                     //  xmlhttp4.open("POST","index.php?z="+str,true);
                     xmlhttp1.send();

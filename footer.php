@@ -30,6 +30,7 @@
                         <li><strong>Yatish Devadiga </strong>(devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.</li>
                         <br><br>
                         <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code.. mainly with Mapbox.</li>
+                        <li><strong>Mahesh Kajale </strong>(m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.</li>
                     </ul>
                 </div>
                 <div id="fade2" class="black_overlay"></div>

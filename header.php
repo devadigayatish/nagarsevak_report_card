@@ -22,9 +22,9 @@
   <nav>
     <a class="" href="index.php" style="color: black;">Home</a>
     |
-    <a class="" target="_blank" href="https://www.facebook.com/parivartanbharat" style="color: black;">About Parivartan</a>
+    <a class="" target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html" style="color: black;">About Parivartan</a>
     |
-    <a class="" href = "NRC.php" style="color: black;">About Nagarsevak Report Card</a>       
+    <a class="" href = "about-nagarsevak-report-card.php" style="color: black;">About Nagarsevak Report Card</a>       
     |
     <a class="" href = "summary.php" style="color: black;">Summary</a>
   </nav>

@@ -331,20 +331,248 @@ google.setOnLoadCallback(drawVisualization);
 
 <!-- ====================================================================================================== -->
 
-<div id="visualization7" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;"></div>
+<div id="visualization7" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;"> Bar chart for criminal records</div>
 
 
 <!-- ================================================================================================== -->
 
-<div id="visualization8" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;"></div>
+<div id="visualization8" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;">
+
+<?php
+$query = "SELECT Details_Of_Work FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC ";
+
+//execute the query
+$result = mysqli_query($con,$query );
+$Details_of_work = array();
+for ($i=0; $i <5 ; $i++) { 
+$row = mysqli_fetch_assoc($result);
+	$Details_of_work[$i] = $row['Details_Of_Work'];
+}
+
+ //echo $Details_of_work[0];
+
+ $query1 = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '".$Details_of_work[0]."' GROUP BY Year ";
+
+ $query2 = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '".$Details_of_work[1]."' GROUP BY Year ";
+
+$query3 = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '".$Details_of_work[2]."' GROUP BY Year ";
+
+$query4 = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '".$Details_of_work[3]."' GROUP BY Year ";
+
+$query5 = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '".$Details_of_work[4]."' GROUP BY Year ";
+
+$result1 = mysqli_query($con,$query1 );
+$result2 = mysqli_query($con,$query2 );
+$result3 = mysqli_query($con,$query3 );
+$result4 = mysqli_query($con,$query4 );
+$result5 = mysqli_query($con,$query5 );
+
+$Amount1 = array();
+for ($i=0; $i <5 ; $i++) { 
+$row1 = mysqli_fetch_assoc($result1);
+	$Amount1[$i] = $row1['Amount'];
+}
+
+
+$Amount2 = array();
+for ($i=0; $i <5 ; $i++) { 
+$row2 = mysqli_fetch_assoc($result2);
+	$Amount2[$i] = $row2['Amount'];
+}
+
+$Amount3 = array();
+for ($i=0; $i <5 ; $i++) { 
+$row3 = mysqli_fetch_assoc($result3);
+	$Amount3[$i] = $row3['Amount'];
+}
+
+$Amount4 = array();
+for ($i=0; $i <5 ; $i++) { 
+$row4 = mysqli_fetch_assoc($result4);
+	$Amount4[$i] = $row4['Amount'];
+}
+
+$Amount5 = array();
+for ($i=0; $i <5 ; $i++) { 
+$row5 = mysqli_fetch_assoc($result5);
+	$Amount5[$i] = $row5['Amount'];
+}
+
+$final_array = array(array());
+for ($i=0; $i <4 ; $i++)
+{
+ $final_array[$i][0]= $Amount1[$i];
+ $final_array[$i][1]= $Amount2[$i];
+ $final_array[$i][2]= $Amount3[$i];
+ $final_array[$i][3]= $Amount4[$i];
+ $final_array[$i][4]= $Amount5[$i];
+}
+?>
+
+
+<!-- load api -->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+//load package
+google.load('visualization8', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">
+function drawVisualization() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+
+<?php
+	echo "['Year', '".$Details_of_work[0]."' , '".$Details_of_work[1]."' , '".$Details_of_work[2]."' , '".$Details_of_work[3]."' , '".$Details_of_work[4]."'],";
+    for($i=0; $i<1; $i++)
+    {
+    echo "['2012-2013', {$final_array[$i][0]} , {$final_array[$i][1]} , {$final_array[$i][2]} , {$final_array[$i][3]} , {$final_array[$i][4]} ],";
+    }
+    for($i=1; $i<2; $i++)
+    {
+    echo "['2013-2014', {$final_array[$i][0]} , {$final_array[$i][1]} , {$final_array[$i][2]} , {$final_array[$i][3]} , {$final_array[$i][4]} ],";
+    }
+    for($i=2; $i<3; $i++)
+    {
+    echo "['2014-2015', {$final_array[$i][0]} , {$final_array[$i][1]} , {$final_array[$i][2]} , {$final_array[$i][3]} , {$final_array[$i][4]} ],";
+    }
+    for($i=3; $i<4; $i++)
+    {
+    echo "['2015-2016', {$final_array[$i][0]} , {$final_array[$i][1]} , {$final_array[$i][2]} , {$final_array[$i][3]} , {$final_array[$i][4]} ],";
+    }
+
+?>
+]);
+// Create and draw the visualization.
+new google.visualization.ColumnChart(document.getElementById('visualization8')).
+draw(data, {title:"Top 5 Works per Year"});
+}
+google.setOnLoadCallback(drawVisualization);
+</script>
+</div>
 
 
 <!-- ================================================================================================== -->
 
-<div id="visualization9" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;">bar chart 5<br>Attendance -> 0 to 20%, 21 to 40%, .....</div>
+<div id="visualization9" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;">
 
-<div id="visualization10" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;">bar chart 6<br>Questions asked -> 0 to 25, 26 to 50, .....</div>
+<?php
+$query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 1 AND 25 ";
+$query_26to50 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 26 AND 50 ";
+$query_51to75 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 51 AND 75 ";
+$query_76to100 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 76 AND 100 ";
+//execute the query
+$result_0to25 = mysqli_query($con,$query_0to25 );
+$result_26to50 = mysqli_query($con,$query_26to50 );
+$result_51to75 = mysqli_query($con,$query_51to75 );
+$result_76to100 = mysqli_query($con,$query_76to100 );
 
+
+$row_0to25 = mysqli_fetch_assoc($result_0to25);
+$row_26to50 = mysqli_fetch_assoc($result_26to50);
+$row_51to75 = mysqli_fetch_assoc($result_51to75);
+$row_76to100 = mysqli_fetch_assoc($result_76to100);
+
+ $print_array_0 = array('0' => '0-25', '1' => '26-50' , '2' => '51-75' , '3' =>'76-100');
+
+ $print_array_1= array('0' => $row_0to25['COUNT(Avg_Attendance)'] ,'1' =>$row_26to50['COUNT(Avg_Attendance)'] ,'2' => $row_51to75['COUNT(Avg_Attendance)'] , '3' => $row_76to100['COUNT(Avg_Attendance)']); 
+
+$final_array= array(array());
+ for ($i=0; $i <4 ; $i++) { 
+     $final_array[$i][0] = $print_array_0[$i];
+     $final_array[$i][1] = $print_array_1[$i];
+}
+?>
+
+
+<!-- load api -->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+//load package
+google.load('visualization9', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">
+function drawVisualization() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['PL', 'COUNT'],
+<?php
+    for($i=0; $i<4; $i++)
+    {
+    echo "['{$final_array[$i][0]}', {$final_array[$i][1]}],";
+    }
+?>
+]);
+// Create and draw the visualization.
+new google.visualization.ColumnChart(document.getElementById('visualization9')).
+draw(data, {title:"No. of nagarsevak's in each attendance range"});
+}
+google.setOnLoadCallback(drawVisualization);
+</script>
+</div>
+<!-- ================================================================================================== -->
+<div id="visualization10" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;">
+	
+<?php
+
+//query all records from the database
+$query_0to25 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 1 AND 25 ";
+$query_26to50 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 26 AND 50 ";
+$query_51to75 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 51 AND 75 ";
+$query_76to100 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 76 AND 100 ";
+//execute the query
+$result_0to25 = mysqli_query($con,$query_0to25 );
+$result_26to50 = mysqli_query($con,$query_26to50 );
+$result_51to75 = mysqli_query($con,$query_51to75 );
+$result_76to100 = mysqli_query($con,$query_76to100 );
+
+
+$row_0to25 = mysqli_fetch_assoc($result_0to25);
+$row_26to50 = mysqli_fetch_assoc($result_26to50);
+$row_51to75 = mysqli_fetch_assoc($result_51to75);
+$row_76to100 = mysqli_fetch_assoc($result_76to100);
+
+    // echo $row_1to25['COUNT(Total_Questions)'];
+ $print_array_0 = array('0' => '0-25', '1' => '26-50' , '2' => '51-75' , '3' =>'76-100');
+
+ $print_array_1= array('0' => $row_0to25['COUNT(Total_Questions)'] ,'1' =>$row_26to50['COUNT(Total_Questions)'] ,'2' => $row_51to75['COUNT(Total_Questions)'] , '3' => $row_76to100['COUNT(Total_Questions)']); 
+
+$final_array= array(array());
+ for ($i=0; $i <4 ; $i++) { 
+     $final_array[$i][0] = $print_array_0[$i];
+     $final_array[$i][1] = $print_array_1[$i];
+}
+//print_r($final_array);
+?>
+
+
+<!-- load api -->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+//load package
+google.load('visualization10', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">
+function drawVisualization() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['PL', 'COUNT'],
+<?php
+    for($i=0; $i<4; $i++)
+    {
+    echo "['{$final_array[$i][0]}', {$final_array[$i][1]}],";
+    }
+?>
+]);
+// Create and draw the visualization.
+new google.visualization.ColumnChart(document.getElementById('visualization10')).
+draw(data, {title:"No. of nagarsevak's in each question range"});
+}
+google.setOnLoadCallback(drawVisualization);
+</script>
+
+
+</div>
+<!-- ================================================================================================= -->
 
 <div id="visualization11" style="padding: 16px; border: 16px solid gray; width: 537px; height: 350px; float: left;">
 
@@ -444,15 +672,7 @@ google.setOnLoadCallback(drawVisualization);
     echo "<tr><td>Total Questions:</td><td>" . $row_F['Total_Questions']."</td></tr>";
     echo "</table>";
  ?>
-
-
 </div>
-
-<div id="visualization13" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;"><br>
-
-
-</div>
-<div id="visualization14" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;">stats<br></div>
 
 <!-- ====================================================================================================== -->
 
