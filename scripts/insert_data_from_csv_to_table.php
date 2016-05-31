@@ -1,18 +1,13 @@
 
 <?php
 //connection
+require_once('./../includes/db_connection.php');
 
-$connection = mysqli_connect('localhost','root','','csv_db');
- if (!$connection) {
-             die('Could not connect: ' . mysqli_error($connection));
-            }
-
- mysqli_select_db($connection,"csv_db");
 
  //=========================================================
 
 
-$directory    = 'C:/wamp/www/NRC/csv';                 //read the directory 
+$directory    = 'C:/wamp/www/nagarsevak_report_card/csv/';                 //read the directory 
 
 $scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
@@ -56,16 +51,16 @@ foreach( $scanned_directory as $value )
 			for ($j=1; $j <= sizeof($row) ; $j++) 
 			{ 
 	
-				$fieldVal_year = mysqli_real_escape_string($connection,$row[$j][0]);
-			    $fieldVal_DOW = mysqli_real_escape_string($connection,$row[$j][2]);
-			    $fieldVal_amount = mysqli_real_escape_string($connection,$row[$j][3]);
-			    $fieldVal_code = mysqli_real_escape_string($connection,$row[$j][4]);
+				$fieldVal_year = mysqli_real_escape_string($con,$row[$j][0]);
+			    $fieldVal_DOW = mysqli_real_escape_string($con,$row[$j][2]);
+			    $fieldVal_amount = mysqli_real_escape_string($con,$row[$j][3]);
+			    $fieldVal_code = mysqli_real_escape_string($con,$row[$j][4]);
     
 				$sql = "INSERT INTO csv_data (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('".$fieldVal_year."','".$fieldVal_DOW."','".$fieldVal_amount."','".$fieldVal_code."','".$prabhag_no."')";
 
-				if(!mysqli_query($connection, $sql))
+				if(!mysqli_query($con, $sql))
 				    {
-				         die('Error : ' . mysqli_error($connection));
+				         die('Error : ' . mysqli_error($con));
 				    }
 			}
 
@@ -114,25 +109,21 @@ foreach( $scanned_directory as $value )
 			for ($j=1; $j <= sizeof($row) ; $j++) 
 				{ 
 	
-				$fieldVal_year = mysqli_real_escape_string($connection,$row[$j][0]);
-   				$fieldVal_questions = mysqli_real_escape_string($connection,$row[$j][5]);
-    			$fieldVal_Attendance = mysqli_real_escape_string($connection,$row[$j][6]);
-    			$fieldVal_meetings = mysqli_real_escape_string($connection,$row[$j][7]);
-    			$fieldVal5= round(($fieldVal3/$fieldVal4)*100,2);
-    			$fieldVal5 = mysqli_real_escape_string($connection,$fieldVal5);
+				$fieldVal_year = mysqli_real_escape_string($con,$row[$j][0]);
+   				$fieldVal_questions = mysqli_real_escape_string($con,$row[$j][5]);
+    			$fieldVal_Attendance = mysqli_real_escape_string($con,$row[$j][6]);
+    			$fieldVal_meetings = mysqli_real_escape_string($con,$row[$j][7]);
+    			$fieldVal5= round(($fieldVal_Attendance/$fieldVal_meetings)*100,2);
+    			$fieldVal5 = mysqli_real_escape_string($con,$fieldVal5);
   
 				$sql = "INSERT INTO attendance (Prabhag_No,Year,Questions,GB_Attendance,GB_Meetings,Atendance_Percentage) VALUES('".$prabhag_no."','".$fieldVal_year."','".$fieldVal_questions."','".$fieldVal_Attendance."','".$fieldVal_meetings."','".$fieldVal5."')";
 
-				if(!mysqli_query($connection, $sql))
+				if(!mysqli_query($con, $sql))
     				{
-        			 die('Error : ' . mysqli_error($connection));
+        			 die('Error : ' . mysqli_error($con));
     				}
 				}
 
 			fclose($file_pointer);
 		}
-
-//close the db connection
-mysqli_close($connection);
-
 ?>

@@ -1,13 +1,8 @@
 <?php
 
 //connection
-	$con = mysqli_connect('localhost','root','','csv_db');
-	if (!$con) 
-	{
-            die('Could not connect: ' . mysqli_error($con));
-    }
+require_once('./../includes/db_connection.php');
 
-	mysqli_select_db($con,"csv_db");
 //--------------------------------------------------------------------
 
 
@@ -45,7 +40,7 @@
 	$result = mysqli_query($con,$sql);
 	while ($row = mysqli_fetch_array($result)) 
     	{ 
-    		$sql = "INSERT INTO finaltable (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."'
+    		$sql = "INSERT INTO work_details (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."'
  					,'". $Work_Against_Codes[$row['Code']] ."','". $row['Amount'] ."','". $row['Code'] ."','".
  					$row['Prabhag_No'] ."')";
      
@@ -56,6 +51,4 @@
     		}
      	}
 
-
-	mysqli_close($con);
 ?>

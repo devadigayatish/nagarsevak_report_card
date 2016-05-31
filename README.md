@@ -2,6 +2,7 @@ NAGARSEVAK REPORT CARD 2016
 ===========================
 
 Nagarsevak Report Card is a project by a pune based NGO named Parivartan.
+See this website live at : [http://nagarsevak.info](http://nagarsevak.info)
 
 ##About Project - Nagarsevak Report Card 2016
 
@@ -27,6 +28,7 @@ We all have got our report cards since school and college. Even in the corporate
     Sharvari Gaikwad (sharvari.v.gaikwad@gmail.com), Intern for Startup Partner. Main developer for this project.
     Yatish Devadiga (devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.
     Nikhil Sheth (nikhil.js@gmail.com), Helped with majority of the code.. mainly with Mapbox.
+    Mahesh Kajale (m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.
 
 ##About Parivartan
 

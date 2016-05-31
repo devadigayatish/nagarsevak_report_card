@@ -1,12 +1,8 @@
 <?php
 //connection
+require_once('./../includes/db_connection.php');
 
-$con = mysqli_connect('localhost','root','','csv_db');
- if (!$con) {
-             die('Could not connect: ' . mysqli_error($con));
-            }
 
- mysqli_select_db($con,"csv_db");
 
  //=========================================================
 
@@ -35,9 +31,4 @@ $con = mysqli_connect('localhost','root','','csv_db');
     		   				}
      			}
      	
-//close the db connection
-
-
-
-	mysqli_close($con);
 ?>
