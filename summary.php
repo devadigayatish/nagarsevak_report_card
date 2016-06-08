@@ -299,7 +299,7 @@ require_once('includes/functions.php');
 		]);
 		// Create and draw the visualization.
 		new google.visualization.ColumnChart(document.getElementById('visualization7')).
-		draw(data, {title:"Bar chart for Criminal Charges"});
+		draw(data, {title:"Partywise Criminal Charges"});
 	 }
 	 google.setOnLoadCallback(drawVisualization);
 </script>

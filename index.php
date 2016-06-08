@@ -1,3 +1,9 @@
+<!-- 
+    File:           index.php
+    Date:           03-06-2016
+
+    This script loads the main page.
+-->
 <?php
 require_once('includes/db_connection.php');
 require_once('includes/functions.php');
@@ -112,7 +118,6 @@ require_once('includes/functions.php');
                     xmlhttp4.send();
                     xmlhttp5.send();
                     xmlhttp6.send();
-                    //  xmlhttp4.send();
                 }
             }
         </script>
@@ -123,10 +128,9 @@ require_once('includes/functions.php');
         ?>
 
         <div id="my-container-1" style="border-right-width: 10px; border-left-width: 10px; width:1076px;">
-            <div class="col-sm-6" style="height: 350px;">
-
-
+            <div class="col-sm-6" style="height: 350px;padding-left: 10px;padding-right: 00px;">
                 <div>
+                <a class="btn btn-default btn-xs" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
                     <select id="users" name="users" onchange="showUser(this.value)">
                         <optgroup label='Aundh'>
                             <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
@@ -234,6 +238,7 @@ require_once('includes/functions.php');
                             <option value='16'>Prabhag 16: Subhashnagar</option>
                         </optgroup>
                     </select>
+                    <a class="btn btn-default btn-xs"  value="next" onClick="nextPrabhag(1)">Next</a>
                     <br><br>
                 </div>         <!-- end of select div -->
 
@@ -367,6 +372,23 @@ require_once('includes/functions.php');
     var strUser = selected_dropdown.options[selected_dropdown.selectedIndex].value;
     showUser(strUser);
 </script>
+ <script>
+function nextPrabhag(i) 
+{
+    var e = document.getElementById("users");
+    e.selectedIndex +=i ;
+    //loop-around from the top or bottom depending on increment/decrement
+    if(e.selectedIndex == -1) {
+        if(i>0) e.selectedIndex = 0; 
+        else e.selectedIndex = e.length - 1;
+    }
+    var id = e.options[e.selectedIndex].value;
+    console.log('Executing prabhagSelect(' + id + ')');
+    showUser(id);
+}
+nextPrabhag(0);
+ </script>  
+
 <?php
 require_once('footer.php');
 ?>
