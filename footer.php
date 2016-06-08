@@ -1,3 +1,9 @@
+<!-- 
+    File:           footer.php
+    Date:           03-06-2016
+
+    This script defines an HTML form to load the footer.
+-->
 <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
 <!-- ===================================== footer ========================================================= -->
 <div id="footer">       
@@ -30,6 +36,7 @@
                         <li><strong>Yatish Devadiga </strong>(devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.</li>
                         <br><br>
                         <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code.. mainly with Mapbox.</li>
+                        <br><br>
                         <li><strong>Mahesh Kajale </strong>(m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.</li>
                     </ul>
                 </div>

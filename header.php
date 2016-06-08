@@ -1,3 +1,9 @@
+<!-- 
+    File:           header.php
+    Date:           03-06-2016
+
+    This script defines an HTML form to load the header.
+-->
 <!-- =================================== header ======================================================== -->
 <div class="main-header " style="height: 88px;">
   <div class="container">
