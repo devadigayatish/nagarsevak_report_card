@@ -1,10 +1,11 @@
+<!-- 
+	File:			create_final_table_dow.php
+	Date:		    03-06-2016
+
+	This script read the data from "csv_data" table and creates the final table "work_details".
+-->
 <?php
-
-//connection
-require_once('./../includes/db_connection.php');
-
-//--------------------------------------------------------------------
-
+require_once('./../includes/db_connection.php');                //connection
 
 	$Work_Against_Codes=array(
 						  "B"=>"Benches",
@@ -40,12 +41,8 @@ require_once('./../includes/db_connection.php');
 	$result = mysqli_query($con,$sql);
 	while ($row = mysqli_fetch_array($result)) 
     	{ 
-    		$sql = "INSERT INTO work_details (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."'
- 					,'". $Work_Against_Codes[$row['Code']] ."','". $row['Amount'] ."','". $row['Code'] ."','".
- 					$row['Prabhag_No'] ."')";
-     
-
-			if(!mysqli_query($con, $sql))
+    		$sql = "INSERT INTO work_details (Year,Details_Of_Work ,Amount, Code, Prabhag_No) VALUES('". $row['Year'] ."','". $Work_Against_Codes[$row['Code']] ."','". $row['Amount'] ."','". $row['Code'] ."','".$row['Prabhag_No'] ."')";
+     		if(!mysqli_query($con, $sql))
     		{
          		die('Error : ' . mysqli_error($con));
     		}
