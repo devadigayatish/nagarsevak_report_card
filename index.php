@@ -35,11 +35,9 @@ require_once('includes/functions.php');
                         xmlhttp1 = new XMLHttpRequest();
                         xmlhttp2 = new XMLHttpRequest();
                         xmlhttp3 = new XMLHttpRequest();
-                        
+                        xmlhttp4 = new XMLHttpRequest();
                         xmlhttp5 = new XMLHttpRequest();
                         xmlhttp6 = new XMLHttpRequest();
-                        // xmlhttp4 = new XMLHttpRequest();
-
                     }
                     else
                     {
@@ -47,10 +45,9 @@ require_once('includes/functions.php');
                         xmlhttp1 = new ActiveXObject("Microsoft.XMLHTTP");
                         xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
                         xmlhttp3 = new ActiveXObject("Microsoft.XMLHTTP");
-                        
+                        xmlhttp4 = new ActiveXObject("Microsoft.XMLHTTP");
                         xmlhttp5 = new ActiveXObject("Microsoft.XMLHTTP");
-                        xmlhttp6 = new ActiveXObject("Microsoft.XMLHTTP");
-                        // xmlhttp4 = new ActiveXObject("Microsoft.XMLHTTP");
+                        xmlhttp6 = new ActiveXObject("Microsoft.XMLHTTP"); 
                     }
 
                     xmlhttp1.onreadystatechange = function () {
@@ -78,6 +75,13 @@ require_once('includes/functions.php');
                         }
 
                     };
+                    xmlhttp4.onreadystatechange = function () {
+                         if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200)
+                         {
+
+                             document.getElementById("downloaded-data").innerHTML = xmlhttp4.responseText;
+                         }
+                     };
                     
                     // load piechart 1 for prabhag no A
                     xmlhttp5.onreadystatechange = function () {
@@ -95,29 +99,17 @@ require_once('includes/functions.php');
                         }
                     };
 
-                    // xmlhttp4.onreadystatechange = function() {
-                    //                                            if (xmlhttp4.readyState == 4 && xmlhttp4.status == 200) 
-                    //                                            {
-
-                    //                                                document.getElementById("pie-charts").innerHTML = xmlhttp4.responseText;
-                    //                                            }
-
-                    //                                          };                                         
-
-
                     xmlhttp1.open("GET", "prabhag-ward-ofc-info.php?q=" + str, true);
                     xmlhttp2.open("GET", "photo-info-table.php?n=" + str, true);
                     xmlhttp3.open("GET", "details-of-work-table.php?m=" + str, true);
-                    
-                    
+                    xmlhttp4.open("GET", "downloaded-data-bar.php?a=" + str, true);                   
                     xmlhttp5.open("GET", "pie-chart-data.php?prabhag_no=" + str + "A", true);
                     xmlhttp6.open("GET", "pie-chart-data.php?prabhag_no=" + str + "B", true);
-//                    xmlhttp3.open("GET", "details_of_work_table.php?m=" + str, true);
-                    //  xmlhttp4.open("POST","index.php?z="+str,true);
+
                     xmlhttp1.send();
                     xmlhttp2.send();
                     xmlhttp3.send();
-                    
+                    xmlhttp4.send();
                     xmlhttp5.send();
                     xmlhttp6.send();
                     //  xmlhttp4.send();
@@ -277,9 +269,8 @@ require_once('includes/functions.php');
             </div>
         </div>
     </div>
-    
-    <!-- ================================== end of pie chart ================================================= -->
-
+    <!-- =========================== downloaded data bar =========================================== -->
+        <div id="downloaded-data"style="text-align: center;"></div>
 </body>
 
 <br><br>
@@ -376,19 +367,6 @@ require_once('includes/functions.php');
     var strUser = selected_dropdown.options[selected_dropdown.selectedIndex].value;
     showUser(strUser);
 </script>
-
-<!-- ================================= download data ===================================================== -->
-
-<div style="text-align: center;">
-    <h4 style="text-align: center;">Download Data:</h4>
-    <div id="downloadList" class="btn-group " style="text-align: center;">
-        <a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Overall</a>
-        <a class="btn btn-default " target="_self" rel="" href="csv/35A.csv" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35A</a>
-        <a class="btn btn-default " target="_self" rel="" href="csv/35B.csv" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Prabhag 35B</a>
-        <a class="btn btn-default " target="_self" rel="" href="" data-slimstat-clicked="false" data-slimstat-type="2" data-slimstat-tracking="false" data-slimstat-callback="false" data-slimstat-async="false">Original RTI Replies</a>
-
-    </div>
-</div>
 <?php
 require_once('footer.php');
 ?>
