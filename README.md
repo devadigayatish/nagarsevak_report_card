@@ -48,3 +48,20 @@ Also, if you are an NGO and want to do a similar kind of project in your city, w
 ##Contacts Us :
 
     If you need more details about this project, please email at devadigayatish@gmail.com
+
+##Scripts :
+
+Expected :
+The main .xlsx files that contain sheets for each prabhag should be present in csv/main-files folder. 
+The output files will be created in csv folder.
+
+The scripts should be run in following order :
+1) extract_excel_file.php
+This script reads each .xlsx file from csv/main-files folder and extracts each worksheet and saves in csv folder as separate csv file
+2) insert_data_from_csv_to_table.php
+This script reads each file from csv folder and inserts the records into "csv_data" table and "attendance" table.
+3)insert_data_to_nagarsevak.php
+This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table.Calculate the total questions and average attendance of each nagarsevak and update the "nagarsevak" table.
+4)create_final_table_dow.php
+This script reads the data from "csv_data" table and inserts into final table "work_details".
+
