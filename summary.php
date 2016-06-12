@@ -416,7 +416,7 @@ require_once('includes/functions.php');
 <!-- ================================================================================================== -->
 <div id="visualization9" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: left;">
 	 <?php
-	 $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 1 AND 25 ";
+	 $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25 ";
 	 $query_26to50 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 26 AND 50 ";
 	 $query_51to75 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 51 AND 75 ";
 	 $query_76to100 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 76 AND 100 ";
@@ -469,23 +469,23 @@ require_once('includes/functions.php');
 <div id="visualization10" style="padding: 16px; border: 16px solid gray;width: 537px; height: 350px; float: right;">
 	 <?php
 	 //query all records from the database
-	 $query_0to25 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 1 AND 25 ";
-	 $query_26to50 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 26 AND 50 ";
-	 $query_51to75 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 51 AND 75 ";
-	 $query_76to100 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 76 AND 100 ";
+	 $query_0to5 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 0 AND 5 ";
+	 $query_6to10 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 6 AND 10 ";
+	 $query_11to15 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 11 AND 15 ";
+	 $query_16to100 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 16 AND 100 ";
 	 
-	 $result_0to25 = mysqli_query($con,$query_0to25 );       //execute the query
-	 $result_26to50 = mysqli_query($con,$query_26to50 );
-	 $result_51to75 = mysqli_query($con,$query_51to75 );
-	 $result_76to100 = mysqli_query($con,$query_76to100 );
+	 $result_0to5 = mysqli_query($con,$query_0to5 );       //execute the query
+	 $result_6to10 = mysqli_query($con,$query_6to10 );
+	 $result_11to15 = mysqli_query($con,$query_11to15 );
+	 $result_16to100 = mysqli_query($con,$query_16to100 );
 
-	 $row_0to25 = mysqli_fetch_assoc($result_0to25);
-	 $row_26to50 = mysqli_fetch_assoc($result_26to50);
-	 $row_51to75 = mysqli_fetch_assoc($result_51to75);
-	 $row_76to100 = mysqli_fetch_assoc($result_76to100);
+	 $row_0to5 = mysqli_fetch_assoc($result_0to5);
+	 $row_6to10 = mysqli_fetch_assoc($result_6to10);
+	 $row_11to15 = mysqli_fetch_assoc($result_11to15);
+	 $row_16to100 = mysqli_fetch_assoc($result_16to100);
     
- 	 $print_array_0 = array('0' => '0-25', '1' => '26-50' , '2' => '51-75' , '3' =>'76-100');
-	 $print_array_1= array('0' => $row_0to25['COUNT(Total_Questions)'] ,'1' =>$row_26to50['COUNT(Total_Questions)'] ,'2' => $row_51to75['COUNT(Total_Questions)'] , '3' => $row_76to100['COUNT(Total_Questions)']); 
+ 	 $print_array_0 = array('0' => '0-5', '1' => '6-10' , '2' => '11-15' , '3' =>'16-100');
+	 $print_array_1= array('0' => $row_0to5['COUNT(Total_Questions)'] ,'1' =>$row_6to10['COUNT(Total_Questions)'] ,'2' => $row_11to15['COUNT(Total_Questions)'] , '3' => $row_16to100['COUNT(Total_Questions)']); 
 
 	 $final_array= array(array());
  	 for ($i=0; $i <4 ; $i++) 
