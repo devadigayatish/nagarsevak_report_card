@@ -15,14 +15,15 @@ require_once('includes/functions.php');
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/styles.css" />
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/name_box.css" />
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/popup.css" />
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
-        <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
-        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
+        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/leaflet.css" />
+        <link rel="stylesheet"href="<?php echo SITE_URL; ?>assets/css/leaflet.label.css" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet.js"></script>
+        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet-omnivore.min.js"></script>
+        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet.label.js"></script>
+        <script src="<?php echo SITE_URL ?>assets/js/lib/jquery.min.js"></script>
         <script src="<?php echo SITE_URL ?>assets/js/lib/highcharts.js"></script>
+
         <script>
             function showUser(str)
             {

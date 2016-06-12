@@ -149,7 +149,7 @@
                     },
                     allowPointSelect: true,
                     cursor: "pointer",
-//          size:'100%',
+//                  size:'100%',
                     dataLabels: {
                         enabled: showDatalabels,
                     },
