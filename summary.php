@@ -15,7 +15,7 @@ require_once('includes/functions.php');
 <link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/styles.css" />
 <link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/name_box.css" />
 <link rel="stylesheet" href="<?php echo SITE_URL;?>assets/css/popup.css" />
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script src="<?php echo SITE_URL ?>assets/js/lib/jsapi.js"></script>
 </head>
 <?php
   include'header.php';
@@ -71,7 +71,7 @@ require_once('includes/functions.php');
 	 { 
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization2', '1', {packages: ['corechart']});      //load package
+	 google.load('visualization', '1', {packages: ['corechart']});      //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization()
@@ -111,7 +111,7 @@ require_once('includes/functions.php');
 	 ?>
 <script type="text/javascript">
 	 //load package
-	 google.load('visualization3', '1', {packages: ['corechart']});
+	 google.load('visualization', '1', {packages: ['corechart']});
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
@@ -151,7 +151,7 @@ require_once('includes/functions.php');
  	 { 
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization4', '1', {packages: ['corechart']});         //load package
+	 google.load('visualization', '1', {packages: ['corechart']});         //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
@@ -204,7 +204,7 @@ require_once('includes/functions.php');
      } 
  	 ?>
 <script type="text/javascript">
-	 google.load('visualization5', '1', {packages: ['corechart']});     //load package
+	 google.load('visualization', '1', {packages: ['corechart']});     //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
@@ -249,7 +249,7 @@ require_once('includes/functions.php');
      } 
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization6', '1', {packages: ['corechart']});       //load package
+	 google.load('visualization', '1', {packages: ['corechart']});       //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
@@ -280,7 +280,7 @@ require_once('includes/functions.php');
 	 if( $num_results > 0){ 
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization7', '1', {packages: ['corechart']});      //load package
+	 google.load('visualization', '1', {packages: ['corechart']});      //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization()
@@ -377,7 +377,7 @@ require_once('includes/functions.php');
 	 ?>
 
 <script type="text/javascript">
-	 google.load('visualization8', '1', {packages: ['corechart']});      //load package
+	 google.load('visualization', '1', {packages: ['corechart']});      //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization()
@@ -442,7 +442,7 @@ require_once('includes/functions.php');
 	 }
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization9', '1', {packages: ['corechart']});        //load package
+	 google.load('visualization', '1', {packages: ['corechart']});        //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
@@ -495,7 +495,7 @@ require_once('includes/functions.php');
 	 }
 	 ?>
 <script type="text/javascript">
-	 google.load('visualization10', '1', {packages: ['corechart']});      //load package
+	 google.load('visualization', '1', {packages: ['corechart']});      //load package
 </script>
 <script type="text/javascript">
 	 function drawVisualization() 
