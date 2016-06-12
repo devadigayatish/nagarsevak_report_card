@@ -19,7 +19,7 @@ while(! feof($file_pointer))
 	$row[$i]=array($read_csv_file[0], $read_csv_file[1], $read_csv_file[2], $read_csv_file[3], $read_csv_file[4],$read_csv_file[5], $read_csv_file[6], $read_csv_file[7], $read_csv_file[8], $read_csv_file[9],$read_csv_file[10], $read_csv_file[11], $read_csv_file[12]);
 	$i++;
 }
-print_r($row);
+
 for ($j=1; $j <= sizeof($row) ; $j++) 
 { 
 	$fieldVal_Prabhag_No = mysqli_real_escape_string($con,$row[$j][0]);
@@ -59,4 +59,4 @@ $sql = "SELECT Prabhag_No ,SUM(Questions) AS Questions,AVG(Atendance_Percentage)
     	}
         print "Updated Questions and Avg-Attendance for Prabhag No. : ".$row['Prabhag_No']."\n";
     }
-?>
+ ?>
