@@ -14,7 +14,7 @@ require_once('includes/db_connection.php');
     $row_A = mysqli_fetch_array($result);
     
     //fetch tha data from the database
-    echo "<div class=''><img width='100' align='left'  src=".SITE_URL.'assets/'. $row_A['URL']." style='margin-left: 100px; margin-top: 10px;'></div>" ;
+    echo "<div class='col-lg-6'><img width='100' src=".SITE_URL.'assets/'. $row_A['URL']." style=' margin-top: 10px;'></div>" ;
     
     
 //=====================================================================================
@@ -25,27 +25,23 @@ require_once('includes/db_connection.php');
     $result = mysqli_query($con,$sql);
     $row_B = mysqli_fetch_array($result);
     //fetch tha data from the database
-    echo "<div class=''><img width='100' align='right' src=".SITE_URL.'assets/'. $row_B['URL']." style='margin-right: 100px; margin-top: 10px;'></div>" ;
+    echo "<div class='col-lg-6'><img width='100' align='' src=".SITE_URL.'assets/'. $row_B['URL']." style=' margin-top: 10px;'></div>" ;
     
 
 
 //=====================================================================================
  //for fetching names
- 
-    echo "<br><br>";
-    echo "<br><br>";
-    echo "<br><br>";
-    echo "<br>";
-    echo "<div class='' style='width: 500px;'>";
-    echo "<div align='center' style='width: 250px; float : left'>";
+
+    echo "<br>";echo "<br>";echo "<br>";
+    echo "<div class=''>";
     $name_A = "". $row_A['Nagarsevak_Name']."";
     echo wordwrap($name_A,20,"<br>\n");
     echo "</div>";
 
-    echo "<div align='center' style='width: 250px; float : right'>";
+    echo "<div class=''>";
     $name_B = "". $row_B['Nagarsevak_Name']."";
     echo wordwrap($name_B,20,"<br>\n");
-    echo "</div>";
+
     echo "</div>";
   
 //=============================================================================
