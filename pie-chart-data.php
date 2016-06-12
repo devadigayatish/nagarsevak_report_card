@@ -10,6 +10,7 @@ require_once('includes/functions.php');
 
 
 $prabhag_no = $_GET['prabhag_no'];
-if($prabhag_no) {
+if($prabhag_no)
+{
     echo get_pie_chart_data($prabhag_no);
 }

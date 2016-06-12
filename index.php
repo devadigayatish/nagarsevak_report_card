@@ -262,14 +262,14 @@ require_once('includes/functions.php');
         <!-- ==============================pie chart 1 ========================================= -->
         <div id="chart1" style="width: 500px; height: 400px; float: left;margin-top: 10px;">
             <!-- <div id="visualization1" style="width: 450px; height: 400px; float: left;"></div> -->
-            <div class="" id="pie_chart_div1" style="min-height: 250px;float:left;widht:50%">
+            <div class="" id="pie_chart_div1" style="min-height: 350px;float:left;widht:470">
                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
             </div>
         </div>
         <!-- ===================================pie chart 2====================================================== -->
         <div id="chart2" style="width: 500px; height: 400px; float: right;margin-top: 10px;">
             <!-- <div id="visualization" style="float : right; width: 450px; height: 400px;"></div> -->
-            <div class="" id="pie_chart_div2" style="min-height: 250px;float:right;widht:50%">
+            <div class="" id="pie_chart_div2" style="min-height: 350px;float:right;widht:470">
                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
             </div>
         </div>

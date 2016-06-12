@@ -94,7 +94,7 @@
             showLegends = true;
         }
         Highcharts.setOptions({
-            colors: ['#0D91D0', '#04D314', '#ABDB08', '#FDD102', '#FF9F00', '#FF6600', '#FF0D00', "#79d4da", "#f487a7", "#a8acda", "#f1d97d", "#ccefe1", "#a285c5", "#78dac6", "#f8a36c", "#afd26f"]
+            colors: ['red','blue','green','yellow','purple','gray','pink','brown']
         });
         // $.get(url, function (data) {
         data = $.parseJSON(data);
@@ -130,7 +130,7 @@
                 enabled: false
             },
             title: {
-                text: ""
+                text: "Top 7 works in 4 years"
             },
             tooltip: {
                 pointFormat: "{series.name}: <b>{point.percentage:.1f}% ({point.y:1f})</b>"
@@ -158,7 +158,7 @@
             },
             legend: {
                 enabled: showLegends,
-                // layout: 'vertical',
+                 layout: 'vertical',
                 // align: 'right',
                 // width: 350,
                 // verticalAlign: 'middle',
