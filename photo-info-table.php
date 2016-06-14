@@ -35,11 +35,11 @@ echo "<div class='col-lg-12 col-md-4'>";
             echo "<table class='table table-bordered table-striped'>";
             while ($row = mysqli_fetch_array($result))
             {//fetch tha data from the database
-                echo "<tr><td>Prabhag No:</td><td>" . $prabhag_num_A."</td></tr>";
-                echo "<tr><td>Party:</td><td>" . $row['Party']."</td></tr>";
-                echo "<tr><td>Total Questions:</td><td>" . $row['Total_Questions']."</td></tr>";
-                echo "<tr><td>Avg Attendance:</td><td>" . $row['Avg_Attendance']."</td></tr>";
-                echo "<tr><td>Criminal Charges:</td><td>" . $row['Criminal_Records']."</td></tr>";
+                echo "<tr><td>Prabhag No</td><td>" . $prabhag_num_A."</td></tr>";
+                echo "<tr><td>Party</td><td>" . $row['Party']."</td></tr>";
+                echo "<tr><td>Total Questions</td><td>" . $row['Total_Questions']."</td></tr>";
+                echo "<tr><td>Attendance</td><td>" . $row['Avg_Attendance']." % </td></tr>";
+                echo "<tr><td>Criminal Charges</td><td>" . $row['Criminal_Records']."</td></tr>";
             }
             echo "</table>";
     echo "</div>";
@@ -51,11 +51,11 @@ echo "<div class='col-lg-12 col-md-4'>";
             echo "<table class='table table-bordered table-striped'>";
             while ($row = mysqli_fetch_array($result))
             {//fetch tha data from the database
-                echo "<tr><td>Prabhag No:</td><td>" .$prabhag_num_B. "</td></tr>";
-                echo "<tr><td>Party:</td><td>" . $row['Party']."</td></tr>";
-                echo "<tr><td>Total Questions:</td><td>" . $row['Total_Questions']."</td></tr>";
-                echo "<tr><td>Avg Attendance:</td><td>" . $row['Avg_Attendance']."</td></tr>";
-                echo "<tr><td>Criminal Charges:</td><td>" . $row['Criminal_Records']."</td></tr>";
+                echo "<tr><td>Prabhag No</td><td>" .$prabhag_num_B. "</td></tr>";
+                echo "<tr><td>Party</td><td>" . $row['Party']."</td></tr>";
+                echo "<tr><td>Total Questions</td><td>" . $row['Total_Questions']."</td></tr>";
+                echo "<tr><td>Attendance</td><td>" . $row['Avg_Attendance']." % </td></tr>";
+                echo "<tr><td>Criminal Charges</td><td>" . $row['Criminal_Records']."</td></tr>";
             }
             echo "</table>";
     echo "</div>";

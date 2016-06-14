@@ -75,7 +75,7 @@ require_once('includes/functions.php');
         <br>
         <li><strong>Yatish Devadiga </strong>(devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.</li>
         <br>
-        <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code.. mainly with Mapbox.</li>
+        <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code. Mainly with Mapbox.</li>
         <br>
         <li><strong>Mahesh Kajale </strong>(m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.</li>
     </ul></p>
