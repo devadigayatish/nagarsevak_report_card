@@ -604,7 +604,7 @@ require_once('includes/functions.php');
                         <div id="visualization11">
                             <?php
                                 echo"<span><p class='text-center'><strong>MAX AVERAGE ATTENDANCE(Gender-wise)</strong></p></span>";
-                                    echo "<div class='col-lg-11 col-md-4'>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
                                             $result_M = mysqli_query($con,$sql_M);
@@ -621,7 +621,7 @@ require_once('includes/functions.php');
                                         echo "</div>";
                                     echo "</div>";
 
-                                    echo "<div class='col-lg-11 col-md-4'>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No:</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
@@ -645,7 +645,7 @@ require_once('includes/functions.php');
                         <div id="visualization12">
                             <?php
                                 echo"<span><p class='text-center'><strong>MAX TOTAL QUESTIONS ASKED (Gender-wise)</strong></p></span>";
-                                    echo "<div class='col-lg-11 col-md-4'>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";
                                             $result_M = mysqli_query($con,$sql_M);
@@ -662,7 +662,7 @@ require_once('includes/functions.php');
                                         echo "</div>";
                                     echo "</div>";
 
-                                    echo "<div class='col-lg-11 col-md-4'>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No:</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";

@@ -174,6 +174,9 @@ require_once('includes/functions.php');
             <div class="container">
                 <div class="row">
                 <div class="container">
+                <div class="col-md-6 col-sm-6">
+                    <div id="map"></div>
+                </div>
                     <div class="col-md-6 col-sm-6 text-center">
                      <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
                         <select class="input-group-sm" id="users" name="users" style="width:60%;"onchange="showUser(this.value)">
@@ -289,9 +292,7 @@ require_once('includes/functions.php');
                 <div id="txtHint"></div>
                     
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                    <div id="map"></div>
-                    </div>
+                    
 
 
                     </div>
