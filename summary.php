@@ -253,7 +253,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Party wise Average Attendance</h3></div>
+                        <div class="text-center"><h3>Party wise Attendance</h3></div>
                             <div id="visualization5"></div>
                                 <?php
                                     $query = "SELECT Party ,SUM(Avg_Attendance) AS Avg_Attendance, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
@@ -300,7 +300,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================= -->
                     <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Party wise Total Questions asked.</h3></div>
+                        <div class="text-center"><h3>Party wise Questions asked.</h3></div>
                             <div id="visualization6"></div>
                                 <?php
                                     $query = "SELECT Party ,SUM(Total_Questions) AS Total_Questions, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
@@ -348,7 +348,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Partywise Criminal Charges</h3></div>
+                        <div class="text-center"><h3>Party wise Criminal Charges</h3></div>
                             <div id="visualization7"></div>
                                 <?php
                                     $query = "SELECT Party, COUNT(Party) AS count FROM `nagarsevak` WHERE Criminal_Records = 'Yes' GROUP BY Party ";
@@ -492,7 +492,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>No. of nagarsevak's in each attendance range</h3></div>
+                        <div class="text-center"><h3>Attendance of Nagarsevaks</h3></div>
                             <div id="visualization9">
                                 <?php
                                     $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25 ";
@@ -510,7 +510,7 @@ require_once('includes/functions.php');
                                     $row_51to75 = mysqli_fetch_assoc($result_51to75);
                                     $row_76to100 = mysqli_fetch_assoc($result_76to100);
 
-                                    $print_array_0 = array('0' => '0-25', '1' => '26-50' , '2' => '51-75' , '3' =>'76-100');
+                                    $print_array_0 = array('0' => '0%-25%', '1' => '26%-50%' , '2' => '51%-75%' , '3' =>'76%-100%');
                                     $print_array_1= array('0' => $row_0to25['COUNT(Avg_Attendance)'] ,'1' =>$row_26to50['COUNT(Avg_Attendance)'] ,'2' => $row_51to75['COUNT(Avg_Attendance)'] , '3' => $row_76to100['COUNT(Avg_Attendance)']); 
 
                                     $final_array= array(array());
@@ -529,7 +529,7 @@ require_once('includes/functions.php');
                                     {// Create and populate the data table.
                                         var data = google.visualization.arrayToDataTable
                                                     ([
-                                                        ['PL', 'COUNT'],
+                                                        ['PL', 'No. of Nagarsevaks'],
                                                         <?php
                                                             for($i=0; $i<4; $i++)
                                                             {
@@ -546,30 +546,39 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>No. of nagarsevak's in each question range</h3></div>
+                        <div class="text-center"><h3>No. of Questions asked by Nagarsevaks</h3></div>
                             <div id="visualization10">
                                 <?php
                                     //query all records from the database
-                                    $query_0to5 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 0 AND 5 ";
-                                    $query_6to10 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 6 AND 10 ";
-                                    $query_11to15 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 11 AND 15 ";
-                                    $query_16to100 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 16 AND 100 ";
+                                    $query_0 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 0 ";
+                                    $query_1 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 1 ";
+                                    $query_2 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 2 ";
+                                    $query_3 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 3";
+                                    $query_4 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 4";
+                                    $query_5 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 5";
+                                    $query_6 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 6 AND 100 ";
 
-                                    $result_0to5 = mysqli_query($con,$query_0to5 );//execute the query
-                                    $result_6to10 = mysqli_query($con,$query_6to10 );
-                                    $result_11to15 = mysqli_query($con,$query_11to15 );
-                                    $result_16to100 = mysqli_query($con,$query_16to100 );
+                                    $result_0 = mysqli_query($con,$query_0 );//execute the query
+                                    $result_1 = mysqli_query($con,$query_1 );
+                                    $result_2 = mysqli_query($con,$query_2 );
+                                    $result_3 = mysqli_query($con,$query_3 );
+                                    $result_4 = mysqli_query($con,$query_4 );
+                                    $result_5 = mysqli_query($con,$query_5 );
+                                    $result_6 = mysqli_query($con,$query_6 );
 
-                                    $row_0to5 = mysqli_fetch_assoc($result_0to5);
-                                    $row_6to10 = mysqli_fetch_assoc($result_6to10);
-                                    $row_11to15 = mysqli_fetch_assoc($result_11to15);
-                                    $row_16to100 = mysqli_fetch_assoc($result_16to100);
+                                    $row_0 = mysqli_fetch_assoc($result_0);
+                                    $row_1 = mysqli_fetch_assoc($result_1);
+                                    $row_2 = mysqli_fetch_assoc($result_2);
+                                    $row_3 = mysqli_fetch_assoc($result_3);
+                                    $row_4 = mysqli_fetch_assoc($result_4);
+                                    $row_5 = mysqli_fetch_assoc($result_5);
+                                    $row_6 = mysqli_fetch_assoc($result_6);
 
-                                    $print_array_0 = array('0' => '0-5', '1' => '6-10' , '2' => '11-15' , '3' =>'16-100');
-                                    $print_array_1= array('0' => $row_0to5['COUNT(Total_Questions)'] ,'1' =>$row_6to10['COUNT(Total_Questions)'] ,'2' => $row_11to15['COUNT(Total_Questions)'] , '3' => $row_16to100['COUNT(Total_Questions)']);
+                                    $print_array_0 = array('0' => '0', '1' => '1' , '2' => '2' , '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6 - 100');
+                                    $print_array_1= array('0' => $row_0['COUNT(Total_Questions)'] ,'1' =>$row_1['COUNT(Total_Questions)'] ,'2' => $row_2['COUNT(Total_Questions)'] , '3' => $row_3['COUNT(Total_Questions)'], '4' => $row_4['COUNT(Total_Questions)'], '5' => $row_5['COUNT(Total_Questions)'], '6' => $row_6['COUNT(Total_Questions)']);
 
                                     $final_array= array(array());
-                                    for ($i=0; $i <4 ; $i++)
+                                    for ($i=0; $i <7 ; $i++)
                                     {
                                         $final_array[$i][0] = $print_array_0[$i];
                                         $final_array[$i][1] = $print_array_1[$i];
@@ -584,9 +593,9 @@ require_once('includes/functions.php');
                                     {// Create and populate the data table.
                                         var data = google.visualization.arrayToDataTable
                                                     ([
-                                                        ['PL', 'COUNT'],
+                                                        ['No. of Questions', 'No. of Nagarsevaks'],
                                                         <?php
-                                                            for($i=0; $i<4; $i++)
+                                                            for($i=0; $i<7; $i++)
                                                             {
                                                                 echo "['{$final_array[$i][0]}', {$final_array[$i][1]}],";
                                                             }
@@ -603,7 +612,7 @@ require_once('includes/functions.php');
                     <div class="col-md-6 col-sm-6">
                         <div id="visualization11">
                             <?php
-                                echo"<div class='text-center'><h3>MAX Average Attendance (Gender-wise)</h3></div>";
+                                echo"<div class='text-center'><h3>MAX Attendance (Gender-wise)</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
@@ -624,16 +633,16 @@ require_once('includes/functions.php');
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No:</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party:</td><td>" . $row_M['Party']."</td></tr>";
-                                                echo "<tr><td>Avg Attendance:</td><td>" . $row_M['Avg_Attendance']."</td></tr>";
+                                                echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Attendance</td><td>" . $row_M['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No:</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party:</td><td>" . $row_F['Party']."</td></tr>";
-                                                echo "<tr><td>Avg Attendance:</td><td>" . $row_F['Avg_Attendance']."</td></tr>";
+                                                echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Attendance</td><td>" . $row_F['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
                                     echo "</div>";
@@ -644,7 +653,7 @@ require_once('includes/functions.php');
                     <div class="col-md-6 col-sm-6">
                         <div id="visualization12">
                             <?php
-                                echo"<div class='text-center'><h3>MAX Total Qustions Asked (Gender-wise)</h3></div>";
+                                echo"<div class='text-center'><h3>MAX Questions Asked (Gender-wise)</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";
