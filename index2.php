@@ -173,10 +173,11 @@ require_once('includes/functions.php');
             
             <div class="container">
                 <div class="row">
-                <div class="container">
-                <div class="col-md-6 col-sm-6">
-                    <div id="map"></div>
-                </div>
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                        <div id="map"></div>
+                    </div>
+                    
                     <div class="col-md-6 col-sm-6 text-center">
                      <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
                         <select class="input-group-sm" id="users" name="users" style="width:60%;"onchange="showUser(this.value)">
@@ -288,106 +289,43 @@ require_once('includes/functions.php');
                     </select>
                     <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
                     <br/>
-                    <div id="prabhag_no_info"></div>
-                    <div id="txtHint"></div>
-                    
+                        <div id="prabhag_no_info"></div>
+                        <div id="txtHint"></div>
                     </div>
-                    
-
-
                     </div>
+
                     <div class="container">
-                    <div id="txtHint2"></div>
+                        <div id="txtHint2"></div>
                     </div>
-                    
-                    <div class="col-md-6 col-sm-6">
-                        <div class="fh5co-grid animate-box" style="background-image: url(<?php echo SITE_URL;?>assets/images/work-4.jpg);">
-                            <a class="image-popup text-center" href="#">
-                                <div class="prod-title">
-                                    <h3>Don’t Just Stand There</h3>
-                                    <span>Illustration, Print</span>
-                                </div>
-                            </a>
+
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                            <div id="pie_chart_div1">
+                                <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                            <div id="pie_chart_div2">
+                                <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="fh5co-grid animate-box" style="background-image: url(<?php echo SITE_URL;?>assets/images/work-3.jpg);">
-                            <a class="image-popup text-center" href="#">
-                                <div class="prod-title">
-                                    <h3>Don’t Just Stand There</h3>
-                                    <span>Illustration, Print</span>
-                                </div>
-                            </a>
+
+                    <div class="container">
+                        <div class="col-md-12 col-sm-12">
+                        <div class="row">
+                            <div id="downloaded-data" class="col-md-8 col-md-offset-2 text-center heading-section animate-box">                
+                            </div>
                         </div>
+                        </div>  
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- fh5co-work-section -->
         
-        <!-- fh5co-content-section -->
-        <div id="fh5co-blog-section" class="fh5co-section-gray">
-            
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#"><img class="img-responsive" src="<?php echo SITE_URL;?>assets/images/blog-1.jpg" alt=""></a>
-                            <div class="image-popup" href="#">
-                                <div class="prod-title">
-                                    <h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
-                                    <span class="posted_by">Posted by: Admin</span>
-                                    <span class="comment"><a href="">21<i class="icon-bubble22"></i></a></span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#"><img class="img-responsive" src="<?php echo SITE_URL;?>assets/images/blog-2.jpg" alt=""></a>
-                            <div class="image-popup" href="#">
-                                <div class="prod-title">
-                                    <h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
-                                    <span class="posted_by">Posted by: Admin</span>
-                                    <span class="comment"><a href="">21<i class="icon-bubble22"></i></a></span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4">
-                        <div class="fh5co-blog animate-box">
-                            <a href="#"><img class="img-responsive" src="<?php echo SITE_URL;?>assets/images/blog-3.jpg" alt=""></a>
-                            <div class="image-popup" href="#">
-                                <div class="prod-title">
-                                    <h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
-                                    <span class="posted_by">Posted by: Admin</span>
-                                    <span class="comment"><a href="">21<i class="icon-bubble22"></i></a></span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <a href="#" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                        <h3>Download Data</h3>
-                        <a class='btn btn-primary ' target='_self' rel='' href='' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Overall</a>
-                        <a class='btn btn-primary ' target='_self' rel='' href='' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Prabhag A</a>
-                        <a class='btn btn-primary ' target='_self' rel='' href='' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Prabhag B</a>
-                        <a class='btn btn-primary ' target='_self' rel='' href='' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Original RTI Replies</a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- fh5co-blog-section -->
         <?php
             require_once('footer2.php');
         ?>

@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #5a5a5a;
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
-  margin: 0 0 30px 0;
+  margin: 0 0 15px 0;
 }
 
 figure {
@@ -465,7 +465,7 @@ figure {
 #fh5co-content-section,
 #fh5co-work-section_2,
 #fh5co-blog-section {
-  padding: 7em 0;
+  padding: 3em 0;
 }
 @media screen and (max-width: 768px) {
   #fh5co-work-section,

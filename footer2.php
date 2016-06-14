@@ -32,7 +32,7 @@
             showLegends = true;
         }
         Highcharts.setOptions({
-            colors: ['red','blue','green','yellow','purple','gray','pink','brown']
+            colors: ['#3366cc','#dc3912','#ff9900','#109618','#990099','#0099c6','#dd4477','#b82e2e','#66aa00','#316395']
         });
         // $.get(url, function (data) {
         data = $.parseJSON(data);
@@ -68,7 +68,7 @@
                 enabled: false
             },
             title: {
-                text: "Top 7 works in 4 years"
+                text: ""
             },
             tooltip: {
                 pointFormat: "{series.name}: <b>{point.percentage:.1f}% ({point.y:1f})</b>"
