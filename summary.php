@@ -80,7 +80,7 @@ require_once('includes/functions.php');
                 <div class="row">
                 <div class="container">
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Amount spent by each Party</strong></p></span>
+                        <div class="text-center"><h3>Amount spent by each Party</h3></div>
                             <div id="visualization" ></div>
                                 <?php
                                     $query = "SELECT n.Party, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No GROUP BY n.Party ";       //query all records from the database
@@ -122,7 +122,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Amount spent on each type of work</strong></p></span>
+                        <div class="text-center"><h3>Amount spent on each type of work</h3></div>
                             <div id="visualization2" ></div>
                                 <?php
                                     $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC"; 
@@ -165,7 +165,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================ -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Female : Amount spent on each type of work</strong></p></span>
+                        <div class="text-center"><h3>Female : Amount spent on each type of work</h3></div>
                             <div id="visualization3"></div>
                                 <?php   
                                     $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount FROM 
@@ -211,7 +211,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================ -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Male : Amount spent on each type of work</strong></p></span>
+                        <div class="text-center"><h3>Male : Amount spent on each type of work</h3></div>
                             <div id="visualization4"></div>
                                 <?php
                                     $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No WHERE n.Gender = 'Male' GROUP BY n.Gender , w.Code ORDER BY SUM(w.Amount) DESC ";  //query all records from the database
@@ -253,7 +253,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Party wise Average Attendance</strong></p></span>
+                        <div class="text-center"><h3>Party wise Average Attendance</h3></div>
                             <div id="visualization5"></div>
                                 <?php
                                     $query = "SELECT Party ,SUM(Avg_Attendance) AS Avg_Attendance, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
@@ -300,7 +300,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================= -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Party wise Total Questions asked.</strong></p></span>
+                        <div class="text-center"><h3>Party wise Total Questions asked.</h3></div>
                             <div id="visualization6"></div>
                                 <?php
                                     $query = "SELECT Party ,SUM(Total_Questions) AS Total_Questions, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
@@ -348,7 +348,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Partywise Criminal Charges</strong></p></span>
+                        <div class="text-center"><h3>Partywise Criminal Charges</h3></div>
                             <div id="visualization7"></div>
                                 <?php
                                     $query = "SELECT Party, COUNT(Party) AS count FROM `nagarsevak` WHERE Criminal_Records = 'Yes' GROUP BY Party ";
@@ -390,7 +390,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>Top 5 Works per Year</strong></p></span>
+                        <div class="text-center"><h3>Top 5 Works per Year</h3></div>
                             <div id="visualization8">
                                 <?php
                                     $query = "SELECT Details_Of_Work FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC ";
@@ -492,7 +492,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>No. of nagarsevak's in each attendance range</strong></p></span>
+                        <div class="text-center"><h3>No. of nagarsevak's in each attendance range</h3></div>
                             <div id="visualization9">
                                 <?php
                                     $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25 ";
@@ -546,7 +546,7 @@ require_once('includes/functions.php');
                     </div>
 <!-- ============================================================================================== -->
                     <div class="col-md-6 col-sm-6">
-                        <span><p class="text-center"><strong>No. of nagarsevak's in each question range</strong></p></span>
+                        <div class="text-center"><h3>No. of nagarsevak's in each question range</h3></div>
                             <div id="visualization10">
                                 <?php
                                     //query all records from the database
@@ -603,7 +603,7 @@ require_once('includes/functions.php');
                     <div class="col-md-6 col-sm-6">
                         <div id="visualization11">
                             <?php
-                                echo"<span><p class='text-center'><strong>MAX AVERAGE ATTENDANCE(Gender-wise)</strong></p></span>";
+                                echo"<div class='text-center'><h3>MAX Average Attendance (Gender-wise)</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
@@ -644,7 +644,7 @@ require_once('includes/functions.php');
                     <div class="col-md-6 col-sm-6">
                         <div id="visualization12">
                             <?php
-                                echo"<span><p class='text-center'><strong>MAX TOTAL QUESTIONS ASKED (Gender-wise)</strong></p></span>";
+                                echo"<div class='text-center'><h3>MAX Total Qustions Asked (Gender-wise)</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";

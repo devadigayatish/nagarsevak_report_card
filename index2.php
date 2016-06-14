@@ -289,33 +289,17 @@ require_once('includes/functions.php');
                     <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
                     <br/>
                     <div id="prabhag_no_info"></div>
-                <div id="txtHint"></div>
+                    <div id="txtHint"></div>
                     
                     </div>
                     
 
 
                     </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="fh5co-grid animate-box" style="background-image: url(<?php echo SITE_URL;?>assets/images/work-3.jpg);">
-                            <a class="image-popup text-center" href="#">
-                                <div class="prod-title">
-                                    <h3>Don’t Just Stand There</h3>
-                                    <span>Illustration, Print</span>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="container">
+                    <div id="txtHint2"></div>
                     </div>
-                    <div class="col-md-8 col-sm-8">
-                        <div class="fh5co-grid animate-box" style="background-image: url(<?php echo SITE_URL;?>assets/images/work-4.jpg);">
-                            <a class="image-popup text-center" href="#">
-                                <div class="prod-title">
-                                    <h3>Don’t Just Stand There</h3>
-                                    <span>Illustration, Print</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-6 col-sm-6">
                         <div class="fh5co-grid animate-box" style="background-image: url(<?php echo SITE_URL;?>assets/images/work-4.jpg);">
                             <a class="image-popup text-center" href="#">
