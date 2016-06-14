@@ -68,7 +68,7 @@ require_once('includes/functions.php');
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-12 animate-box fadeInUp animated">
 						<p>
-<strong style="font-size: 20px;">Contributors</strong>
+<strong>Contributors</strong>
 <br><br>
     <ul>
         <li><strong>Sharvari Gaikwad </strong>(sharvari.v.gaikwad@gmail.com), Intern for Startup Partner. Main developer for this project.</li>

@@ -68,7 +68,7 @@ require_once('includes/functions.php');
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-12 animate-box fadeInUp animated">
 						<p>
-<strong style="font-size: 20px;">About Project - Nagarsevak Report Card 2016</strong>
+<strong>About Project - Nagarsevak Report Card 2016</strong>
 <br><br>
 Nowadays it has become a cliché to bash politicians just for the sake of it. The uninitiated don’t even know what the work is that our corporators really do. So we at Parivartan came up with an idea to investigate how the corporators spend the funds that are allocated to them, which in case of Pune city corporators is 50 lakhs per year per prabhag. Though this amount may seem small, but in 5 years it accounts to a staggering Rs 2.5 crore, an amount sufficient for implementing and executing various good projects successfully. The only question is “do the corporators have the vision and will to utilize the funds and do the citizens think that this vision is aligned with the needs of their own prabhag”?
 <br><br>
