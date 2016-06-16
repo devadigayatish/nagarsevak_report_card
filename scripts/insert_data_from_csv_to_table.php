@@ -27,10 +27,11 @@ foreach( $scanned_directory as $value )
 		$prabhag = str_replace("Prabhag","", $temp[0]);         //replace prabhag by empty string 
 		$prabhag_no = str_replace(" ","", $prabhag);            //replace the space by empty string
 		print "Prabhag No. : ".$prabhag_no."\n";
+		$row =array();
 		while(! feof($file_pointer))
 		{
 			$read_csv_file = fgetcsv($file_pointer);
-			if ($read_csv_file[0] != "" && $read_csv_file[4] != "")
+			if ($read_csv_file[0] != "" && $read_csv_file[4] != "" && $read_csv_file[3] != "" )
 			{
 				$row[$i]=array($read_csv_file[0], $read_csv_file[1], $read_csv_file[2], $read_csv_file[3], $read_csv_file[4]);
 				$i++;
