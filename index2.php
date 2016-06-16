@@ -182,7 +182,6 @@ require_once('includes/functions.php');
                      <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
                         <select class="input-group-sm" id="users" name="users" style="width:60%;"onchange="showUser(this.value)">
                         <optgroup label='Aundh'>
-                            <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
                             <option value='6'>Prabhag 6: Bopodi Gaonthan</option>
                             <option value='7'>Prabhag 7: Pune University</option>
                             <option value='8'>Prabhag 8: Aundh ITI</option>
@@ -211,7 +210,7 @@ require_once('includes/functions.php');
                             <option value='76'>Prabhag 76: Katraj Maulinagar</option>
                         </optgroup>
                         <optgroup label='Dhole Patil Road'>
-                            <option value='20'>Prabhag 20: Magarpatta City</option>
+                            <option value='20' selected="selected">Prabhag 20: Magarpatta City</option>
                             <option value='21'>Prabhag 21: Koregaon Park</option>
                             <option value='22'>Prabhag 22: Naidu Hospital</option>
                             <option value='23'>Prabhag 23: Junabazaar Kumbharwada</option>
@@ -273,6 +272,7 @@ require_once('includes/functions.php');
                             <option value='56'>Prabhag 56: Sarasbaug Parvati</option>
                         </optgroup>
                         <optgroup label='Warje Karvenagar'>
+                            <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
                             <option value='30'>Prabhag 30: Popularnagar Malwadi</option>
                             <option value='31'>Prabhag 31: Shivane - Warje - Ramnagar</option>
                             <option value='32'>Prabhag 32: Karvenagar - Gosavivasti</option>
