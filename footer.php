@@ -1,86 +1,24 @@
-<!-- 
-    File:           footer.php
-    Date:           03-06-2016
-
-    This script defines an HTML form to load the footer.
--->
-<hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
-<!-- ===================================== footer ========================================================= -->
-<div id="footer">       
-
-    <footer class="">
-
-        <h4 style="margin-left: 20px;">Website designed, developed, hosted and maintained by 
-            <a target="_blank" href="http://startuppartner.co.in/about.html">
-                <strong style="color: blue">Startup Partner Pvt Ltd. </strong>
-            </a>Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">
-                <strong style="color: blue">Parivartan</strong>
-            </a>
-        </h4>
-        <h4 align="center" style="c">
-            <nav>
-
-                <a class="" target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card" style="color: black;">Source Code</a>
-                |
-                <a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display = 'block';
-                        document.getElementById('fade2').style.display = 'block'" style="color: black;">Contributors</a>
-                <div id="light2" class="white_content1" style="text-align: justify; font-size: 15px;">
-                    <strong style="text-align: justify; font-size: 20px;">Contributors</strong>
-                    <button style="top: 0%; float: right;"onclick = "document.getElementById('light2').style.display = 'none';
-                            document.getElementById('fade2').style.display = 'none'">
-                        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL; ?>assets/images/logo/close_button_red.png"></button>
-                    <br><br>
-                    <ul>
-                        <li><strong>Sharvari Gaikwad </strong>(sharvari.v.gaikwad@gmail.com), Intern for Startup Partner. Main developer for this project.</li>
-                        <br><br>
-                        <li><strong>Yatish Devadiga </strong>(devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.</li>
-                        <br><br>
-                        <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code.. mainly with Mapbox.</li>
-                        <br><br>
-                        <li><strong>Mahesh Kajale </strong>(m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.</li>
-                    </ul>
+<footer>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <p>Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd</strong></a>. Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html"><strong>Parivartan</strong></a>.
+                    <br/>
+                    <nav>
+                    <a href="https://github.com/devadigayatish/nagarsevak_report_card" target="_blank" class="btn btn-primary">Source Code</a>&nbsp;&nbsp;
+                    <a href="contributors.php" class="btn btn-primary">Contributors</a>&nbsp;&nbsp;
+                    <a href="disclaimer.php" class="btn btn-primary">Disclaimer</a>&nbsp;&nbsp;
+                    <a href="report-bug.php" class="btn btn-primary">Report Bug</a>&nbsp;&nbsp;
+                    </nav>
+                    <br/>
+                    This project is completely free. No Copyrights. You're welcome to fork this project from &nbsp;<a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card"><strong>Here</strong></a>&nbsp; and send pull requests. We would love you to contribute in this project and improve the code quality. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
+                    </p>
                 </div>
-                <div id="fade2" class="black_overlay"></div>
-                |
-                <a href = "javascript:void(0)" onclick = "document.getElementById('light3').style.display = 'block';
-                        document.getElementById('fade3').style.display = 'block'" style="color: black;">Disclaimer</a>
-                <div id="light3" class="white_content2" style="text-align: justify; font-size: 15px;">
-                    <strong style="text-align: justify; font-size: 20px;">Disclaimer</strong>
-                    <button style="top: 0%; float: right;"onclick = "document.getElementById('light3').style.display = 'none';
-                            document.getElementById('fade3').style.display = 'none'">
-                        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL; ?>assets/images/logo/close_button_red.png"></button>
-                    <br><br>
-                    This Website is designed, developed, hosted and maintained by Startup Partner Pvt Ltd. The content of this website is provided by Parivartan and it is for information purposes only, enabling the public at large to have a quick and an easy access to information and do not have any legal sanctity.
-                </div>
-                <div id="fade3" class="black_overlay"></div>
-                |
-                <a href = "javascript:void(0)" onclick = "document.getElementById('light4').style.display = 'block';
-                        document.getElementById('fade4').style.display = 'block'" style="color: black;">Report Bug</a>
-                <div id="light4" class="white_content3" style="text-align: justify; font-size: 15px;">
-                    <strong style="text-align: justify; font-size: 20px;">Report Bug</strong>
-                    <button style="top: 0%; float: right;"onclick = "document.getElementById('light4').style.display = 'none';
-                            document.getElementById('fade4').style.display = 'none'">
-                        <img style="width:20px; height: 20px;" src="<?php echo SITE_URL; ?>assets/images/logo/close_button_red.png"></button>
-                    <br><br>
-                    We welcome your suggestions to improve this website and request that error(if any) may kindly be brought to our notice.
-                    <br><br>
-                    Email id : devadigayatish@gmail.com  
-                </div>
-                <div id="fade4" class="black_overlay"></div>
-            </nav></h4>
-
-        <h8 style="margin-left: 30px; margin-right: 30px;">
-            <p style="text-align:center; margin-left: 30px; margin-right: 30px;">
-                This project is completely free. No Copyrights. You're welcome to fork this project from 
-                <a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card">
-                    <strong style="color: blue">Here</strong>
-                </a> and send pull requests. We would love you to contribute in this project and improve the code quality. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
-            </p>
-        </h8>
-    </footer>
-</div>
-
-<hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto;border-style: inset; border-width: 1px;">
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script type="text/javascript">
     function draw_piechart(data, element, showDatalabels, showLegends) {
@@ -94,7 +32,7 @@
             showLegends = true;
         }
         Highcharts.setOptions({
-            colors: ['red','blue','green','yellow','purple','gray','pink','brown']
+            colors: ['#3366cc','#dc3912','#ff9900','#109618','#990099','#0099c6','#dd4477','#b82e2e','#66aa00','#316395']
         });
         // $.get(url, function (data) {
         data = $.parseJSON(data);
@@ -130,7 +68,7 @@
                 enabled: false
             },
             title: {
-                text: "Top 7 works in 4 years"
+                text: ""
             },
             tooltip: {
                 pointFormat: "{series.name}: <b>{point.percentage:.1f}% ({point.y:1f})</b>"
@@ -178,8 +116,22 @@
         });
 // });
         return false;
-    }
-    ;
+    };
 
 </script>
-</html>
+
+<script src="<?php echo SITE_URL ?>assets/js/lib/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/jquery.waypoints.min.js"></script>
+    <!-- Stellar -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/jquery.stellar.min.js"></script>
+    <!-- Superfish -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/hoverIntent.js"></script>
+    <script src="<?php echo SITE_URL ?>assets/js/lib/superfish.js"></script>
+
+    <!-- Main JS (Do not remove) -->
+    <script src="<?php echo SITE_URL ?>assets/js/lib/main.js"></script>

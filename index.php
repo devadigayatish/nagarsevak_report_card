@@ -1,30 +1,60 @@
-<!-- 
-    File:           index.php
-    Date:           03-06-2016
-
-    This script loads the main page.
--->
 <?php
 require_once('includes/db_connection.php');
 require_once('includes/functions.php');
 ?>
-<html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title>Nagarsevak Report Card</title>
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/map.css" />
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/styles.css" />
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/name_box.css" />
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/popup.css" />
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/leaflet.css" />
-        <link rel="stylesheet"href="<?php echo SITE_URL; ?>assets/css/leaflet.label.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guardian &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FREEHTML5.CO" />
 
-        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet.js"></script>
-        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet-omnivore.min.js"></script>
-        <script src="<?php echo SITE_URL ?>assets/js/lib/leaflet.label.js"></script>
-        <script src="<?php echo SITE_URL ?>assets/js/lib/jquery.min.js"></script>
-        <script src="<?php echo SITE_URL ?>assets/js/lib/highcharts.js"></script>
+  <!-- 
+    //////////////////////////////////////////////////////
 
-        <script>
+    FREE HTML5 TEMPLATE 
+    DESIGNED & DEVELOPED by FREEHTML5.CO
+        
+    Website:        http://freehtml5.co/
+    Email:          info@freehtml5.co
+    Twitter:        http://twitter.com/fh5co
+    Facebook:       https://www.facebook.com/fh5co
+
+    //////////////////////////////////////////////////////
+     -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+    
+
+
+    <script>
             function showUser(str)
             {
 
@@ -122,19 +152,36 @@ require_once('includes/functions.php');
                 }
             }
         </script>
+
     </head>
     <body>
-        <?php
+    <?php
         require_once('header.php');
-        ?>
+    ?>
 
-        <div id="my-container-1" style="border-right-width: 10px; border-left-width: 10px; width:1076px;">
-            <div class="col-sm-6" style="height: 350px;padding-left: 10px;padding-right: 00px;">
-                <div>
-                <a class="btn btn-default btn-xs" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
-                    <select id="users" name="users" onchange="showUser(this.value)">
+        
+
+        <div class="fh5co-hero">
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo SITE_URL;?>assets/images/home-image.jpg);">
+               
+            </div>
+
+        </div>
+        <!-- end:header-top -->
+        <div id="fh5co-work-section" style="padding-top: 50px;">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                        <div id="map"></div>
+                    </div>
+                    
+                    <div class="col-md-6 col-sm-6 text-center">
+                     <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
+                        <select class="input-group-sm" id="users" name="users" style="width:60%;"onchange="showUser(this.value)">
                         <optgroup label='Aundh'>
-                            <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
                             <option value='6'>Prabhag 6: Bopodi Gaonthan</option>
                             <option value='7'>Prabhag 7: Pune University</option>
                             <option value='8'>Prabhag 8: Aundh ITI</option>
@@ -163,7 +210,7 @@ require_once('includes/functions.php');
                             <option value='76'>Prabhag 76: Katraj Maulinagar</option>
                         </optgroup>
                         <optgroup label='Dhole Patil Road'>
-                            <option value='20'>Prabhag 20: Magarpatta City</option>
+                            <option value='20' selected="selected">Prabhag 20: Magarpatta City</option>
                             <option value='21'>Prabhag 21: Koregaon Park</option>
                             <option value='22'>Prabhag 22: Naidu Hospital</option>
                             <option value='23'>Prabhag 23: Junabazaar Kumbharwada</option>
@@ -225,6 +272,7 @@ require_once('includes/functions.php');
                             <option value='56'>Prabhag 56: Sarasbaug Parvati</option>
                         </optgroup>
                         <optgroup label='Warje Karvenagar'>
+                            <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
                             <option value='30'>Prabhag 30: Popularnagar Malwadi</option>
                             <option value='31'>Prabhag 31: Shivane - Warje - Ramnagar</option>
                             <option value='32'>Prabhag 32: Karvenagar - Gosavivasti</option>
@@ -239,49 +287,62 @@ require_once('includes/functions.php');
                             <option value='16'>Prabhag 16: Subhashnagar</option>
                         </optgroup>
                     </select>
-                    <a class="btn btn-default btn-xs"  value="next" onClick="nextPrabhag(1)">Next</a>
-                    <br><br>
-                </div>         <!-- end of select div -->
+                    <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
+                    <br/>
+                        <div id="prabhag_no_info"></div>
+                        <div id="txtHint"></div>
+                    </div>
+                    </div>
 
-                <div id="prabhag_no_info" style="text-align: center; font:Times New Roman; font-size: 20; "><b></b></div>
-                <div id="txtHint"></div>           <!-- end of txthint  div -->
-            </div>
+                    <div class="container">
+                        <div id="txtHint2"></div>
+                    </div>
 
-            <div id="prabhag_no_info" style="text-align: center; font:Times New Roman; font-size: 20; "><b></b></div>
-            <div id="txtHint"></div>           <!-- end of txthint  div -->
-        </div>                 <!-- end of info col-sm-6  div -->
-        <div class="col-sm-6" style="height: 350px;">
-            <div id="map" style="height:350px; width:498px; position: relative;"></div>
-        </div>            <!-- end of map col-sm-6 div -->
+                    <div class="container">
+                        <div class="col-md-6 col-sm-6">
+                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                            <div id="pie_chart_div1">
+                                <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                            <div id="pie_chart_div2">
+                                <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- =================================================================================================== -->
-    <div id="my-container-2" style="border-right-width: 10px; border-left-width: 10px; width:1076px;margin-top: 20px;">
-        <div id="txtHint2"></div>
-    </div>
+                    <div class="container">
+                        <div class="col-md-12 col-sm-12">
+                        <div class="row">
+                            <div id="downloaded-data" class="col-md-8 col-md-offset-2 text-center heading-section animate-box">                
+                            </div>
+                        </div>
+                        </div>  
+                    </div>
 
-    <div id="pie-charts" style="width: 1050px; height: 400px;">
-        <!-- ==============================pie chart 1 ========================================= -->
-        <div id="chart1" style="width: 500px; height: 400px; float: left;margin-top: 10px;">
-            <!-- <div id="visualization1" style="width: 450px; height: 400px; float: left;"></div> -->
-            <div class="" id="pie_chart_div1" style="min-height: 350px;float:left;widht:470">
-                <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
+                </div>
             </div>
         </div>
-        <!-- ===================================pie chart 2====================================================== -->
-        <div id="chart2" style="width: 500px; height: 400px; float: right;margin-top: 10px;">
-            <!-- <div id="visualization" style="float : right; width: 450px; height: 400px;"></div> -->
-            <div class="" id="pie_chart_div2" style="min-height: 350px;float:right;widht:470">
-                <img src="<?php echo SITE_URL ?>assets/images/loader.gif" style="padding: 14% 50%;" />
-            </div>
-        </div>
+        
+        <?php
+            require_once('footer.php');
+        ?>
+    
+
     </div>
-    <!-- =========================== downloaded data bar =========================================== -->
-        <div id="downloaded-data"style="text-align: center;"></div>
-</body>
+    <!-- END fh5co-page -->
 
-<br><br>
+    </div>
+    <!-- END fh5co-wrapper -->
 
-<script>
+    <!-- jQuery -->
+
+
+    </body>
+
+    <script>
     var DATAPATH = "uploads/";
     var wardMAX = 76;
     var wardColumn = 'prabhag_no';
@@ -360,7 +421,7 @@ require_once('includes/functions.php');
                     });
 
                 } //END OF ON EACH FEATURE
-    }); //END of wards geojson layer definition	
+    }); //END of wards geojson layer definition 
     omnivore.geojson(DATAPATH + 'pune-electoral-wards-more.geojson', null, clickLayer);
     clickLayer.addTo(map);
 
@@ -388,8 +449,12 @@ function nextPrabhag(i)
     showUser(id);
 }
 nextPrabhag(0);
- </script>  
+ </script>
+</html>
 
-<?php
-require_once('footer.php');
-?>
+
+
+
+
+
+

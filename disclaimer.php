@@ -52,7 +52,7 @@ require_once('includes/functions.php');
     </head>
     <body>
     <?php
-        require_once('header2.php');
+        require_once('header.php');
     ?>
 
         
@@ -82,7 +82,7 @@ require_once('includes/functions.php');
 
 
 <?php
-  include'footer2.php';
+  include'footer.php';
 ?>
 
 </html>

@@ -52,7 +52,7 @@ require_once('includes/functions.php');
     </head>
     <body>
     <?php
-        require_once('header2.php');
+        require_once('header.php');
     ?>
 
         
@@ -90,7 +90,7 @@ We all have got our report cards since school and college. Even in the corporate
 
 
 <?php
-  include'footer2.php';
+  include'footer.php';
 ?>
 
 </html>
