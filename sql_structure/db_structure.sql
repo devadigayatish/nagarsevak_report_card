@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2016 at 10:08 AM
+-- Generation Time: Jun 16, 2016 at 11:42 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `work_details` (
   `Year` varchar(11) DEFAULT NULL,
   `Details_Of_Work` varchar(100) DEFAULT NULL,
   `Amount` decimal(15,2) DEFAULT NULL,
-  `Code` varchar(4) DEFAULT NULL,
+  `Code` varchar(7) DEFAULT NULL,
   `Prabhag_No` varchar(7) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
