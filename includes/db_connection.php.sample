@@ -17,6 +17,8 @@ $username      = USERNAME;
 $password      = PASSWORD;
 $database_name = DATABASE;
 
+ini_set("memory_limit",-1);
+
 $con = mysqli_connect($host, $username, $password, $database_name);
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
