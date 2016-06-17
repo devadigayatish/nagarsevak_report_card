@@ -35,7 +35,9 @@
             colors: ['#3366cc','#dc3912','#ff9900','#109618','#990099','#0099c6','#dd4477','#b82e2e','#66aa00','#316395']
         });
         // $.get(url, function (data) {
+    
         data = $.parseJSON(data);
+        
         var collection, ele, flag, _i, _j, _len, _len1;
         flag = true;
         for (_i = 0, _len = data.length; _i < _len; _i++) {

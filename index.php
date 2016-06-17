@@ -284,13 +284,13 @@ require_once('includes/functions.php');
 
                     <div class="container">
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                        <div class="text-center"><h3>Top works in 4 years</h3></div>
                             <div id="pie_chart_div1">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div> 
                         </div>
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Top 7 works in 4 years</h3></div>
+                        <div class="text-center"><h3>Top works in 4 years</h3></div>
                             <div id="pie_chart_div2">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div>
@@ -300,7 +300,7 @@ require_once('includes/functions.php');
                     <div class="container">
                         <div class="col-md-12 col-sm-12">
                         <div class="row">
-                            <div id="downloaded-data" class="col-md-8 col-md-offset-2 text-center heading-section animate-box">                
+                            <div id="downloaded-data" class="col-md-8 col-md-offset-2 text-center animate-box">                
                             </div>
                         </div>
                         </div>  

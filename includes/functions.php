@@ -17,7 +17,8 @@ function get_pie_chart_data($prabhag_no = '35A') {
   }
   $Details_of_work = array();
   $Amount = array();
-
+  $row = array();
+  
   for($i=0; $i<$num_results;$i++)
   {
     $row = mysqli_fetch_assoc($result);
@@ -26,19 +27,32 @@ function get_pie_chart_data($prabhag_no = '35A') {
     $Amount[$i] = $row['Amount'];
   }
 
+
   $combine_array = array_combine($Details_of_work, $Amount);
   $total_Amount = array_sum($Amount);
-  $remaining_values = array_slice($Amount, 7);
-  $remaining_total = array_sum($remaining_values);
-  $chart_array = array(array());
-  for($i=0; $i<7; $i++)
+  if ($num_results <= 7) 
   {
-    $chart_array[$i]['name'] = $Details_of_work[$i];
-    $chart_array[$i]['no_of_times'] = $Amount[$i];
+    for($i=0; $i<$num_results; $i++)
+    {
+      $chart_array[$i]['name'] = $Details_of_work[$i];
+      $chart_array[$i]['no_of_times'] = $Amount[$i];
+    }
+    return json_encode($chart_array);
   }
-  $chart_array[7]['name'] = "Others";
-  $chart_array[7]['no_of_times'] = $remaining_total;
-  return json_encode($chart_array);
+  else
+  {
+    $remaining_values = array_slice($Amount, 7);
+    $remaining_total = array_sum($remaining_values);
+    $chart_array = array(array());
+    for($i=0; $i<7; $i++)
+    {
+      $chart_array[$i]['name'] = $Details_of_work[$i];
+      $chart_array[$i]['no_of_times'] = $Amount[$i];
+    }
+    $chart_array[7]['name'] = "Others";
+    $chart_array[7]['no_of_times'] = $remaining_total;
+    return json_encode($chart_array);
+  }
 }
 
 ?>
