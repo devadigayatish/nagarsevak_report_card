@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2016 at 11:41 AM
+-- Generation Time: Jun 17, 2016 at 01:25 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -1250,7 +1250,7 @@ INSERT INTO `csv_data` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabhag_No
 ('2015 - 2016', 'Develpoment Work', '37000.00', 'DW', '36A'),
 ('2015 - 2016', 'Samaj Mandir/ any building related work/ Renovation / Temple shed ', '95000.00', 'SM', '36A'),
 ('2012 - 2013', 'Electrification', '148000.00', 'E', '36B'),
-('2012 - 2013', 'Benches', '188000.00', 'B', '36B'),
+('2012 - 2013', 'Benches', '188000.00', 'D', '36B'),
 ('2012 - 2013', 'Drainage work', '73000.00', 'D', '36B'),
 ('2013 - 2014', 'Benches', '159000.00', 'B', '36B'),
 ('2013 - 2014', 'Road work Concretization ', '155000.00', 'R', '36B'),
@@ -1361,7 +1361,7 @@ INSERT INTO `csv_data` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabhag_No
 ('2015 - 2016', 'Waste Disposal ', '184780.39', 'WD', '42A'),
 ('2015 - 2016', 'Sign Board', '149301.34', 'SB', '42A'),
 ('2012 - 2013', 'Installation of electric board', '483002.19', 'E', '42B'),
-('2012 - 2013', 'Benches', '358823.42', ' B', '42B'),
+('2012 - 2013', 'Benches', '358823.42', 'B', '42B'),
 ('2012 - 2013', 'Paving block', '175673.16', 'P', '42B'),
 ('2012 - 2013', 'Fencing', '194023.55', 'FE', '42B'),
 ('2013 - 2014', 'Benches', '588900.00', 'B', '42B'),
@@ -2384,9 +2384,9 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
 --
 
 INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prabhag_Name`, `Ward_ofc`, `Party`, `Total_Questions`, `Avg_Attendance`, `Criminal_Records`, `Original_RTI_Link`, `Csv_Link`, `Gender`) VALUES
-('1A', 'MRS. REKHA TINGRE', '1A', 'images/photos/1A.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/1A.csv', 'Female'),
-('1B', 'TINGRE ANIL (BOBY) VASANTRAO', '1B', 'images/photos/1B.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/1B.csv', 'Male'),
-('2A', 'PATHARE MAHENDRA PNDHARINATH', '2A', 'images/photos/2A.jpg', 'Kharadi Infotech Park', 'Nagar Road ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/2A.csv', 'Male'),
+('1A', 'MRS. REKHA TINGARE', '1A', 'images/photos/1A.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/1A.csv', 'Female'),
+('1B', 'TINGARE ANIL (BOBY) VASANTRAO', '1B', 'images/photos/1B.jpg', 'Lohegaon Airport', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/1B.csv', 'Male'),
+('2A', 'PATHARE MAHENDRA PANDHARINATH', '2A', 'images/photos/2A.jpg', 'Kharadi Infotech Park', 'Nagar Road ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/2A.csv', 'Male'),
 ('2B', 'MRS. PATHARE SANJILA BAPUSAHEB', '2B', 'images/photos/2B.jpg', 'Kharadi Infotech Park', 'Nagar Road ', 'SS', 0, 0, 'No', 'www.google.com', 'csv/2B.csv', 'Female'),
 ('3A', 'MRS. KALAMKAR USHA DNYANESHWAR', '3A', 'images/photos/3A.jpg', 'Vimannagar Sanjay Park', 'Nagar Road ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/3A.csv', 'Female'),
 ('3B', 'PATHARE (PATIL) MAHADEV BHIKU', '3B', 'images/photos/3B.jpg', 'Vimannagar Sanjay Park', 'Nagar Road ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/3B.csv', 'Male'),
@@ -2410,7 +2410,7 @@ INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prab
 ('12B', 'PAWAR RAJU /DATTATRAY RAMCHANDRA', '12B', 'images/photos/12B.jpg', 'Model Colony', 'Ghole Road ', 'MNS', 2, 80.91, 'Yes', 'www.google.com', 'csv/12B.csv', 'Male'),
 ('13A', 'MRS. SANE ASHA RAJESH', '13A', 'images/photos/13A.jpg', 'Narveer Tanajiwadi', 'Ghole Road ', 'MNS', 0, 85.1, 'No', 'www.google.com', 'csv/13A.csv', 'Female'),
 ('13B', 'MRS. BHOSALE RESHMA ANIL', '13B', 'images/photos/13B.jpg', 'Narveer Tanajiwadi', 'Ghole Road ', 'NCP', 0, 38.57, 'Yes', 'www.google.com', 'csv/13B.csv', 'Female'),
-('14A', 'MRS. PARDESHI MEENA RAVI', '14A', 'images/photos/14A.jpg', 'Deccan College', 'Yerawda - Sangamwadi ', '', 0, 0, 'No', 'www.google.com', 'csv/14A.csv', 'Female'),
+('14A', 'MRS. PARDESHI MEENA RAVI', '14A', 'images/photos/14A.jpg', 'Deccan College', 'Yerawda - Sangamwadi ', 'RPI', 0, 0, 'No', 'www.google.com', 'csv/14A.csv', 'Female'),
 ('14B', 'BHOSALE SANJAY SHASHIKANT', '14B', 'images/photos/14B.jpg', 'Deccan College', 'Yerawda - Sangamwadi', 'SS', 0, 0, 'No', 'www.google.com', 'csv/14B.csv', 'Male'),
 ('15A', 'SMT. ARADE SHASHIKALA SUDAM', '15A', 'images/photos/15A.jpg', 'Rajguru Road', 'Yerawda - Sangamwadi', 'INC', 0, 0, 'No', 'www.google.com', 'csv/15A.csv', 'Female'),
 ('15B', 'VITKAR KISHOR RAJARAM', '15B', 'images/photos/15B.jpg', 'Rajguru Road', 'Yerawda - Sangamwadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/15B.csv', 'Male'),
@@ -2471,7 +2471,7 @@ INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prab
 ('43A', 'TUPE CHETAN VITTHAL (PATIL)', '43A', 'images/photos/43A.jpg', 'Sadhana Vidyalay', 'Hadapsar ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/43A.csv', 'Male'),
 ('43B', 'MRS. PAWAR RANJANA SHIVAJI', '43B', 'images/photos/43B.jpg', 'Sadhana Vidyalay', 'Hadapsar ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/43B.csv', 'Female'),
 ('44A', 'MRS. BANKAR VAISHALI SUNIL', '44A', 'images/photos/44A.jpg', 'Gliding Centre', 'Hadapsar ', 'NCP', 0, 0, 'No', 'www.google.com', 'csv/44A.csv', 'Female'),
-('44B', '-', '44B', 'images/photos/44B.jpg', 'Gliding Centre', 'Hadapsar ', 'SS', 0, 0, 'No', 'www.google.com', 'csv/44B.csv', 'Male'),
+('44B', 'DESHMUKH VIJAY', '44B', 'images/photos/44B.jpg', 'Gliding Centre', 'Hadapsar ', 'SS', 0, 0, 'No', 'www.google.com', 'csv/44B.csv', 'Male'),
 ('45A', 'SAYYAD FARUK YASIN/FARUKBHAI INAMDAR', '45A', 'images/photos/45A.jpg', 'Mohammadwadi', 'Hadapsar ', 'SS', 0, 0, 'Yes', 'www.google.com', 'csv/45A.csv', 'Male'),
 ('45B', 'MRS. WADKAR VIJAYA POPAT', '45B', 'images/photos/45B.jpg', 'Mohammadwadi', 'Hadapsar ', 'INC', 0, 0, 'No', 'www.google.com', 'csv/45B.csv', 'Female'),
 ('46A', 'LONDHE SATISHBHAU VAMANRAO', '46A', 'images/photos/46A.jpg', 'Wanavdi - Ramtekdi', 'Kondhwa Wanavdi ', 'INC', 0, 0, 'Yes', 'www.google.com', 'csv/46A.csv', 'Male'),
@@ -2510,8 +2510,8 @@ INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prab
 ('62B', 'TILEKAR YOGESH PUNDALIK', '62B', 'images/photos/62B.jpg', 'Kondhwa Budruk, Gokulnagar', 'Kondhwa Wanavdi ', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/62B.csv', 'Male'),
 ('63A', 'RAYIS RASHID SUNDAKE', '63A', 'images/photos/63A.jpg', 'Bhagyodaynagar', 'Kondhwa Wanavdi ', 'SS', 0, 0, 'No', 'www.google.com', 'csv/63A.csv', 'Male'),
 ('63B', 'MRS. BABAR AARTI SAINATH', '63B', 'images/photos/63B.jpg', 'Bhagyodaynagar', 'Kondhwa Wanavdi ', 'MNS', 0, 0, 'No', 'www.google.com', 'csv/63B.csv', 'Female'),
-('64A', 'BHIMALE SHRINATH YASHWANT', '64A', 'images/photos/64A.jpg', 'Salisbury Park', 'Bhawani Peth', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/64A.csv', 'Male'),
-('64B', 'MRS. VAIRAGE KAVITA BHARAT', '64B', 'images/photos/64B.jpg', 'Salisbury Park', 'Bhawani Peth', 'BJP', 0, 0, 'No', 'www.google.com', 'csv/64B.csv', 'Female'),
+('64A', 'BHIMALE SHRINATH YASHWANT', '64A', 'images/photos/64A.jpg', 'Salisbury Park', 'Bibvewadi', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/64A.csv', 'Male'),
+('64B', 'MRS. VAIRAGE KAVITA BHARAT', '64B', 'images/photos/64B.jpg', 'Salisbury Park', 'Bibvewadi', 'BJP', 0, 0, 'No', 'www.google.com', 'csv/64B.csv', 'Female'),
 ('65A', 'KAMBALE PANDURANG/BAPU DIGAMBAR', '65A', 'images/photos/65A.jpg', 'Ghorpade Garden', 'Bhawani Peth', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/65A.csv', 'Male'),
 ('65B', 'MRS. VYAVAHARE KAMAL DNYANRAJ', '65B', 'images/photos/65B.jpg', 'Ghorpade Garden', 'Bhawani Peth', 'INC', 0, 0, 'No', 'www.google.com', 'csv/65B.csv', 'Female'),
 ('66A', 'MRS. CHORBELE MANISHA PRAVIN', '66A', 'images/photos/66A.jpg', 'Adinath Society', 'Sahakarnagar ', 'BJP', 0, 0, 'No', 'www.google.com', 'csv/66A.csv', 'Female'),
@@ -2522,12 +2522,12 @@ INSERT INTO `nagarsevak` (`Prabhag_No`, `Nagarsevak_Name`, `Codes`, `Url`, `Prab
 ('68B', 'JAGTAP SUBHASH DIGAMBAR', '68B', 'images/photos/68B.jpg', 'Sahakarnagar - Taljai', 'Sahakarnagar ', 'INC', 0, 0, 'Yes', 'www.google.com', 'csv/68B.csv', 'Male'),
 ('69A', 'MRS. TAPKIR VARSHA VILAS', '69A', 'images/photos/69A.jpg', 'Dhankawadi Padmavati', 'Dhankawadi ', 'BJP', 0, 81.41, 'No', 'www.google.com', 'csv/69A.csv', 'Female'),
 ('69B', 'BHOSALE SHIVLAL NAMADEVLAL', '69B', 'images/photos/69B.jpg', 'Dhankawadi Padmavati', 'Dhankawadi ', 'NCP', 1, 87.04, 'No', 'www.google.com', 'csv/69B.csv', 'Male'),
-('70A', 'SHILIMKAR RAJENDRA YASHWANT', '70A', 'images/photos/70A.jpg', 'Bibvewadi and KK Market', 'Bhawani Peth', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/70A.csv', 'Male'),
-('70B', 'MRS. SHINDE ASMITA VISHAL', '70B', 'images/photos/70B.jpg', 'Bibvewadi and KK Market', 'Bhawani Peth', 'MNS', 0, 0, 'Yes', 'www.google.com', 'csv/70B.csv', 'Female'),
-('71A', 'KAMBALE SUNIL DNYANDEV', '71A', 'images/photos/71A.jpg', 'Shivaji Market, Gultekdi', 'Bhawani Peth', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/71A.csv', 'Male'),
-('71B', 'MRS. DESHPANDE MANASI MANOJ', '71B', 'images/photos/71B.jpg', 'Shivaji Market, Gultekdi', 'Bhawani Peth', 'BJP', 0, 0, 'No', 'www.google.com', 'csv/71B.csv', 'Female'),
-('72A', 'DHADAVE DINESH SHANKAR', '72A', 'images/photos/72A.jpg', 'Upper Indiranagar', 'Bhawani Peth', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/72A.csv', 'Male'),
-('72B', 'MRS.OSWAL DIPALI PRAMOD', '72B', 'images/photos/72B.jpg', 'Upper Indiranagar', 'Bhawani Peth', 'SS', 0, 0, 'No', 'www.google.com', 'csv/72B.csv', 'Female'),
+('70A', 'SHILIMKAR RAJENDRA YASHWANT', '70A', 'images/photos/70A.jpg', 'Bibvewadi and KK Market', 'Bibvewadi', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/70A.csv', 'Male'),
+('70B', 'MRS. SHINDE ASMITA VISHAL', '70B', 'images/photos/70B.jpg', 'Bibvewadi and KK Market', 'Bibvewadi', 'MNS', 0, 0, 'Yes', 'www.google.com', 'csv/70B.csv', 'Female'),
+('71A', 'KAMBALE SUNIL DNYANDEV', '71A', 'images/photos/71A.jpg', 'Shivaji Market, Gultekdi', 'Bibvewadi', 'BJP', 0, 0, 'Yes', 'www.google.com', 'csv/71A.csv', 'Male'),
+('71B', 'MRS. DESHPANDE MANASI MANOJ', '71B', 'images/photos/71B.jpg', 'Shivaji Market, Gultekdi', 'Bibvewadi', 'BJP', 0, 0, 'No', 'www.google.com', 'csv/71B.csv', 'Female'),
+('72A', 'DHADAVE DINESH SHANKAR', '72A', 'images/photos/72A.jpg', 'Upper Indiranagar', 'Bibvewadi', 'NCP', 0, 0, 'Yes', 'www.google.com', 'csv/72A.csv', 'Male'),
+('72B', 'MRS.OSWAL DIPALI PRAMOD', '72B', 'images/photos/72B.jpg', 'Upper Indiranagar', 'Bibvewadi', 'SS', 0, 0, 'No', 'www.google.com', 'csv/72B.csv', 'Female'),
 ('73A', 'DHANKAVDE DATTATRAY BABANRAO', '73A', 'images/photos/73A.jpg', 'Balajinagar Vaibhavnagar', 'Dhankawadi ', 'NCP', 0, 82.76, 'Yes', 'www.google.com', 'csv/73A.csv', 'Male'),
 ('73B', 'MRS. PAYGUDE SUVARNA ROHIDAS', '73B', 'images/photos/73B.jpg', 'Balajinagar Vaibhavnagar', 'Dhankawadi ', 'NCP', 0, 88.48, 'No', 'www.google.com', 'csv/73B.csv', 'Female'),
 ('74A', 'MRS. DEVKAR MOHINI RAJENDRAKUMAR', '74A', 'images/photos/74A.jpg', 'Bharati Vidyapeeth', 'Dhankawadi ', 'NCP', 0, 94.53, 'No', 'www.google.com', 'csv/74A.csv', 'Female'),
@@ -3474,8 +3474,7 @@ INSERT INTO `work_details` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabha
 ('2015 - 2016', 'Fencing, walls', '154000.00', 'FE', '36A'),
 ('2015 - 2016', 'Maintenance/cleaning', '271000.00', 'M', '36A'),
 ('2015 - 2016', 'Samaj Mandir/ Related work/ Renovation', '95000.00', 'SM', '36A'),
-('2012 - 2013', 'Benches', '188000.00', 'B', '36B'),
-('2012 - 2013', 'Drainage work/ Laying of Drainage line', '73000.00', 'D', '36B'),
+('2012 - 2013', 'Drainage work/ Laying of Drainage line', '261000.00', 'D', '36B'),
 ('2012 - 2013', 'Electrification, new street lights', '148000.00', 'E', '36B'),
 ('2013 - 2014', 'Benches', '159000.00', 'B', '36B'),
 ('2013 - 2014', 'Installation of Nameplates', '169000.00', 'N', '36B'),
@@ -3529,9 +3528,9 @@ INSERT INTO `work_details` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabha
 ('2012 - 2013', 'Drainage work/ Laying of Drainage line', '199940.00', 'D', '40B'),
 ('2012 - 2013', 'Dustbin distribution/ Buckets', '200000.00', 'DB', '40B'),
 ('2012 - 2013', 'Fencing, walls', '138395.00', 'FE', '40B'),
-('2012 - 2013', 'Installation of Nameplates', '103412.00', 'N', '40B');
+('2012 - 2013', 'Installation of Nameplates', '103412.00', 'N', '40B'),
+('2012 - 2013', 'Laying of Tiles', '157213.00', 'T', '40B');
 INSERT INTO `work_details` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabhag_No`) VALUES
-('2012 - 2013', 'Laying of Tiles', '157213.00', 'T', '40B'),
 ('2012 - 2013', 'Waste Disposal', '200000.00', 'WD', '40B'),
 ('2013 - 2014', 'Benches', '156494.00', 'B', '40B'),
 ('2013 - 2014', 'Dustbin distribution/ Buckets', '200000.00', 'DB', '40B'),
@@ -3568,7 +3567,7 @@ INSERT INTO `work_details` (`Year`, `Details_Of_Work`, `Amount`, `Code`, `Prabha
 ('2015 - 2016', 'Road works', '197455.64', 'RW', '42A'),
 ('2015 - 2016', 'Direction/Information/Sign Boards', '149301.34', 'SB', '42A'),
 ('2015 - 2016', 'Waste Disposal', '184780.39', 'WD', '42A'),
-('2012 - 2013', '', '358823.42', ' B', '42B'),
+('2012 - 2013', 'Benches', '358823.42', 'B', '42B'),
 ('2012 - 2013', 'Electrification, new street lights', '483002.19', 'E', '42B'),
 ('2012 - 2013', 'Fencing, walls', '194023.55', 'FE', '42B'),
 ('2012 - 2013', 'Pavement blocks', '175673.16', 'P', '42B'),
