@@ -1,0 +1,41 @@
+Benches,B,,BT,TO
+Helping Bachat Gat training center,BG,,RF,E
+Building of Bus stop shed,BS,,RW,R
+Building of Toilets,BT,,SF,E
+Bore wells,BW,,GR,P
+Concretization ,C,,CMR,CM
+Cladding for Buildings,CB,,T+C,T
+Cemetory / cremetory,CM,,WC,FE
+Computers,CO,,SW,DW
+Colouring of Tiles / coloring,CT,,SS,DW
+Drainage work/ Laying of Drainage line,D,,SMR,SM
+Drainage work+ Concretisation,D+C,,AW,SM
+Dustbin distribution/ Buckets,DB,,WBB,WD
+Decoration,DE,,PC,F
+Develpoment Work,DW,,S,BG
+"Electrification, new street lights",E,,MM,MK
+"Footpath work, Pedestrian Crossing",F,,ACT,TO
+Fire Brigade related work,FB,,CC,SM
+"Fencing, walls",FE,,SB,N
+Furniture work,FW,,BBT,BS
+Garden work / Playground,G,,HKM,SM
+Gym/ gym equipments,GY,,DP,DE
+Jute bags / Canvas bags,J,,MSB,R
+Building Library / maintenance / books,L,,HM,M
+Maintenance/cleaning,M,,D+C,D
+Market related works,MK,,,
+Installation of Nameplates / direction boards / Sign boards / Message boards,N,,,
+Pavement blocks / Grouting,P,,,
+pedestrian crossing,PC,,,
+Road construction/ Colouring roads/ Railing Work/Speed breaker ,R,,,
+Road works,RW,,,
+Buying sewing machines,S,,,
+Direction/Information/Sign Boards,SB,,,
+Samaj Mandir/ any building related work/ Renovation / Temple shed ,SM,,,
+Laying of Tiles,T,,,
+Laying of Tiles+Concretisation,T+C,,,
+Toilet- building / Renovation/Maintenance,c,,,
+Water supply,W,,,
+Construction of walls,WC,,,
+Waste Disposal ,WD,,,
+Wheelbarrow ,WB,,,
