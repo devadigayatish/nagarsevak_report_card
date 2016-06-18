@@ -4,49 +4,54 @@
 */
 
 require_once('./../includes/db_connection.php');                //connection
+$filename    = PROJ_DIR.'information/Updated_Codes_sheet.csv';
+$sql_for_truncate = "TRUNCATE TABLE codes ";
+	if(!mysqli_query($con, $sql_for_truncate))
+	{
+    	die('Error : ' . mysqli_error($con));
+	}
+$file_pointer = fopen($filename,"r");    
+$i=1;
+while(! feof($file_pointer))
+{
+	$read_csv_file = fgetcsv($file_pointer);
+	$row[$i]=array($read_csv_file[0], $read_csv_file[1]);
+	$i++;
+}
 
-	$Work_Against_Codes=array(
-						  "B"=>"Benches",
-						  "BG"=>"Helping Bachat Gat training center",
-						  "BT"=>"Building of Toilets",
-						  "BS"=>"Building of Bus stop shed",
-						  "BW"=>"Bore wells",
-						  "C"=>"Concretization",
-						  "CO"=>"Computers",
-						  "CT"=>"Colouring of Tiles",
-						  "CM"=>"Cemetory / cremetory",
-						  "CB"=>"Cladding for Buildings",
-						  "D"=>"Drainage work/ Laying of Drainage line",
-						  "DB"=>"Dustbin distribution/ Buckets",
-						  "DW"=>"Develpoment Work",
-						  "DE"=>"Decoration",
-						  "D+C"=>"Drainage work+ Concretisation",
-						  "E"=>"Electrification, new street lights",
-						  "F"=>"Footpath work",
-						  "FE"=>"Fencing, walls",
-						  "FB"=>"Fire Brigade related work",
-						  "FW"=>"Furniture work",
-						  "G"=>"Garden work",
-						  "GY"=>"Gym/ gym equipments",
-						  "J"=>"Jute bags",
-						  "L"=>"Building Library",
-						  "M"=>"Maintenance/cleaning",
-						  "MK"=>"Market related works",
-						  "N"=>"Installation of Nameplates",
-						  "P"=>"Pavement blocks",
-						  "R"=>"Colouring roads/ Railing Work/Road WorK",
-						  "RW"=>"Road works",
-						  "S"=>"Buying sewing machines",
-						  "SB"=>"Direction/Information/Sign Boards",
-						  "SM"=>"Samaj Mandir/ Related work/ Renovation",
-						  "T"=>"Laying of Tiles",
-						  "TO"=>"Toilet Renovation/Maintenance",
-						  "T+C"=>"Laying of Tiles+Concretisation",
-						  "W"=>"Water supply",
-						  "WD"=>"Waste Disposal",
-						  "WB"=>"Wheelbarrow",
-						  "WC"=>"Construction of walls"  
-						  );
+for ($j=1; $j <= sizeof($row) ; $j++) 
+{ 
+	$fieldVal_Work_Type = mysqli_real_escape_string($con,$row[$j][0]);
+	$fieldVal_Code = mysqli_real_escape_string($con,$row[$j][1]);
+
+	$sql_for_insert = "INSERT INTO codes (Work_Type,Code) VALUES('".$fieldVal_Work_Type."','".$fieldVal_Code."')";
+			
+	if(!mysqli_query($con, $sql_for_insert))
+	{
+		die('Error : ' . mysqli_error($con));
+	}
+}
+fclose($file_pointer);
+print "Inserted codes and its work types in codes table.\n "
+$sql_for_select_query = "SELECT Work_Type , Code FROM codes";
+$result_for_select_query = mysqli_query($con,$sql_for_select_query);
+$num_results = $result_for_select_query->num_rows;
+$fieldVal1= array();
+$fieldVal2= array();
+
+for ($i=0; $i <$num_results ; $i++) 
+{
+	$row_for_select_query = mysqli_fetch_array($result_for_select_query);
+	$fieldVal1[$i]= $row_for_select_query['Code'] ;
+	$fieldVal2[$i]= $row_for_select_query['Work_Type'];
+}
+$Work_Against_Codes=array();
+
+for ($i=0; $i <$num_results ; $i++) 
+{
+
+	$Work_Against_Codes[$fieldVal1[$i]] =  $fieldVal2[$i] ;
+}
 
 	$sql_for_select_all = "SELECT * FROM `csv_data` " ;
 	$result_for_select_all = mysqli_query($con,$sql_for_select_all);
