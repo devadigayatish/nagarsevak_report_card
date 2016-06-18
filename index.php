@@ -159,6 +159,7 @@ require_once('includes/functions.php');
                 <div class="row">
                     <div class="container">
                         <div class="col-md-6 col-sm-6">
+                        <div class="text-center"><strong>Select Prabhag area on the map</strong></div>
                         <div id="map"></div>
                     </div>
                     
