@@ -16,7 +16,7 @@ body {
   line-height: 1.8;
   font-size: 16px;
   background: #fff;
-  color: #848484;
+  color: #000000;
   font-weight: 300;
   overflow-x: hidden;
 }
@@ -43,7 +43,7 @@ p, ul, ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #5a5a5a;
+  color: #000000;
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 15px 0;
@@ -820,6 +820,7 @@ figure {
 #footer {
   background: #222831;
   padding: 60px 0 40px;
+  color : #ffffff;
 }
 #footer p {
   color: rgba(255, 255, 255, 0.9);

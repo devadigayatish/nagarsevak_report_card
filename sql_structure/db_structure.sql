@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2016 at 11:42 AM
+-- Generation Time: Jun 18, 2016 at 12:11 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.15
 
@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `attendance` (
 
 DROP TABLE IF EXISTS `codes`;
 CREATE TABLE IF NOT EXISTS `codes` (
-  `Work_Type` varchar(39) DEFAULT NULL,
-  `Code` varchar(4) DEFAULT NULL
+  `Work_Type` varchar(100) DEFAULT NULL,
+  `Code` varchar(7) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
