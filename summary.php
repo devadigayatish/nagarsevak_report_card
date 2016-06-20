@@ -3,21 +3,15 @@
 require_once('includes/db_connection.php');
 require_once('includes/functions.php');
 ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-    <?php
-        require_once('header.php');
-    ?>
+        <?php
+            require_once('header.php');
+        ?>
     </head>
     <body>
         
@@ -52,7 +46,6 @@ require_once('includes/functions.php');
         </div>
 
         <div id="fh5co-work-section" style="padding-top: 50px;">
-            
             <div class="container">
                 <div class="row">
                     <div class="container">
@@ -60,7 +53,7 @@ require_once('includes/functions.php');
                             <div class="text-center"><h3>Amount spent by each Party</h3></div>
                                 <div id="visualization" ></div>
                                     <?php
-                                        $query = "SELECT n.Party, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No GROUP BY n.Party ";       //query all records from the database
+                                        $query = "SELECT n.Party, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No GROUP BY n.Party ORDER BY `Amount` DESC";       //query all records from the database
                                         $result = mysqli_query($con,$query );     //execute the query
                                         $num_results = $result->num_rows;         //get number of rows returned
                                         if( $num_results > 0)
@@ -97,17 +90,35 @@ require_once('includes/functions.php');
                                         }
                                     ?>   
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Amount spent on each type of work</h3></div>
                                 <div id="visualization2" ></div>
                                     <?php
                                         $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC"; 
                                             //query all records from the database
-                                            $result = mysqli_query($con,$query );  //execute the query
-                                            $num_results = $result->num_rows;      //get number of rows returned
-                                            if( $num_results > 0)
-                                            { 
+                                        $result = mysqli_query($con,$query );  //execute the query
+                                        $num_results = $result->num_rows;      //get number of rows returned
+                                        $Details_of_work = array();
+                                        $Amount = array();
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Details_of_work[$i] = $row['Details_Of_Work'];
+                                            $Amount[$i] = $row['Amount'];
+                                        }
+                                        $combine_array = array_combine($Details_of_work, $Amount);
+                                        $total_Amount = array_sum($Amount);
+                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_total = array_sum($remaining_values);
+                                        $chart_array = array(array());
+                                        for($i=0; $i<10; $i++)
+                                        {
+                                            $chart_array[$i][0] = $Details_of_work[$i];
+                                            $chart_array[$i][1] = $Amount[$i];
+                                        }
+                                        $chart_array[10][0] = "Others";
+                                        $chart_array[10][1] = $remaining_total;
+
                                     ?>
                                     <script type="text/javascript">
                                         google.load('visualization', '1', {packages: ['corechart']});      
@@ -120,10 +131,9 @@ require_once('includes/functions.php');
                                                         ([
                                                             ['PL', 'Ratings'],
                                                             <?php
-                                                                while( $row = mysqli_fetch_assoc($result) )
+                                                                for($i=0; $i<=10; $i++)
                                                                 {
-                                                                    extract($row);
-                                                                    echo "['{$Details_Of_Work}', {$Amount}],";
+                                                                    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
                                                                 }
                                                             ?>
                                                         ]);
@@ -131,16 +141,8 @@ require_once('includes/functions.php');
                                             new google.visualization.PieChart(document.getElementById('visualization2')).draw(data, {title:""});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
-                                    </script>
-                                    <?php
-                                        }
-                                        else
-                                        {
-                                            echo "No related data found in the database.";
-                                        }
-                                    ?>   
+                                    </script>               
                         </div>
-    <!-- ============================================================================================ -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Female : Amount spent on each type of work</h3></div>
                                 <div id="visualization3"></div>
@@ -152,8 +154,26 @@ require_once('includes/functions.php');
                                                   //query all records from the database
                                         $result = mysqli_query($con,$query );     //execute the query
                                         $num_results = $result->num_rows;        //get number of rows returned
-                                        if( $num_results > 0)
-                                        { 
+                                        $Details_of_work = array();
+                                        $Amount = array();
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Details_of_work[$i] = $row['Details_Of_Work'];
+                                            $Amount[$i] = $row['Amount'];
+                                        }
+                                        $combine_array = array_combine($Details_of_work, $Amount);
+                                        $total_Amount = array_sum($Amount);
+                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_total = array_sum($remaining_values);
+                                        $chart_array = array(array());
+                                        for($i=0; $i<10; $i++)
+                                        {
+                                            $chart_array[$i][0] = $Details_of_work[$i];
+                                            $chart_array[$i][1] = $Amount[$i];
+                                        }
+                                        $chart_array[10][0] = "Others";
+                                        $chart_array[10][1] = $remaining_total;    
                                     ?>
                                     <script type="text/javascript">
                                         google.load('visualization', '1', {packages: ['corechart']});
@@ -166,10 +186,9 @@ require_once('includes/functions.php');
                                                         ([
                                                             ['PL', 'Ratings'],
                                                             <?php
-                                                                while( $row = mysqli_fetch_assoc($result) )
+                                                                for($i=0; $i<=10; $i++)
                                                                 {
-                                                                    extract($row);
-                                                                    echo "['{$Details_Of_Work}',{$Amount}],";
+                                                                    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
                                                                 }
                                                             ?>
                                                         ]);
@@ -178,15 +197,7 @@ require_once('includes/functions.php');
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
-                                    <?php
-                                        }
-                                        else
-                                            {
-                                                echo "No programming languages found in the database.";
-                                            }
-                                    ?>
                         </div>
-    <!-- ============================================================================================ -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Male : Amount spent on each type of work</h3></div>
                                 <div id="visualization4"></div>
@@ -194,8 +205,26 @@ require_once('includes/functions.php');
                                         $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No WHERE n.Gender = 'Male' GROUP BY n.Gender , w.Code ORDER BY SUM(w.Amount) DESC ";  //query all records from the database
                                         $result = mysqli_query($con,$query );   //execute the query
                                         $num_results = $result->num_rows;       //get number of rows returned
-                                        if( $num_results > 0)
-                                        { 
+                                        $Details_of_work = array();
+                                        $Amount = array();
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Details_of_work[$i] = $row['Details_Of_Work'];
+                                            $Amount[$i] = $row['Amount'];
+                                        }
+                                        $combine_array = array_combine($Details_of_work, $Amount);
+                                        $total_Amount = array_sum($Amount);
+                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_total = array_sum($remaining_values);
+                                        $chart_array = array(array());
+                                        for($i=0; $i<10; $i++)
+                                        {
+                                            $chart_array[$i][0] = $Details_of_work[$i];
+                                            $chart_array[$i][1] = $Amount[$i];
+                                        }
+                                        $chart_array[10][0] = "Others";
+                                        $chart_array[10][1] = $remaining_total; 
                                     ?>
                                     <script type="text/javascript">
                                         google.load('visualization', '1', {packages: ['corechart']});
@@ -208,10 +237,9 @@ require_once('includes/functions.php');
                                                         ([
                                                             ['PL', 'Ratings'],
                                                             <?php
-                                                                while( $row = mysqli_fetch_assoc($result) )
+                                                                for($i=0; $i<=10; $i++)
                                                                 {
-                                                                    extract($row);
-                                                                    echo "['{$Details_Of_Work}',{$Amount}],";
+                                                                    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
                                                                 }
                                                             ?>
                                                         ]);
@@ -220,15 +248,7 @@ require_once('includes/functions.php');
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
-                                    <?php
-                                        }
-                                        else
-                                        {
-                                            echo "No related data found in the database.";
-                                        }
-                                    ?> 
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Party wise Attendance</h3></div>
                                 <div id="visualization5"></div>
@@ -275,7 +295,6 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script> 
                         </div>
-    <!-- ============================================================================================= -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Party wise Questions asked.</h3></div>
                                 <div id="visualization6"></div>
@@ -323,7 +342,6 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Party wise Criminal Charges</h3></div>
                                 <div id="visualization7"></div>
@@ -365,7 +383,6 @@ require_once('includes/functions.php');
                                         }
                                     ?>
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Top 5 Works per Year</h3></div>
                                 <div id="visualization8">
@@ -467,7 +484,6 @@ require_once('includes/functions.php');
                                         </script>
                                 </div>
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>Attendance of Nagarsevaks</h3></div>
                                 <div id="visualization9">
@@ -521,7 +537,6 @@ require_once('includes/functions.php');
                                     </script>
                                 </div>
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div class="text-center"><h3>No. of Questions asked by Nagarsevaks</h3></div>
                                 <div id="visualization10">
@@ -585,7 +600,6 @@ require_once('includes/functions.php');
                                     </script>
                                 </div>
                         </div>
-    <!-- ============================================================================================== -->
                         <div class="col-md-6 col-sm-6">
                             <div id="visualization11">
                                 <?php
@@ -626,7 +640,6 @@ require_once('includes/functions.php');
                                 ?>
                             </div>   
                         </div>
-    <!-- ============================================================================================= -->
                         <div class="col-md-6 col-sm-6">
                             <div id="visualization12">
                                 <?php
@@ -667,30 +680,17 @@ require_once('includes/functions.php');
                                 ?>
                             </div>
                         </div>
-    <!-- ============================================================================================= -->
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- fh5co-work-section -->
-        
-        <!-- fh5co-blog-section -->
+        </div><!-- fh5co-work-section -->
+
         <?php
             require_once('footer.php');
         ?>
     
-
-    </div>
-    <!-- END fh5co-page -->
-
-    </div>
-    <!-- END fh5co-wrapper -->
-
-    <!-- jQuery -->
-
-
+        </div><!-- END fh5co-page -->
+        </div><!-- END fh5co-wrapper -->
     </body>
-
-
 </html>
 

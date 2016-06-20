@@ -2911,6 +2911,14 @@ th {
   background-color: #f5f5f5;
 }
 
+.table-even {
+  background-color: #ffffe6;
+}
+
+.table-odd {
+  background-color: #e1eaea;
+}
+
 table col[class*="col-"] {
   position: static;
   float: none;
