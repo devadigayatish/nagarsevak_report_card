@@ -21,30 +21,28 @@ echo "<div class='col-md-6 col-sm-6'>";
     $result_for_total_amt = mysqli_query($con,$sql_for_total_amt);
     $row_for_total_amt = mysqli_fetch_array($result_for_total_amt);
 
-        echo "<table class='table table-bordered table-odd'><tr><th>Year</th><th>Details Of Work</th><th>Amount</th></tr>";
-        while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
-        {
-            echo "<tr><td>" . $row_for_2012_2013['Year'] . "</td><td>" . $row_for_2012_2013['Details_Of_Work'] . "</td><td>" . $row_for_2012_2013['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-even'>";
-        while($row_for_2013_2014 = mysqli_fetch_array($result_for_2013_2014))
-        {
-            echo "<tr><td>" . $row_for_2013_2014['Year'] . "</td><td>" . $row_for_2013_2014['Details_Of_Work'] . "</td><td>" . $row_for_2013_2014['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-odd'>";
-        while($row_for_2014_2015 = mysqli_fetch_array($result_for_2014_2015))
-        {
-            echo "<tr><td>" . $row_for_2014_2015['Year'] . "</td><td>" . $row_for_2014_2015['Details_Of_Work'] . "</td><td>" . $row_for_2014_2015['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-even'>";
-        while($row_for_2015_2016 = mysqli_fetch_array($result_for_2015_2016))
-        {
-            echo "<tr><td>" . $row_for_2015_2016['Year'] . "</td><td>" . $row_for_2015_2016['Details_Of_Work'] . "</td><td>" . $row_for_2015_2016['Amount'] . "</td></tr>";
-        }
-        echo "<tr><td></td><td><strong>Total Amount</strong></td><td><strong>" . $row_for_total_amt['Amount'] . "</strong></td></tr>";
+        echo "<table class='table-bordered table-striped'>";
+            echo "<colgroup><col style='width:18%;'><col style='width:60%;'><col style='width:20%;'></colgroup>";
+            echo "<thead><tr><th>Year</th><th>Details Of Work</th><th>Amount</th></tr></thead>";
+            echo "<tbody>";
+                while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
+                {
+                    echo "<tr><td>" . $row_for_2012_2013['Year'] . "</td><td>" . $row_for_2012_2013['Details_Of_Work'] . "</td><td>" . $row_for_2012_2013['Amount'] . "</td></tr>";
+                }
+                while($row_for_2013_2014 = mysqli_fetch_array($result_for_2013_2014))
+                {
+                    echo "<tr><td>" . $row_for_2013_2014['Year'] . "</td><td>" . $row_for_2013_2014['Details_Of_Work'] . "</td><td>" . $row_for_2013_2014['Amount'] . "</td></tr>";
+                }
+                while($row_for_2014_2015 = mysqli_fetch_array($result_for_2014_2015))
+                {
+                    echo "<tr><td>" . $row_for_2014_2015['Year'] . "</td><td>" . $row_for_2014_2015['Details_Of_Work'] . "</td><td>" . $row_for_2014_2015['Amount'] . "</td></tr>";
+                }
+                while($row_for_2015_2016 = mysqli_fetch_array($result_for_2015_2016))
+                {
+                    echo "<tr><td>" . $row_for_2015_2016['Year'] . "</td><td>" . $row_for_2015_2016['Details_Of_Work'] . "</td><td>" . $row_for_2015_2016['Amount'] . "</td></tr>";
+                }
+                echo "<tr><td></td><td><strong>Total Amount</strong></td><td><strong>" . $row_for_total_amt['Amount'] . "</strong></td></tr>";
+            echo "</tbody>";
         echo "</table>";
 echo "</div>";
 //============================================================================================
@@ -65,30 +63,28 @@ echo "<div class='col-md-6 col-sm-6'>";
     $result_for_total_amt = mysqli_query($con,$sql_for_total_amt);
     $row_for_total_amt = mysqli_fetch_array($result_for_total_amt);
 
-        echo "<table class='table table-bordered table-odd'><tr><th>Year</th><th>Details Of Work</th><th>Amount</th></tr>";
-        while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
-        {
-            echo "<tr><td>" . $row_for_2012_2013['Year'] . "</td><td>" . $row_for_2012_2013['Details_Of_Work'] . "</td><td>" . $row_for_2012_2013['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-even'>";
-        while($row_for_2013_2014 = mysqli_fetch_array($result_for_2013_2014))
-        {
-            echo "<tr><td>" . $row_for_2013_2014['Year'] . "</td><td>" . $row_for_2013_2014['Details_Of_Work'] . "</td><td>" . $row_for_2013_2014['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-odd'>";
-        while($row_for_2014_2015 = mysqli_fetch_array($result_for_2014_2015))
-        {
-            echo "<tr><td>" . $row_for_2014_2015['Year'] . "</td><td>" . $row_for_2014_2015['Details_Of_Work'] . "</td><td>" . $row_for_2014_2015['Amount'] . "</td></tr>";
-        }
-        echo "</table>";
-        echo "<table class='table table-bordered table-even'>";
-        while($row_for_2015_2016 = mysqli_fetch_array($result_for_2015_2016))
-        {
-            echo "<tr><td>" . $row_for_2015_2016['Year'] . "</td><td>" . $row_for_2015_2016['Details_Of_Work'] . "</td><td>" . $row_for_2015_2016['Amount'] . "</td></tr>";
-        }
-        echo "<tr><td></td><td><strong>Total Amount</strong></td><td><strong>" . $row_for_total_amt['Amount'] . "</strong></td></tr>";       
+        echo "<table class='table-bordered table-striped'>";
+            echo "<colgroup><col style='width:18%;'><col style='width:60%;'><col style='width:20%;'></colgroup>";
+            echo "<thead><tr><th>Year</th><th>Details Of Work</th><th>Amount</th></tr></thead>";
+            echo "<tbody>";
+                while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
+                {
+                    echo "<tr><td>" . $row_for_2012_2013['Year'] . "</td><td>" . $row_for_2012_2013['Details_Of_Work'] . "</td><td>" . $row_for_2012_2013['Amount'] . "</td></tr>";
+                }
+                while($row_for_2013_2014 = mysqli_fetch_array($result_for_2013_2014))
+                {
+                    echo "<tr><td>" . $row_for_2013_2014['Year'] . "</td><td>" . $row_for_2013_2014['Details_Of_Work'] . "</td><td>" . $row_for_2013_2014['Amount'] . "</td></tr>";
+                }
+                while($row_for_2014_2015 = mysqli_fetch_array($result_for_2014_2015))
+                {
+                    echo "<tr><td>" . $row_for_2014_2015['Year'] . "</td><td>" . $row_for_2014_2015['Details_Of_Work'] . "</td><td>" . $row_for_2014_2015['Amount'] . "</td></tr>";
+                }
+                while($row_for_2015_2016 = mysqli_fetch_array($result_for_2015_2016))
+                {
+                    echo "<tr><td>" . $row_for_2015_2016['Year'] . "</td><td>" . $row_for_2015_2016['Details_Of_Work'] . "</td><td>" . $row_for_2015_2016['Amount'] . "</td></tr>";
+                }
+                echo "<tr><td></td><td><strong>Total Amount</strong></td><td><strong>" . $row_for_total_amt['Amount'] . "</strong></td></tr>";
+            echo "</tbody>";      
         echo "</table>";
 echo "</div>";
 ?>

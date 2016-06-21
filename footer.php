@@ -64,7 +64,7 @@
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 renderTo: element,
-                plotShadow: false
+                plotShadow: false,
             },
             credits: {
                 enabled: false
@@ -89,7 +89,7 @@
                     },
                     allowPointSelect: true,
                     cursor: "pointer",
-//                  size:'100%',
+                  size:'100%',
                     dataLabels: {
                         enabled: showDatalabels,
                     },
@@ -98,11 +98,12 @@
             },
             legend: {
                 enabled: showLegends,
-                 layout: 'vertical',
-                // align: 'right',
-                // width: 350,
-                // verticalAlign: 'middle',
-                // useHTML: true,
+                layout: 'vertical',
+               //  align: 'center',
+                 width: 320,
+                 
+               //  verticalAlign: 'middle',
+               //  useHTML: true,
                 labelFormatter: function () {
                     return '<div style="text-align: left; ">' + this.name + '</div>';
                 }
