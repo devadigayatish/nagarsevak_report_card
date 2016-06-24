@@ -4,7 +4,7 @@
 */
 
 require_once('./../includes/db_connection.php');                //connection
-$filename    = PROJ_DIR.'information/Updated_Codes_sheet.csv';
+$filename    = PROJ_DIR.'information/work_code.csv';
 $sql_for_truncate = "TRUNCATE TABLE codes ";
 	if(!mysqli_query($con, $sql_for_truncate))
 	{
@@ -32,7 +32,7 @@ for ($j=1; $j <= sizeof($row) ; $j++)
 	}
 }
 fclose($file_pointer);
-print "Inserted codes and its work types in codes table.\n "
+print "Inserted codes and its work types in codes table.\n ";
 $sql_for_select_query = "SELECT Work_Type , Code FROM codes";
 $result_for_select_query = mysqli_query($con,$sql_for_select_query);
 $num_results = $result_for_select_query->num_rows;

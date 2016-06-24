@@ -1,41 +1,33 @@
 Benches,B,,BT,TO
-Helping Bachat Gat training center,BG,,RF,E
+Helping Bachat Gat training center / giving toys etc to schools,BG,,RF,E
 Building of Bus stop shed,BS,,RW,R
-Building of Toilets,BT,,SF,E
-Bore wells,BW,,GR,P
-Concretization ,C,,CMR,CM
-Cladding for Buildings,CB,,T+C,T
-Cemetory / cremetory,CM,,WC,FE
-Computers,CO,,SW,DW
-Colouring of Tiles / coloring,CT,,SS,DW
-Drainage work/ Laying of Drainage line,D,,SMR,SM
-Drainage work+ Concretisation,D+C,,AW,SM
-Dustbin distribution/ Buckets,DB,,WBB,WD
-Decoration,DE,,PC,F
-Develpoment Work,DW,,S,BG
-"Electrification, new street lights",E,,MM,MK
-"Footpath work, Pedestrian Crossing",F,,ACT,TO
-Fire Brigade related work,FB,,CC,SM
-"Fencing, walls",FE,,SB,N
-Furniture work,FW,,BBT,BS
-Garden work / Playground,G,,HKM,SM
-Gym/ gym equipments,GY,,DP,DE
-Jute bags / Canvas bags,J,,MSB,R
-Building Library / maintenance / books,L,,HM,M
-Maintenance/cleaning,M,,D+C,D
-Market related works,MK,,,
-Installation of Nameplates / direction boards / Sign boards / Message boards,N,,,
-Pavement blocks / Grouting,P,,,
-pedestrian crossing,PC,,,
+Bore wells,BW,,SF,E
+Concretization ,C,,GR,P
+Cladding for Buildings,CB,,CMR,CM
+Cemetory / cremetory,CM,,T+C,T
+Computers,CO,,WC,FE
+Colouring of Tiles / coloring,CT,,SW,DW
+Drainage work/ Laying of Drainage line,D,,SS,DW
+Dustbin distribution/ Buckets,DB,,SMR,SM
+Decoration,DE,,AW,SM
+Develpoment Work,DW,,WBB,WD
+"Electrification, new street lights",E,,PC,F
+"Footpath work, Pedestrian Crossing",F,,S,BG
+Fire Brigade related work,FB,,MM,MK
+"Fencing, walls",FE,,ACT,TO
+Furniture work,FW,,CC,SM
+Garden work / Playground,G,,SB,N
+Gym/ gym equipments,GY,,BBT,BS
+Hospital / clinic / medical facilities,H,,HKM,SM
+Jute bags / Canvas bags,J,,DP,DE
+Building Library / maintenance / books,L,,MSB,R
+Maintenance/cleaning,M,,HM,M
+Market related works,MK,,D+C,D
+Installation of Nameplates / direction boards / Sign boards / Message boards,N,,WB,WD
+Pavement blocks / Grouting,P,,WC,F
 Road construction/ Colouring roads/ Railing Work/Speed breaker ,R,,,
-Road works,RW,,,
-Buying sewing machines,S,,,
-Direction/Information/Sign Boards,SB,,,
 Samaj Mandir/ any building related work/ Renovation / Temple shed ,SM,,,
 Laying of Tiles,T,,,
-Laying of Tiles+Concretisation,T+C,,,
-Toilet- building / Renovation/Maintenance,c,,,
+Toilet- building / Renovation/Maintenance,TO,,,
 Water supply,W,,,
-Construction of walls,WC,,,
 Waste Disposal ,WD,,,
-Wheelbarrow ,WB,,,
