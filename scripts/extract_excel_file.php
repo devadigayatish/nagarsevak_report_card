@@ -5,7 +5,7 @@
 
 
 require_once('./../includes/db_connection.php');                   //connection
-include 'PHPExcel.php';
+include './../includes/lib/PHPExcel.php';
 $fileType = 'Excel2007';
 
 $directory    = PROJ_DIR.'csv/main-files/';                 //read the directory 
