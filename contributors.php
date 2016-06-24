@@ -74,7 +74,7 @@ require_once('includes/functions.php');
                 include'footer.php';
             ?>
         </div>
-    </div>
+        </div>
 
 </body>
 </html>
