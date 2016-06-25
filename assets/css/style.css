@@ -1138,4 +1138,14 @@ figure {
   background: url(../images/hourglass.svg) center no-repeat #222222;
 }
 
+.contributor-name {
+  font-family: Verdana,Arial,sans-serif;
+  color: #0000ff;
+}
+
+.contributor-description {
+  font-family: Georgia,Arial,sans-serif;
+  font-size: 16px;
+}
+
 /*# sourceMappingURL=style.css.map */

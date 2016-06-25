@@ -51,8 +51,8 @@ require_once('includes/functions.php');
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-12 animate-box fadeInUp animated">
                             <p>
-                                <strong>Disclaimer</strong>
-                                <br><br>
+                            <h2><strong> DISCLAIMER </strong></h2>
+                                <br>
                                 This Website is designed, developed, hosted and maintained by Startup Partner Pvt Ltd. The content of this website is provided by Parivartan and it is for information purposes only, enabling the public at large to have a quick and an easy access to information and do not have any legal sanctity.</p>
 
                             </div>

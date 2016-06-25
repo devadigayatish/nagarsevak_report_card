@@ -50,28 +50,28 @@ require_once('includes/functions.php');
                 <div class="container">
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-12 animate-box fadeInUp animated">
-                            <h2>Contributors</h2>
-                            <br/>
-                            <h3> Sharvari Gaikwad </h3>
-                            <ul>
+                            <h2><strong> CONTRIBUTORS </strong></h2>
+                            <br>
+                            <h3 class="contributor-name"> Sharvari Gaikwad </h3>
+                            <ul class="contributor-description">
                                 <li>Profile : Intern at Startup Partner</li>
                                 <li>Role    : Lead developer for this project</li>
                                 <li>Email   : sharvari.v.gaikwad@gmail.com</li>
                             </ul>
-                            <h3> Yatish Devadiga </h3>
-                            <ul>
+                            <h3 class="contributor-name"> Yatish Devadiga </h3>
+                            <ul class="contributor-description">
                                 <li>Profile : Software Engineer at Startup Partner</li>
                                 <li>Role    : Technical guide and developer for this project</li>
                                 <li>Email   : devadigayatish@gmail.com</li>
                             </ul>
-                            <h3> Nikhil Sheth </h3>
-                            <ul>
+                            <h3 class="contributor-name"> Nikhil Sheth </h3>
+                            <ul class="contributor-description">
                                 <li>Profile : Freelancer</li>
                                 <li>Role    : Helped with majority of the code. Mainly with Mapbox</li>
                                 <li>Email   : nikhil.js@gmail.com</li>
                             </ul>
-                            <h3> Mahesh Kajale </h3>
-                            <ul>
+                            <h3 class="contributor-name"> Mahesh Kajale </h3>
+                            <ul class="contributor-description">
                                 <li>Profile : Software Engineer at Better Technology Labs</li>
                                 <li>Role    : Helped fixing some issues. Structured the code.</li>
                                 <li>Email   : m.s.kajale@gmail.com</li>
