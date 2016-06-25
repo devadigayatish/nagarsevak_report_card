@@ -8,7 +8,7 @@ $prabhag_num_B = $q . "B";
 
 
 echo "<div class='text-center'><h2>Download Data</h2></div>";
-echo "<div id='downloadList'>";
+echo "<div id='downloadList' class='row nav'>";
         echo "<a class='btn btn-primary' target='_self' rel='' href='uploads/Nagarsevak_Full_Data.zip' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Overall</a>&nbsp";
         echo "<a class='btn btn-primary' target='_self' rel='' href='csv/" . $prabhag_num_A . ".csv' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Prabhag " . $prabhag_num_A . "</a>&nbsp";
         echo "<a class='btn btn-primary' target='_self' rel='' href='csv/" . $prabhag_num_B . ".csv' data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'>Prabhag " . $prabhag_num_B . "</a>&nbsp";

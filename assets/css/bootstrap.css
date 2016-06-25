@@ -4500,6 +4500,11 @@ tbody.collapse.in {
   padding-left: 0;
   list-style: none;
 }
+
+.nav a {
+  margin: 5px;
+}
+
 .nav:before, .nav:after {
   content: " ";
   display: table;
