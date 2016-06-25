@@ -163,9 +163,9 @@ require_once('includes/functions.php');
                         <div id="map"></div>
                     </div>
                     
-                    <div class="col-md-6 col-sm-6 text-center">
+                    <div class="col-md-6 col-sm-6 text-center" style="margin-top: 15px;">
                      <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
-                        <select class="input-group-sm" id="users" name="users" style="width:60%;"onchange="showUser(this.value)">
+                        <select class="input-group-sm" id="users" name="users" style="width:60%;" onchange="showUser(this.value)">
                         <optgroup label='Aundh'>
                             <option value='6'>Prabhag 6: Bopodi Gaonthan</option>
                             <option value='7'>Prabhag 7: Pune University</option>
@@ -273,9 +273,8 @@ require_once('includes/functions.php');
                         </optgroup>
                     </select>
                     <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
-                    <br/>
-                        <div id="prabhag_no_info"></div>
-                        <div id="txtHint"></div>
+                        <div id="prabhag_no_info" class="row"></div>
+                        <div id="txtHint" class="row"></div>
                     </div>
                     </div>
 
