@@ -1,5 +1,8 @@
 <?php
+// Define the email-id through which email should be sent
 define('Sender', 'user@example.com');
-define('Recipient', 'ellen@example.com');
+// Give the password for the above sender email
 define('Password', 'secret');
+// Give the email id to which all the reported bugs should be emailed
+define('Recipient', 'ellen@example.com');
 ?>
