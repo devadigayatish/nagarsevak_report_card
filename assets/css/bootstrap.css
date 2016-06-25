@@ -7334,4 +7334,8 @@ button.close {
   }
 }
 
+div .nagarsevak-name {
+  min-height: 60px;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
