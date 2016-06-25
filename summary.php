@@ -601,82 +601,68 @@ require_once('includes/functions.php');
                                 </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <div id="visualization11">
+                            <div id="visualization11" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MAX Attendance (Gender-wise)</h3></div>";
-                                        echo "<div class='col-lg-12 col-md-4'>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
-                                                $result_M = mysqli_query($con,$sql_M);
-                                                $row_M = mysqli_fetch_array($result_M);
-                                                echo "<div class=''><img width='70' src=".SITE_URL.'assets/'. $row_M['URL']." ></div>" ;
-                                                echo "<span>". $row_M['Nagarsevak_Name']."</span>";
-                                            echo "</div>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                $sql_F = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Female')";
-                                                $result_F = mysqli_query($con,$sql_F);
-                                                $row_F = mysqli_fetch_array($result_F);
-                                                echo "<div class=''><img width='70' src=".SITE_URL.'assets/'. $row_F['URL']." ></div>" ;
-                                                echo "<span>". $row_F['Nagarsevak_Name']."</span>";
-                                            echo "</div>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
+                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
+                                            $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
+                                            $result_M = mysqli_query($con,$sql_M);
+                                            $row_M = mysqli_fetch_array($result_M);
+                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_M['URL']." ></div>" ;
+                                            echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
+                                            echo "<table class='table table-bordered table-striped'>";
+                                                echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Attendance</td><td>" . $row_M['Avg_Attendance']." % </td></tr>";
+                                            echo "</table>";
                                         echo "</div>";
-
-                                        echo "<div class='col-lg-12 col-md-4'>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                echo "<table class='table table-bordered table-striped'>";
-                                                    echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                    echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
-                                                    echo "<tr><td>Attendance</td><td>" . $row_M['Avg_Attendance']." % </td></tr>";
-                                                echo "</table>";
-                                            echo "</div>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                echo "<table class='table table-bordered table-striped'>";
-                                                    echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                    echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
-                                                    echo "<tr><td>Attendance</td><td>" . $row_F['Avg_Attendance']." % </td></tr>";
-                                                echo "</table>";
-                                            echo "</div>";
+                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
+                                            $sql_F = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Female')";
+                                            $result_F = mysqli_query($con,$sql_F);
+                                            $row_F = mysqli_fetch_array($result_F);
+                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_F['URL']." ></div>" ;
+                                            echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
+                                            echo "<table class='table table-bordered table-striped'>";
+                                                echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Attendance</td><td>" . $row_F['Avg_Attendance']." % </td></tr>";
+                                            echo "</table>";
                                         echo "</div>";
+                                    echo "</div>";
                                 ?>
                             </div>   
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <div id="visualization12">
+                            <div id="visualization12" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MAX Questions Asked (Gender-wise)</h3></div>";
-                                        echo "<div class='col-lg-12 col-md-4'>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";
-                                                $result_M = mysqli_query($con,$sql_M);
-                                                $row_M = mysqli_fetch_array($result_M);
-                                                echo "<div class=''><img width='70' src=".SITE_URL.'assets/'. $row_M['URL']." ></div>" ;
-                                                echo "<span>". $row_M['Nagarsevak_Name']."</span>";
-                                            echo "</div>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                $sql_F = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Female')";
-                                                $result_F = mysqli_query($con,$sql_F);
-                                                $row_F = mysqli_fetch_array($result_F);
-                                                echo "<div class=''><img width='70' src=".SITE_URL.'assets/'. $row_F['URL']." ></div>" ;
-                                                echo "<span>". $row_F['Nagarsevak_Name']."</span>";
-                                            echo "</div>";
+                                    echo "<div class='col-lg-12 col-md-4'>";
+                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
+                                            $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";
+                                            $result_M = mysqli_query($con,$sql_M);
+                                            $row_M = mysqli_fetch_array($result_M);
+                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_M['URL']." ></div>" ;
+                                            echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
+                                            echo "<table class='table table-bordered table-striped'>";
+                                                echo "<tr><td>Prabhag No:</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party:</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Total Questions:</td><td>" . $row_M['Total_Questions']."</td></tr>";
+                                            echo "</table>";
                                         echo "</div>";
-
-                                        echo "<div class='col-lg-12 col-md-4'>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                echo "<table class='table table-bordered table-striped'>";
-                                                    echo "<tr><td>Prabhag No:</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                    echo "<tr><td>Party:</td><td>" . $row_M['Party']."</td></tr>";
-                                                    echo "<tr><td>Total Questions:</td><td>" . $row_M['Total_Questions']."</td></tr>";
-                                                echo "</table>";
-                                            echo "</div>";
-                                            echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                                echo "<table class='table table-bordered table-striped'>";
-                                                    echo "<tr><td>Prabhag No:</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                    echo "<tr><td>Party:</td><td>" . $row_F['Party']."</td></tr>";
-                                                    echo "<tr><td>Total Questions:</td><td>" . $row_F['Total_Questions']."</td></tr>";
-                                                echo "</table>";
-                                            echo "</div>";
+                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
+                                            $sql_F = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Female')";
+                                            $result_F = mysqli_query($con,$sql_F);
+                                            $row_F = mysqli_fetch_array($result_F);
+                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_F['URL']." ></div>" ;
+                                            echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
+                                            echo "<table class='table table-bordered table-striped'>";
+                                                echo "<tr><td>Prabhag No:</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
+                                                echo "<tr><td>Party:</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Total Questions:</td><td>" . $row_F['Total_Questions']."</td></tr>";
+                                            echo "</table>";
                                         echo "</div>";
+                                    echo "</div>";
                                 ?>
                             </div>
                         </div>
