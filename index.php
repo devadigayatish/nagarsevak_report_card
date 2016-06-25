@@ -280,10 +280,11 @@ require_once('includes/functions.php');
                     </div>
 
                     <div class="container">
-                        <div id="txtHint2"></div>
+                        <div id="txtHint2" class="row"></div>
                     </div>
 
                     <div class="container">
+                        <div class="row">
                         <div class="col-md-6 col-sm-6">
                         <div class="text-center"><h3>Top works in 4 years</h3></div>
                             <div id="pie_chart_div1">
@@ -295,6 +296,7 @@ require_once('includes/functions.php');
                             <div id="pie_chart_div2">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div>
+                        </div>
                         </div>
                     </div>
 
