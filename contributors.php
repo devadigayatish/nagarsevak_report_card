@@ -50,20 +50,32 @@ require_once('includes/functions.php');
                 <div class="container">
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-12 animate-box fadeInUp animated">
-                            <p>
-                                <strong>Contributors</strong>
-                                <br><br>
-                                <ul>
-                                    <li><strong>Sharvari Gaikwad </strong>(sharvari.v.gaikwad@gmail.com), Intern for Startup Partner. Main developer for this project.</li>
-                                    <br>
-                                    <li><strong>Yatish Devadiga </strong>(devadigayatish@gmail.com), Software Engineer - Startup Partner. Technical guide for this project.</li>
-                                    <br>
-                                    <li><strong>Nikhil Sheth </strong>(nikhil.js@gmail.com), Helped with majority of the code. Mainly with Mapbox.</li>
-                                    <br>
-                                    <li><strong>Mahesh Kajale </strong>(m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.</li>
-                                </ul>
-                            </p>
-
+                            <h2>Contributors</h2>
+                            <br/>
+                            <h3> Sharvari Gaikwad </h3>
+                            <ul>
+                                <li>Profile : Intern at Startup Partner</li>
+                                <li>Role    : Lead developer for this project</li>
+                                <li>Email   : sharvari.v.gaikwad@gmail.com</li>
+                            </ul>
+                            <h3> Yatish Devadiga </h3>
+                            <ul>
+                                <li>Profile : Software Engineer at Startup Partner</li>
+                                <li>Role    : Technical guide and developer for this project</li>
+                                <li>Email   : devadigayatish@gmail.com</li>
+                            </ul>
+                            <h3> Nikhil Sheth </h3>
+                            <ul>
+                                <li>Profile : Freelancer</li>
+                                <li>Role    : Helped with majority of the code. Mainly with Mapbox</li>
+                                <li>Email   : nikhil.js@gmail.com</li>
+                            </ul>
+                            <h3> Mahesh Kajale </h3>
+                            <ul>
+                                <li>Profile : Software Engineer at Better Technology Labs</li>
+                                <li>Role    : Helped fixing some issues. Structured the code.</li>
+                                <li>Email   : m.s.kajale@gmail.com</li>
+                            </ul>
                         </div>
                     </div>
 
