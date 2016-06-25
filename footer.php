@@ -3,16 +3,19 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <p>Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd</strong></a>. Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html"><strong>Parivartan</strong></a>.
+                    <p>
+                        Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd.</strong></a> Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html"><strong>Parivartan.</strong></a>
+                    </p>
                     <br/>
-                    <nav>
+                    <nav class="nav">
                     <a href="https://github.com/devadigayatish/nagarsevak_report_card" target="_blank" class="btn btn-primary">Source Code</a>&nbsp;&nbsp;
                     <a href="contributors.php" class="btn btn-primary">Contributors</a>&nbsp;&nbsp;
                     <a href="disclaimer.php" class="btn btn-primary">Disclaimer</a>&nbsp;&nbsp;
                     <a href="report-bug.php" class="btn btn-primary">Report Bug</a>&nbsp;&nbsp;
                     </nav>
                     <br/>
-                    This project is completely free. No Copyrights. You're welcome to fork this project from &nbsp;<a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card"><strong>Here</strong></a>&nbsp; and send pull requests. We would love you to contribute in this project and improve the code quality. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
+                    <p>
+                        This project is NOT Copyright protected. You're welcome to fork this project from &nbsp;<a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card"><strong>Here</strong></a>&nbsp; and contribute. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
                     </p>
                 </div>
             </div>
