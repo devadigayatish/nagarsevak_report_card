@@ -2888,7 +2888,7 @@ th {
 }
 
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 3px solid #ccc;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td,
