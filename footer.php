@@ -29,7 +29,7 @@
             return $('#'+element).html('No data found');
         }
         if (!showDatalabels) {
-            showDatalabels = false;
+            showDatalabels = true;
         }
         if (!showLegends) {
             showLegends = true;
@@ -76,7 +76,7 @@
                 text: ""
             },
             tooltip: {
-                pointFormat: "{series.name}: <b>{point.percentage:.1f}% ({point.y:1f})</b>"
+                pointFormat: "{series.name}: <b>{point.percentage:.1f}% (Rs.{point.y:1f})</b>"
             },
             plotOptions: {
                 pie: {
@@ -95,6 +95,7 @@
                   size:'100%',
                     dataLabels: {
                         enabled: showDatalabels,
+                        format: '{point.percentage:.1f} %',
                     },
                     showInLegend: true
                 }
