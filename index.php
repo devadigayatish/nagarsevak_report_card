@@ -154,7 +154,13 @@ require_once('includes/functions.php');
         </div>
         <!-- end:header-top -->
         <div id="fh5co-work-section" style="padding-top: 50px;">
-            
+
+            <div class="container">
+                <div class="row text-center">
+                    <h3>An Analysis of the Development Work undertaken every year by the Nagarsevaks of Pune City from the funds available through Nagarsevak Nidhi</h3>
+                </div>
+            </div>
+
             <div class="container">
                 <div class="row">
                     <div class="container">
@@ -180,13 +186,13 @@ require_once('includes/functions.php');
                         <div class="row">
                         <div class="col-md-6 col-sm-6">
                         <div class="text-center"><h3>Top works in 4 years</h3></div>
-                            <div id="pie_chart_div1">
+                            <div id="pie_chart_div1" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div> 
                         </div>
                         <div class="col-md-6 col-sm-6">
                         <div class="text-center"><h3>Top works in 4 years</h3></div>
-                            <div id="pie_chart_div2">
+                            <div id="pie_chart_div2" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div>
                         </div>
