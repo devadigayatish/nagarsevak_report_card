@@ -1463,7 +1463,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 2px solid #cccccc;
 }
 
 .sr-only {
@@ -2896,7 +2896,8 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 2px solid #aaa;
+  font-weight: 400;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2912,11 +2913,11 @@ th {
 }
 
 .table-even {
-  background-color: #ffffe6;
+  background-color: #98fb98;
 }
 
 .table-odd {
-  background-color: #e1eaea;
+  background-color: #faebd7;
 }
 
 table col[class*="col-"] {
