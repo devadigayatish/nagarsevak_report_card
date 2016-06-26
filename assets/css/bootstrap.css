@@ -3242,6 +3242,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  margin-left: -15px;
 }
 
 .radio,

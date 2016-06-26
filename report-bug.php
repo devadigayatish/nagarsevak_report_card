@@ -61,9 +61,9 @@ require_once('includes/email-settings.php');
                             <p>
                                 We welcome your suggestions to improve this website and request that error (if any) may kindly be brought to our notice.
                             </p>
-                            <br>
 
                             <?php
+                            if(isset($_POST['submit'])){
                                 /*** This example shows settings to use when sending via Google's Gmail servers.*/
                                 //SMTP needs accurate times, and the PHP time zone MUST be set
                                 //This should be done in your php.ini, but this is how to do it if you don't have access to that
@@ -96,27 +96,40 @@ require_once('includes/email-settings.php');
                                 //Password to use for SMTP authentication
                                 $mail->Password = Password;
                                 //Set who the message is to be sent from
-                                $mail->setFrom(@$_POST['email']);
+                                $mail->setFrom(Sender);
                                 //Set an alternative reply-to address
-                                $mail->addReplyTo(@$_POST['email']);
+                                $mail->addReplyTo(Sender);
                                 //Set who the message is to be sent to
                                 $mail->addAddress(Recipient);
                                 //Set the subject line
-                                $mail->Subject = 'Error : Nagarsevak_Report_Card';
+                                $mail->Subject = 'Issue on Nagarsevak Report Card website';
                                 //Read an HTML message body from an external file, convert referenced images to embedded,
                                 //convert HTML into a basic plain-text alternative body
-                                $mail->msgHTML(@$_POST['message']);
+                                $msg = "Issue reported by : " .$_POST['email']. " <br><br>Description of the issue : <br><br>" .$_POST['message']. " ";
+                                $mail->msgHTML($msg);
                                 //Replace the plain text body with one created manually
                                 $mail->AltBody = 'This is a plain-text message body';
                                 //send the message, check for errors
                                 if ($mail->send())
                                 {
-                                    echo "<div class='text-center'><h4>Thanks for reporting the issue. We will fix it ASAP !!</h4></div>";
+                                    echo "<div ><span style='color:#0000ff;'><strong>Thanks for reporting the issue. We will fix it ASAP !!</strong></span></div>";
                                 }
+                                else
+                                {
+                                    echo "<div><span style='color:#ff0000;'>Email sending failed !!<br>Please report the issue to devadigayatish@gmail.com</span></div>";
+                                }
+                            }
                             ?>
-                            <div class="col-md-6">
+<!--                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" id="txtEmail" required="" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"name="email" class="form-control" placeholder="Your Email">
+                                </div>
+                            </div> -->
+
+                            <form action="" method="post">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="txtEmail" required="" name="email" class="form-control" placeholder="Your Email">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -126,9 +139,10 @@ require_once('includes/email-settings.php');
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="submit" value="Send Email" class="btn btn-primary"  /> 
+                                    <input type="submit" value="Send Email" name="submit" class="btn btn-primary"  /> 
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </form>
@@ -137,7 +151,7 @@ require_once('includes/email-settings.php');
             </div>
 
             <?php
-                include'footer.php';
+                require_once('footer.php');
             ?>
         </div>
     </div>
