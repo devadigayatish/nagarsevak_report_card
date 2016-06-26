@@ -2,7 +2,7 @@
 $q = intval($_GET['m']);
 //MySQL Database Connect
 require_once('includes/db_connection.php');
-echo "<div class='text-center'><h2>Utilization of Ward Level Funds</h2></div>";
+echo "<div class='text-center'><h2><strong>UTILIZATION OF WARD LEVEL FUNDS</strong></h2><br></div>";
 //=============================================================================================
 echo "<div class='col-md-6 col-sm-6'>";
     $prabhag_num_A = $q."A";

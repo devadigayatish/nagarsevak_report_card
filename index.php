@@ -185,13 +185,13 @@ require_once('includes/functions.php');
                     <div class="container">
                         <div class="row">
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Top works in 4 years</h3></div>
+                        <div class="text-center"><h3><strong>Top works in 4 years</strong></h3></div>
                             <div id="pie_chart_div1" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div> 
                         </div>
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3>Top works in 4 years</h3></div>
+                        <div class="text-center"><h3><strong>Top works in 4 years</strong></h3></div>
                             <div id="pie_chart_div2" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div>
