@@ -81,7 +81,7 @@ require_once('includes/email-settings.php');
                                 //Ask for HTML-friendly debug output
                                 $mail->Debugoutput = 'html';
                                 //Set the hostname of the mail server
-                                $mail->Host = 'smtp.gmail.com';
+                                $mail->Host = host;
                                 // use
                                 // $mail->Host = gethostbyname('smtp.gmail.com');
                                 // if your network does not support SMTP over IPv6
@@ -90,7 +90,7 @@ require_once('includes/email-settings.php');
                                 //Set the encryption system to use - ssl (deprecated) or tls
                                 $mail->SMTPSecure = 'ssl';
                                 //Whether to use SMTP authentication
-                                $mail->SMTPAuth = true;
+                                $mail->SMTPAuth = auth;
                                 //Username to use for SMTP authentication - use full email address for gmail
                                 $mail->Username = Sender;
                                 //Password to use for SMTP authentication

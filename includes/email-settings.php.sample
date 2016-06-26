@@ -5,4 +5,10 @@ define('Sender', 'user@example.com');
 define('Password', 'secret');
 // Give the email id to which all the reported bugs should be emailed
 define('Recipient', 'ellen@example.com');
+// smtp server for sending email
+define('host', 'smtp.gmail.com');
+//define('host', 'localhost'); // Use this setting for godaddy. Godaddy uses it's own smtp server to send email.
+// Set whether to use SMTP Authentication
+define('auth', 'true');
+//define('auth', 'false'); // Use this setting for godaddy. Godaddy uses it's own smtp server to send email.
 ?>
