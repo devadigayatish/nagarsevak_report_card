@@ -33,9 +33,9 @@ require_once('includes/email-settings.php');
                                     <li>
                                         <a href="index.php">Home</a>
                                     </li>
-                                    <li><a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a></li>
-                                    <li><a href = "about-nagarsevak-report-card.php">About Nagarsevak Report Card</a></li>
                                     <li><a href = "summary.php">Summary</a></li>
+                                    <li><a href = "about-nagarsevak-report-card.php">About Nagarsevak Report Card</a></li>
+                                    <li><a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a></li>
                                 </ul>
                             </nav>
                         </div>
