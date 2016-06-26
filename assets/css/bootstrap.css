@@ -2896,7 +2896,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > th,
 .table-bordered > tfoot > tr > td {
-  border: 2px solid #aaa;
+  border: 2px solid #222;
   font-weight: 400;
 }
 .table-bordered > thead > tr > th,
@@ -7337,6 +7337,7 @@ button.close {
 
 div .nagarsevak-name {
   min-height: 60px;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
