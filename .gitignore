@@ -1,3 +1,2 @@
 includes/db_connection.php
-includes/email-settings.php
 includes/email-sender.php

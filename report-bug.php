@@ -1,7 +1,6 @@
 <?php
 require_once('includes/db_connection.php');
 require_once('includes/functions.php');
-require_once('includes/email-settings.php');
 ?>
 
 
