@@ -12,8 +12,21 @@ require_once('includes/functions.php');
     <?php
         require_once('header.php');
     ?>
+    <script>
+    function checkEmail()
+    {
+        var email = document.getElementById('txtEmail');
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-   
+        if (!filter.test(email.value))
+        {
+        alert('Please provide a valid email address');
+        email.focus;
+        return false;
+        }
+        
+    }
+    </script>
     </head>
     <body>
 
@@ -51,8 +64,6 @@ require_once('includes/functions.php');
 
                 
                 <div class="container">
-                
-                <form name="form" method="post" action="">
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-6">
                             <h2><strong> REPORT BUG </strong></h2>
@@ -64,16 +75,10 @@ require_once('includes/functions.php');
                             <?php
                             require_once('includes/email-sender.php')
                             ?>
-                            <!--<div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" id="txtEmail" required="" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"name="email" class="form-control" placeholder="Your Email">
-                                </div>
-                            </div> -->
-
-                            <form action="" method="post">
+                            <form action="" method="post" enctype='multipart/form-data' onsubmit="return checkEmail();">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" id="txtEmail" required="" name="email" class="form-control" placeholder="Your Email">
+                                    <input type="text" id="txtEmail"  name="email" required="" class="form-control" placeholder="Your Email">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -83,19 +88,23 @@ require_once('includes/functions.php');
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="submit" value="Send Email" name="submit" class="btn btn-primary"  /> 
+                                    <input type='file' name='userFile'> 
                                 </div>
                             </div>
-                            </form>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Send Email" name="submit" class="btn btn-primary" /> 
+                                </div>
+                            </div>
+                            </form>          
                         </div>
                     </div>
-                </form>
                 
                 </div>
             </div>
-
             <?php
                 require_once('footer.php');
+                
             ?>
         </div>
     </div>

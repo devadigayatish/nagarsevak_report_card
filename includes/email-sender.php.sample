@@ -1,5 +1,14 @@
 <?php
 if(isset($_POST['submit'])){
+
+    date_default_timezone_set('Asia/Kolkata');
+    $time = date("Ymdhis");
+    $info = @pathinfo($_FILES['userFile']['name']);
+    $ext = @$info['extension']; // get the extension of the file
+    $newname = "file_" .$time. "." .$ext. ""; 
+    $target = 'uploads/attachments/'.$newname;
+    @move_uploaded_file( $_FILES['userFile']['tmp_name'], $target);
+
     /*** This example shows settings to use when sending via Google's Gmail servers.*/
     //SMTP needs accurate times, and the PHP time zone MUST be set
     //This should be done in your php.ini, but this is how to do it if you don't have access to that
@@ -37,6 +46,7 @@ if(isset($_POST['submit'])){
     $mail->addReplyTo('sender@gmail.com', 'First_Name Last_Name');
     //Set who the message is to be sent to
     $mail->addAddress('recepient@gmail.com', 'First_Name Last_Name');
+    $mail->addAttachment($target);        // Add attachments 
     //Set the subject line
     $mail->Subject = 'Issue on Nagarsevak Report Card website';
     //Read an HTML message body from an external file, convert referenced images to embedded,
