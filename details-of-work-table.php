@@ -22,8 +22,8 @@ echo "<div class='col-md-6 col-sm-6'>";
     $row_for_total_amt = mysqli_fetch_array($result_for_total_amt);
 
         echo "<table class='table-bordered table-condensed'>";
-            echo "<colgroup><col style='width:17%;'><col style='width:66%;'><col style='width:17%;'></colgroup>";
-            echo "<thead><tr><th><strong>Year</strong></th><th><strong>Details Of Work</strong></th><th><strong>Amount</strong></th></tr></thead>";
+            echo "<colgroup><col style='width:17%;'><col style='width:63%;'><col style='width:20%;'></colgroup>";
+            echo "<thead><tr><th><strong>Year</strong></th><th><strong>Details Of Work</strong></th><th><strong>Amount (Rs.)</strong></th></tr></thead>";
                 echo "<tbody class='table-odd'>";
                 while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
                 {
@@ -70,8 +70,8 @@ echo "<div class='col-md-6 col-sm-6'>";
     $row_for_total_amt = mysqli_fetch_array($result_for_total_amt);
 
         echo "<table class='table-bordered table-condensed'>";
-            echo "<colgroup><col style='width:17%;'><col style='width:66%;'><col style='width:17%;'></colgroup>";
-            echo "<thead><tr><th><strong>Year</strong></th><th><strong>Details Of Work</strong></th><th><strong>Amount</strong></th></tr></thead>";
+            echo "<colgroup><col style='width:17%;'><col style='width:63%;'><col style='width:20%;'></colgroup>";
+            echo "<thead><tr><th><strong>Year</strong></th><th><strong>Details Of Work</strong></th><th><strong>Amount (Rs.)</strong></th></tr></thead>";
                 echo "<tbody class='table-odd'>";
                 while($row_for_2012_2013 = mysqli_fetch_array($result_for_2012_2013))
                 {
