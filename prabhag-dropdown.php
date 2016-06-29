@@ -1,5 +1,5 @@
 <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
-    <select class="input-group-sm" id="users" name="users" style="width:60%;" onchange="showUser(this.value)">
+    <select class="input-group-sm text-left" id="users" name="users" style="width:60%;" onchange="showUser(this.value)">
     <optgroup label='Aundh'>
         <option value='6'>Prabhag 6: Bopodi Gaonthan</option>
         <option value='7'>Prabhag 7: Pune University</option>
