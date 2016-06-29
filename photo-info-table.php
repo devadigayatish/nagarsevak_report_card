@@ -3,8 +3,8 @@ $q = intval($_GET['n']);
 //MySQL Database Connect
 require_once('includes/db_connection.php');
 //====================================================================================
-echo "<div class='col-lg-12 col-md-4'>";
-    echo "<div class='col-lg-6 col-md-4 text-center'>";
+echo "<div>";
+    echo "<div class='col-sm-6 col-md-6 text-center'>";
     //FOR FETCHING IMAGE of Part A
         $prabhag_num_A = $q."A";          
         $sql = "SELECT Nagarsevak_Name,URL FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_A."' ";
@@ -30,7 +30,7 @@ echo "<div class='col-lg-12 col-md-4'>";
 
     echo "</div>";  
     //=====================================================================================
-    echo "<div class='col-lg-6 col-md-4 text-center'>";
+    echo "<div class='col-sm-6 col-md-6 text-center'>";
     //FOR FETCHING IMAGE of Part B
         $prabhag_num_B = $q."B";          
         $sql = "SELECT Nagarsevak_Name,URL FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_B."' ";
