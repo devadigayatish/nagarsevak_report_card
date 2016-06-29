@@ -1,2 +1,3 @@
 includes/db_connection.php
 includes/email-sender.php
+uploads/attachments/*
