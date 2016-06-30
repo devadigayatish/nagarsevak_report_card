@@ -40,6 +40,9 @@ require_once('includes/functions.php');
                         xmlhttp4 = new XMLHttpRequest();
                         xmlhttp5 = new XMLHttpRequest();
                         xmlhttp6 = new XMLHttpRequest();
+                        xmlhttp7 = new XMLHttpRequest();
+                        xmlhttp8 = new XMLHttpRequest();
+
                     }
                     else
                     {
@@ -49,7 +52,9 @@ require_once('includes/functions.php');
                         xmlhttp3 = new ActiveXObject("Microsoft.XMLHTTP");
                         xmlhttp4 = new ActiveXObject("Microsoft.XMLHTTP");
                         xmlhttp5 = new ActiveXObject("Microsoft.XMLHTTP");
-                        xmlhttp6 = new ActiveXObject("Microsoft.XMLHTTP"); 
+                        xmlhttp6 = new ActiveXObject("Microsoft.XMLHTTP");
+                        xmlhttp7 = new ActiveXObject("Microsoft.XMLHTTP");
+                        xmlhttp8 = new ActiveXObject("Microsoft.XMLHTTP"); 
                     }
 
                     xmlhttp1.onreadystatechange = function () {
@@ -101,12 +106,31 @@ require_once('includes/functions.php');
                         }
                     };
 
+                    xmlhttp7.onreadystatechange = function () {
+                         if (xmlhttp7.readyState == 4 && xmlhttp7.status == 200)
+                         {
+
+                             document.getElementById("prabhag-A").innerHTML = xmlhttp7.responseText;
+                         }
+                     };
+
+                     xmlhttp8.onreadystatechange = function () {
+                         if (xmlhttp8.readyState == 4 && xmlhttp8.status == 200)
+                         {
+
+                             document.getElementById("prabhag-B").innerHTML = xmlhttp8.responseText;
+                         }
+                     };
+
                     xmlhttp1.open("GET", "prabhag-ward-ofc-info.php?q=" + str, true);
                     xmlhttp2.open("GET", "photo-info-table.php?n=" + str, true);
                     xmlhttp3.open("GET", "details-of-work-table.php?m=" + str, true);
-                    xmlhttp4.open("GET", "downloaded-data-bar.php?a=" + str, true);                   
+                    xmlhttp4.open("GET", "downloaded-data-bar.php?a=" + str, true);
                     xmlhttp5.open("GET", "pie-chart-data.php?prabhag_no=" + str + "A", true);
                     xmlhttp6.open("GET", "pie-chart-data.php?prabhag_no=" + str + "B", true);
+                    xmlhttp7.open("GET", "title-for-piechart.php?prabhag=" + str + "A", true);
+                    xmlhttp8.open("GET", "title-for-piechart.php?prabhag=" + str + "B", true);
+
 
                     xmlhttp1.send();
                     xmlhttp2.send();
@@ -114,6 +138,9 @@ require_once('includes/functions.php');
                     xmlhttp4.send();
                     xmlhttp5.send();
                     xmlhttp6.send();
+                    xmlhttp7.send();
+                    xmlhttp8.send();
+
                 }
             }
         </script>
@@ -185,13 +212,13 @@ require_once('includes/functions.php');
                     <div class="container">
                         <div class="row">
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3><strong>Top works in 4 years</strong></h3></div>
+                        <div id="prabhag-A" class="row"></div>
                             <div id="pie_chart_div1" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div> 
                         </div>
                         <div class="col-md-6 col-sm-6">
-                        <div class="text-center"><h3><strong>Top works in 4 years</strong></h3></div>
+                        <div id="prabhag-B" class="row"></div>
                             <div id="pie_chart_div2" class="row">
                                 <img src="<?php echo SITE_URL ?>assets/images/loader.gif"/>
                             </div>
