@@ -2,6 +2,8 @@ NAGARSEVAK REPORT CARD 2016
 ===========================
 
 Nagarsevak Report Card is a project by a pune based NGO named Parivartan.
+It is an attempt to analyze the Development Work undertaken every year by the Nagarsevaks (Corporators) of Pune City from the funds available through Nagarsevak Nidhi (Funds).  
+
 See this website live at : [http://nagarsevak.info](http://nagarsevak.info)
 
 ##About Project - Nagarsevak Report Card 2016
@@ -15,7 +17,7 @@ This Project’s objectives are in complete resonance with Parivartan’s core p
 1) Complete Transparency in the functioning.  
 2) Accountability of the Government.  
 3) Proper Planning.  
-4) Participation of Citizens.  return
+4) Participation of Citizens.  
 5) Voters Awareness.
 
 Thus by this Project we are hoping that citizens would think twice before casting their vote. If you look into the report cards we are not trying to give grades or claim any corporator good or bad.We are nobody to make a comment on that. We are just trying to state the facts and we are resting it on the collective intelligence of all the people to decide who has done a better Job.
@@ -47,19 +49,22 @@ This project is NOT Copyright protected. You're welcome to fork this project and
 
     If you need more details about this project, please email at devadigayatish@gmail.com
 
-##Scripts :
+##Instructions :
 
-Expected :
-The main .xlsx files that contain sheets for each prabhag should be present in csv/main-files folder. 
-The output files will be created in csv folder.
+1) Clone the project on your machine.  
+2) Inside the project folder, execute the following commands :  
+cp includes/db_connection.php.sample includes/db_connection.php  
+cp includes/email-sender.php.sample includes/email-sender.php  
+3) Update your database details in includes/db_connection.php  
+4) Update your email sending related configuration in includes/email-sender.php  
+5) The main .xlsx files that contain sheets for each prabhag should be present in csv/main-files folder. After running the scripts, the output files will be created in csv folder.  
+6) The php scripts should be run in following order :  
 
-The scripts should be run in following order :
-1) extract_excel_file.php
-This script reads each .xlsx file from csv/main-files folder and extracts each worksheet and saves in csv folder as separate csv file
-2) insert_data_from_csv_to_table.php
-This script reads each file from csv folder and inserts the records into "csv_data" table and "attendance" table.
-3)insert_data_to_nagarsevak.php
-This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table.Calculate the total questions and average attendance of each nagarsevak and update the "nagarsevak" table.
-4)create_final_table_dow.php
-This script reads the data from "csv_data" table and inserts into final table "work_details".
-
+	a) extract_excel_file.php  
+	This script reads each .xlsx file from csv/main-files folder and extracts each worksheet and saves in csv folder as separate csv file.  
+	b) insert_data_from_csv_to_table.php  
+	This script reads each file from csv folder and inserts the records into "csv_data" table and "attendance" table.  
+	c)insert_data_to_nagarsevak.php  
+	This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table.Calculate the total questions and average attendance of each nagarsevak and update the "nagarsevak" table.  
+	d)create_final_table_dow.php  
+	This script reads the data from "csv_data" table and inserts into final table "work_details".  
