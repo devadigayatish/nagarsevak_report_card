@@ -2,9 +2,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Nagarsevak Report Card</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-<meta name="author" content="FREEHTML5.CO" />
+<meta name="description" content="Nagarsevak Report Card by Parivartan" />
+<meta name="keywords" content="nagarsevak, nagarsevak report card, nagarsevak report, report card, pune city, pune, pmc, pune municipal corporation, pune corporation, transparency, governance, ngo, good governance, parivartan" />
+<meta name="author" content="parivartanbharat" />
 
 <!-- Facebook and Twitter integration -->
 <meta property="og:title" content=""/>
