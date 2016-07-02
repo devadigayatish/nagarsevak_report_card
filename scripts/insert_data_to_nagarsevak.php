@@ -20,7 +20,7 @@ while(! feof($file_pointer))
 	$i++;
 }
 
-for ($j=1; $j <= sizeof($row) ; $j++) 
+for ($j=1; $j <= sizeof($row)-1 ; $j++) 
 { 
 	$fieldVal_Prabhag_No = mysqli_real_escape_string($con,$row[$j][0]);
 	$fieldVal_Nagarsevak_Name = mysqli_real_escape_string($con,$row[$j][1]);

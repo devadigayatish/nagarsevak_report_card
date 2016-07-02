@@ -325,7 +325,7 @@ require_once('includes/functions.php');
                                         {// Create and populate the data table.
                                             var data = google.visualization.arrayToDataTable
                                                         ([
-                                                            ['Party', 'No of Nagarsevak'],
+                                                            ['Party', 'No of Nagarsevaks'],
                                                             <?php
                                                                 while( $row = mysqli_fetch_assoc($result) )
                                                                 {
