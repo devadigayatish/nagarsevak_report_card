@@ -60,14 +60,14 @@ cp includes/email-sender.php.sample includes/email-sender.php
 5) The main .xlsx files that contain sheets for each prabhag should be present in csv/main-files folder. After running the scripts, the output files will be created in csv folder.  
 6) The php scripts should be run in following order :  
 
-	a) **extract_excel_file.php**  
-	This script reads each .xlsx file from csv/main-files folder and extracts each worksheet and saves in csv folder as separate csv file.  
+a) **extract_excel_file.php**  
+This script reads each .xlsx file from csv/main-files folder and extracts each worksheet and saves in csv folder as separate csv file.  
 
-	b) **insert_data_from_csv_to_table.php**  
-	This script reads each file from csv folder and inserts the records into "csv_data" table and "attendance" table.  
+b) **insert_data_from_csv_to_table.php**  
+This script reads each file from csv folder and inserts the records into "csv_data" table and "attendance" table.  
 
-	c) **insert_data_to_nagarsevak.php**  
-	This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table.Calculate the total questions and average attendance of each nagarsevak and update the "nagarsevak" table.  
+c) **insert_data_to_nagarsevak.php**  
+This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table.Calculate the total questions and average attendance of each nagarsevak and update the "nagarsevak" table.  
 
-	d) **create_final_table_dow.php**  
-	This script reads the data from "csv_data" table and inserts into final table "work_details".  
+d) **create_final_table_dow.php**  
+This script reads the data from "csv_data" table and inserts into final table "work_details".  
