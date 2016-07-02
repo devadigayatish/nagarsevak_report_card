@@ -194,7 +194,7 @@ require_once('includes/functions.php');
                                                                 ?>
                                                             ]);
                                                 // Create and draw the visualization.
-                                                new google.visualization.ColumnChart(document.getElementById('visualization8')).draw(data, {legend: {position: 'top',maxLines:5, textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Year',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Amount Spent',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                                new google.visualization.ColumnChart(document.getElementById('visualization8')).draw(data, {legend: {position: 'top',maxLines:5, textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Amount Spent Rs',titleTextStyle:{bold:'true',fontSize: 14}}});
                                             }
                                             google.setOnLoadCallback(drawVisualization);
                                         </script>
@@ -335,7 +335,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -376,7 +376,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -429,7 +429,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{minValue:50, title: '% Attendance',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{minValue:50, title: '% Attendance',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script> 
@@ -476,7 +476,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -528,7 +528,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization9')).draw(data, {legend: {position: 'top',alignment:'center',textStyle: {color: 'black', fontSize: 12} },hAxis:{title: 'Attendance Range',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization9')).draw(data, {legend: {position: 'top',alignment:'center',textStyle: {color: 'black', fontSize: 12} },vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -591,7 +591,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization10')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization10')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
