@@ -63,7 +63,7 @@ require_once('includes/functions.php');
             <div id="fh5co-about" style="padding-top: 50px;">
 
                 
-                <div class="container">
+                <div class="container animate-box">
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-6">
                             <h2><strong> REPORT BUG </strong></h2>

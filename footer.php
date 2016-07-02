@@ -2,7 +2,7 @@
     <div id="footer">
         <div class="container">
             <div class="row">
-                <div class="text-center">
+                <div class="text-center animate-box">
                     <p>
                         Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd.</strong></a> Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html"><strong>Parivartan.</strong></a>
                     </p>

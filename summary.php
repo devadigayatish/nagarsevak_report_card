@@ -46,7 +46,7 @@ require_once('includes/functions.php');
             <div class="container">
                 <div class="row">
                     <div class="container">
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box ">
                             <div class="text-center"><h3>Overall Expenditure Pattern</h3></div>
                                 <div id="visualization2" ></div>
                                     <?php
@@ -99,7 +99,7 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>               
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Top 5 Works per Year</h3></div>
                                 <div id="visualization8">
                                     <?php
@@ -200,7 +200,7 @@ require_once('includes/functions.php');
                                         </script>
                                 </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Expenditure Pattern by Male Nagarsevaks</h3></div>
                                 <div id="visualization4"></div>
                                     <?php
@@ -251,7 +251,7 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Expenditure Pattern by Female Nagarsevaks</h3></div>
                                 <div id="visualization3"></div>
                                     <?php   
@@ -306,7 +306,7 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Party wise number of Nagarsevaks</h3></div>
                                 <div id="visualization16" ></div>
                                     <?php
@@ -347,7 +347,7 @@ require_once('includes/functions.php');
                                         }
                                     ?>   
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Party wise Criminal Charges</h3></div>
                                 <div id="visualization7"></div>
                                     <?php
@@ -388,7 +388,7 @@ require_once('includes/functions.php');
                                         }
                                     ?>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Party wise Attendance</h3></div>
                                 <div id="visualization5"></div>
                                     <?php
@@ -434,7 +434,7 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script> 
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Party wise Questions asked.</h3></div>
                                 <div id="visualization6"></div>
                                     <?php
@@ -481,7 +481,7 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Attendance of Nagarsevaks</h3></div>
                                 <div id="visualization9">
                                     <?php
@@ -534,7 +534,7 @@ require_once('includes/functions.php');
                                     </script>
                                 </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>No. of Questions asked by Nagarsevaks</h3></div>
                                 <div id="visualization10">
                                     <?php
@@ -597,7 +597,7 @@ require_once('includes/functions.php');
                                     </script>
                                 </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization13" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MIN Attendance (Gender-wise)</h3></div>";
@@ -631,7 +631,7 @@ require_once('includes/functions.php');
                                 ?>
                             </div>   
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization11" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MAX Attendance (Gender-wise)</h3></div>";
@@ -664,7 +664,7 @@ require_once('includes/functions.php');
                                 ?>
                             </div>   
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization15" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MIN Fund Utilisation (Gender-wise)</h3></div>";
@@ -698,7 +698,7 @@ require_once('includes/functions.php');
                                 ?>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization14" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MAX Fund Utilisation (Gender-wise)</h3></div>";
@@ -732,7 +732,7 @@ require_once('includes/functions.php');
                                 ?>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered">
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization12" class="row">
                                 <?php
                                     echo"<div class='text-center'><h3>MAX Questions Asked (Gender-wise)</h3></div>";

@@ -190,13 +190,13 @@ require_once('includes/functions.php');
 
             <div class="container">
                 <div class="row">
-                    <div class="container">
+                    <div class="container animate-box">
                         <div class="col-md-6 col-sm-6">
                         <div class="text-center"><strong>Select Prabhag area on the map</strong></div>
                         <div id="map"></div>
                     </div>
                     
-                    <div class="col-md-6 col-sm-6 text-center" style="margin-top: 15px;">
+                    <div class="col-md-6 col-sm-6 text-center animate-box" style="margin-top: 15px;">
                         <?php
                             require_once('prabhag-dropdown.php');
                         ?>
@@ -205,11 +205,11 @@ require_once('includes/functions.php');
                     </div>
                     </div>
 
-                    <div class="container">
+                    <div class="container animate-box">
                         <div id="txtHint2" class="row"></div>
                     </div>
 
-                    <div class="container">
+                    <div class="container animate-box">
                         <div class="row">
                         <div class="col-md-6 col-sm-6">
                         <div id="prabhag-A" class="row"></div>
