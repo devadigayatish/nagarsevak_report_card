@@ -27,10 +27,10 @@ require_once('includes/functions.php');
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
                                 <li>
-                                    <a href="index.php">Home</a>
+                                    <a href="<?php echo SITE_URL ?>index.php">Home</a>
                                 </li>
-                                <li class="active"><a href = "summary.php">Summary</a></li>
-                                <li><a href = "about-nagarsevak-report-card.php">About Nagarsevak Report Card</a></li>
+                                <li class="active"><a href="<?php echo SITE_URL ?>summary.php">Summary</a></li>
+                                <li><a href="<?php echo SITE_URL ?>about-nagarsevak-report-card.php">About Nagarsevak Report Card</a></li>
                                 <li><a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a></li>
                             </ul>
                         </nav>
