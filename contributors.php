@@ -54,13 +54,13 @@ require_once('includes/functions.php');
                             <br>
                             <h3 class="contributor-name"> Sharvari Gaikwad </h3>
                             <ul class="contributor-description">
-                                <li>Profile : Intern at Startup Partner</li>
+                                <li>Profile : Intern at Startup Partner Pvt Ltd.</li>
                                 <li>Role    : Lead developer for this project</li>
                                 <li>Email   : sharvari.v.gaikwad@gmail.com</li>
                             </ul>
                             <h3 class="contributor-name"> Yatish Devadiga </h3>
                             <ul class="contributor-description">
-                                <li>Profile : Software Engineer at Startup Partner</li>
+                                <li>Profile : Software Engineer at Startup Partner Pvt Ltd.</li>
                                 <li>Role    : Technical guide and developer for this project</li>
                                 <li>Email   : devadigayatish@gmail.com</li>
                             </ul>
@@ -72,7 +72,7 @@ require_once('includes/functions.php');
                             </ul>
                             <h3 class="contributor-name"> Mahesh Kajale </h3>
                             <ul class="contributor-description">
-                                <li>Profile : Software Engineer at Better Technology Labs</li>
+                                <li>Profile : Software Engineer at Better Technology Labs LLP.</li>
                                 <li>Role    : Helped fixing some issues. Structured the code.</li>
                                 <li>Email   : m.s.kajale@gmail.com</li>
                             </ul>
