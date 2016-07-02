@@ -94,7 +94,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.PieChart(document.getElementById('visualization2')).draw(data, {title:""});
+                                            new google.visualization.PieChart(document.getElementById('visualization2')).draw(data, {});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>               
@@ -194,7 +194,7 @@ require_once('includes/functions.php');
                                                                 ?>
                                                             ]);
                                                 // Create and draw the visualization.
-                                                new google.visualization.ColumnChart(document.getElementById('visualization8')).draw(data, {title:""});
+                                                new google.visualization.ColumnChart(document.getElementById('visualization8')).draw(data, {legend: {position: 'top',maxLines:5, textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Year',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Amount Spent',titleTextStyle:{bold:'true',fontSize: 14}}});
                                             }
                                             google.setOnLoadCallback(drawVisualization);
                                         </script>
@@ -246,7 +246,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.PieChart(document.getElementById('visualization4')).draw(data, {title:""});
+                                            new google.visualization.PieChart(document.getElementById('visualization4')).draw(data, {});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -301,7 +301,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.PieChart(document.getElementById('visualization3')).draw(data, {title:""});
+                                            new google.visualization.PieChart(document.getElementById('visualization3')).draw(data, {});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -325,7 +325,7 @@ require_once('includes/functions.php');
                                         {// Create and populate the data table.
                                             var data = google.visualization.arrayToDataTable
                                                         ([
-                                                            ['PL', 'No of Nagarsevak'],
+                                                            ['Party', 'No of Nagarsevak'],
                                                             <?php
                                                                 while( $row = mysqli_fetch_assoc($result) )
                                                                 {
@@ -335,7 +335,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -366,7 +366,7 @@ require_once('includes/functions.php');
                                         {// Create and populate the data table.
                                             var data = google.visualization.arrayToDataTable
                                                         ([
-                                                            ['PL', 'Count'],
+                                                            ['Party', 'No of Nagarsevaks'],
                                                             <?php
                                                                 while( $row = mysqli_fetch_assoc($result) )
                                                                 {
@@ -376,7 +376,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -420,7 +420,7 @@ require_once('includes/functions.php');
                                         {// Create and populate the data table.
                                             var data = google.visualization.arrayToDataTable
                                                         ([
-                                                            ['PL', 'Avg Attendance',],
+                                                            ['Party', 'Avg Attendance (%)'],
                                                             <?php
                                                                 for($i=0; $i<$num_results; $i++)
                                                                 {
@@ -429,7 +429,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{minValue:50, title: '% Attendance',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script> 
@@ -467,7 +467,7 @@ require_once('includes/functions.php');
                                         {// Create and populate the data table.
                                             var data = google.visualization.arrayToDataTable
                                                         ([
-                                                            ['PL', 'Total Questions',],
+                                                            ['Party', 'Total Questions',],
                                                             <?php
                                                                 for($i=0; $i<$num_results; $i++)
                                                                 {
@@ -476,7 +476,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Party',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -528,7 +528,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization9')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization9')).draw(data, {legend: {position: 'top',alignment:'center',textStyle: {color: 'black', fontSize: 12} },hAxis:{title: 'Attendance Range',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -591,7 +591,7 @@ require_once('includes/functions.php');
                                                             ?>
                                                         ]);
                                             // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization10')).draw(data, {title:""});
+                                            new google.visualization.ColumnChart(document.getElementById('visualization10')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},hAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
                                         }
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
@@ -691,7 +691,7 @@ require_once('includes/functions.php');
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
                                                 echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (RS.)</td><td>" . $row_F['Amount']."</td></tr>";
+                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_F['Amount']."</td></tr>";
                                             echo "</table>";
                                         echo "</div>";
                                     echo "</div>";
@@ -725,7 +725,7 @@ require_once('includes/functions.php');
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
                                                 echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (RS.)</td><td>" . $row_F['Amount']."</td></tr>";
+                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_F['Amount']."</td></tr>";
                                             echo "</table>";
                                         echo "</div>";
                                     echo "</div>";
