@@ -20,7 +20,7 @@
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+<link href="<?php echo SITE_URL; ?>assets/css/fonts-googleapis.css" rel='stylesheet' type='text/css'>
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/animate.css">
