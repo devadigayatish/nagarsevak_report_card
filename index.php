@@ -326,10 +326,22 @@ require_once('includes/functions.php');
                                 break;
                             }
                         }
+                        var layer = e.target;
+                        layer.setStyle({
+                            weight: 2,
+                            color: 'black',
+                            dashArray: '0',
+                            fillOpacity: 0.5,
+                            fillColor:'yellow'
+                        });
+                        if (!L.Browser.ie && !L.Browser.opera)
+                        {
+                            layer.bringToFront();
+                        }
                     }
                     layer.on({
-                        mouseover: highlightFeature,
-                        mouseout: resetHighlight,
+                        //mouseover: highlightFeature,
+                       // mouseout: resetHighlight,
                         click: prabhagChange
                     });
 
