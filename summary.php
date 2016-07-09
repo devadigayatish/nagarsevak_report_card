@@ -25,7 +25,7 @@ require_once('includes/functions.php');
                         <h1 id="fh5co-logo">
                             <img src="http://nagarsevak.info/assets/images/logo/parivartan-logo.jpg" style="width: 150px; height: 50px; margin: 0px 15px 10px 0px;">
                             <a href="index.php">
-                                Nagarsevak <span>Report Card</span>
+                                <span>Nagarsevak Report Card</span>
                             </a>
                         </h1>
                         <!-- START #fh5co-menu-wrap -->
