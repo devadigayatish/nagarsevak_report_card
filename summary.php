@@ -22,7 +22,12 @@ require_once('includes/functions.php');
                 <div class="container">
                     <div class="nav-header">
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                        <h1 id="fh5co-logo"><a href="index.php">Nagarsevak <span>Report Card</span></a></h1>
+                        <h1 id="fh5co-logo">
+                            <img src="http://nagarsevak.info/assets/images/logo/parivartan-logo.jpg" style="width: 150px; height: 50px; margin: 0px 15px 10px 0px;">
+                            <a href="index.php">
+                                Nagarsevak <span>Report Card</span>
+                            </a>
+                        </h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
@@ -30,7 +35,7 @@ require_once('includes/functions.php');
                                     <a href="<?php echo SITE_URL ?>index.php">Home</a>
                                 </li>
                                 <li class="active"><a href="<?php echo SITE_URL ?>summary.php">Summary</a></li>
-                                <li><a href="<?php echo SITE_URL ?>about-nagarsevak-report-card.php">About Nagarsevak Report Card</a></li>
+                                <li><a href="<?php echo SITE_URL ?>about-nagarsevak-report-card.php">About NRC</a></li>
                                 <li><a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a></li>
                             </ul>
                         </nav>

@@ -26,9 +26,9 @@
                 </div>
             </div>
         </div>
-        <div id="visitor-counter text-right" style="margin-right: 15px;">
-            <strong> Visitors  : </strong>
-            <img border="0" alt="Visitors" title="Visitors" src="http://counter10.01counter.com/private/freecounterstat.php?c=f9c10ad9f2bfe9c845b831c135089a47" style="width: 150px;">
+        <div id="visitor-counter" class="text-right" style="margin-right: 15px;">
+            <strong> Visitors : </strong>
+            <img border="0" alt="Visitors" title="Visitors" src="http://www.reliablecounter.com/count.php?page=nagarsevak.info&digit=style/plain/24/&reloads=1" style="width: 50px; height: 25px;">
         </div>
     </div>
 </footer>
