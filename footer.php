@@ -20,16 +20,15 @@
                     <a href="<?php echo SITE_URL ?>report-bug.php"><strong>Report Bug</strong></a>
                     </p>
                     <hr/>
-                    <p>
+                    <p style="font-size: 15px;">
                         This project is NOT Copyright protected. You're welcome to fork this project from &nbsp;<a target="_blank" href="https://github.com/devadigayatish/nagarsevak_report_card"><strong>Here</strong></a>&nbsp; and contribute. Also, if you are an NGO and want to do a similar kind of project in your city, we encourage you to copy our work and code.
                     </p>
                 </div>
             </div>
         </div>
-        <div id="visitor-counter" class="text-right" style="margin-right: 15px;">
-            <strong> Visitors : </strong>
-            <img border="0" alt="Visitors" title="Visitors" src="http://www.reliablecounter.com/count.php?page=nagarsevak.info&digit=style/plain/24/&reloads=1" style="width: 50px; height: 25px;">
-        </div>
+        <?php
+            require_once('unique_hits.php');
+        ?>
     </div>
 </footer>
 
