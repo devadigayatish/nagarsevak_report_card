@@ -2,7 +2,7 @@
     <div id="footer">
         <div class="container">
             <div class="row">
-                <div class="text-center animate-box">
+                <div class="text-center">
                     <nav class="nav">
                     <a href="<?php echo SITE_URL ?>index.php" class="btn btn-primary"><strong>Home</strong></a>&nbsp;&nbsp;
                     <a href="<?php echo SITE_URL ?>summary.php" class="btn btn-primary"><strong>Detailed Analysis</strong></a>&nbsp;&nbsp;
@@ -25,6 +25,10 @@
                     </p>
                 </div>
             </div>
+        </div>
+        <div id="visitor-counter text-right" style="margin-right: 15px;">
+            <strong> Visitors  : </strong>
+            <img border="0" alt="Visitors" title="Visitors" src="http://counter10.01counter.com/private/freecounterstat.php?c=f9c10ad9f2bfe9c845b831c135089a47" style="width: 150px;">
         </div>
     </div>
 </footer>
