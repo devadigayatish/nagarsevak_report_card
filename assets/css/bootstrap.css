@@ -2913,11 +2913,11 @@ th {
 }
 
 .table-even {
-  background-color: #98fb98;
+  background-color: #ffffff;
 }
 
 .table-odd {
-  background-color: #faebd7;
+  background-color: #f9f9f9;
 }
 
 table col[class*="col-"] {

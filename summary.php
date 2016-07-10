@@ -23,7 +23,7 @@ require_once('includes/functions.php');
                     <div class="nav-header">
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
                         <h1 id="fh5co-logo">
-                            <img src="<?php echo SITE_URL ?>assets/images/logo/parivartan-logo.jpg" style="width: 150px; height: 50px; margin: 0px 15px 10px 0px;">
+                            <img src="<?php echo SITE_URL ?>assets/images/logo/parivartan_logo_black.jpg" style="width: 150px; height: 50px; margin: 0px 15px 10px 0px;">
                             <a href="index.php">
                                 <span>Nagarsevak Report Card</span>
                             </a>
