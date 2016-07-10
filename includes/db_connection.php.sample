@@ -1,13 +1,14 @@
 <?php
 
 define('SITE_URL', 'localhost/nagarsevak_report_card/');
+define('PROJ_DIR', '/www/nagarsevak_report_card/');
 
-date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Kolkata');
 
 // db constants
 define('HOST', 'localhost');
 define('USERNAME', 'root');
-define('PASSWORD', 'better');
+define('PASSWORD', 'mysecret');
 define('DATABASE', 'nrc');
 // Create a file named db_connection.php in the same directory as this file.
 // Copy the contents of this file in db_connection.php
