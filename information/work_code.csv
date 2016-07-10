@@ -1,33 +1,34 @@
-Benches,B,,BT,TO
-Helping Bachat Gat training center / giving toys etc to schools,BG,,RF,E
-Building of Bus stop shed,BS,,RW,R
-Bore wells,BW,,SF,E
-Concretization ,C,,GR,P
-Cladding for Buildings,CB,,CMR,CM
-Cemetory / cremetory,CM,,T+C,T
-Computers,CO,,WC,FE
-Colouring of Tiles / coloring,CT,,SW,DW
-Drainage work/ Laying of Drainage line,D,,SS,DW
-Dustbin distribution/ Buckets,DB,,SMR,SM
-Decoration,DE,,AW,SM
-Develpoment Work,DW,,WBB,WD
-"Electrification, new street lights",E,,PC,F
-"Footpath work, Pedestrian Crossing",F,,S,BG
-Fire Brigade related work,FB,,MM,MK
-"Fencing, walls",FE,,ACT,TO
-Furniture work,FW,,CC,SM
-Garden work / Playground,G,,SB,N
-Gym/ gym equipments,GY,,BBT,BS
-Hospital / clinic / medical facilities,H,,HKM,SM
-Jute bags / Canvas bags,J,,DP,DE
-Building Library / maintenance / books,L,,MSB,R
-Maintenance/cleaning,M,,HM,M
-Market related works,MK,,D+C,D
-Installation of Nameplates / direction boards / Sign boards / Message boards,N,,WB,WD
-Pavement blocks / Grouting,P,,WC,F
-Road construction/ Colouring roads/ Railing Work/Speed breaker ,R,,,
-Samaj Mandir/ any building related work/ Renovation / Temple shed ,SM,,,
-Laying of Tiles,T,,,
-Toilet- building / Renovation/Maintenance,TO,,,
-Water supply,W,,,
-Waste Disposal ,WD,,,
+Benches,B
+Helping Bachat Gat training center / giving toys etc to schools,BG
+Building of Bus stop shed,BS
+Bore wells,BW
+Concretization ,C
+Cladding for Buildings,CB
+Cemetory / cremetory,CM
+Computers,CO
+Colouring of Tiles / coloring,CT
+Drainage work/ Laying of Drainage line,D
+Dustbin distribution/ Buckets,DB
+Decoration,DE
+Develpoment Work,DW
+"Electrification, new street lights",E
+"Footpath work, Pedestrian Crossing",F
+Fire Brigade related work,FB
+"Fencing, walls",FE
+Furniture work,FW
+Garden work / Playground,G
+Gym/ gym equipments,GY
+Hospital / clinic / medical facilities,H
+Jute bags / Canvas bags,J
+Building Library / maintenance / books,L
+Maintenance/cleaning,M
+Market related works,MK
+Installation of Nameplates / direction boards / Sign boards / Message boards,N
+Pavement blocks / Grouting,P
+Road construction/ Colouring roads/ Railing Work/Speed breaker ,R
+Samaj Mandir/ any building related work/ Renovation / Temple shed ,SM
+Laying of Tiles,T
+Toilet- building / Renovation/Maintenance,TO
+Water supply,W
+Waste Disposal ,WD
+,
