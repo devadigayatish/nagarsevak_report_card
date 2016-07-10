@@ -98,7 +98,7 @@ figure {
   bottom: 0;
   right: 0;
   z-index: 1;
-  background: rgba(66, 64, 64, 0.9);
+  background: rgba(0, 0, 0, 1);
 }
 
 .fh5co-overlay {
@@ -109,7 +109,7 @@ figure {
   bottom: 0;
   right: 0;
   z-index: 1;
-  background: rgba(66, 64, 64, 0.9);
+  background: rgba(0, 0, 0, 1);
 }
 
 .fh5co-cover {
@@ -906,7 +906,7 @@ figure {
   top: 0;
   bottom: 0;
   z-index: 99;
-  background: #222;
+  background: #000;
   right: -240px;
   width: 240px;
   padding: 20px;
