@@ -185,7 +185,7 @@ require_once('includes/functions.php');
 
         </div>
         <!-- end:header-top -->
-        <div id="fh5co-work-section" style="padding-top: 50px;">
+        <div id="fh5co-work-section" style="padding-top: 25px;">
 
             <div class="container">
                 <div class="row text-center">
