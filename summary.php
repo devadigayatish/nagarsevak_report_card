@@ -486,6 +486,57 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center"><h3>Nagarsevaks that asked Qustions(Party Wise).</h3></div>
+                                <div id="visualization20"></div>
+                                    <?php
+                                        $query = "SELECT Party , COUNT(Nagarsevak_Name) AS No_of_nagarsevaks FROM `nagarsevak` WHERE Total_Questions > 0 GROUP BY Party";
+                                        //query all records from the database
+         
+                                        $result = mysqli_query($con,$query );      //execute the query
+                                        $Party = array();
+                                        $No_of_nagarsevaks = array();
+                                        $num_results = $result->num_rows;
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Party[$i] = $row['Party'];
+                                            $No_of_nagarsevaks[$i] = $row['No_of_nagarsevaks'];
+                                        }
+                                        $print_array = array(array());
+                                        for($i=0; $i<$num_results; $i++)
+                                        {
+                                            $print_array[$i][0] = $Party[$i];
+                                            $print_array[$i][1] = $final_questions[$i];
+                                        }
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization() 
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'Number of Nagarsevaks',],
+                                                            <?php
+                                                                for($i=0; $i<$num_results; $i++)
+                                                                {
+                                                                    echo "['{$Party[$i]}', {$No_of_nagarsevaks[$i]}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization20')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                        </div>
+
+
+
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div class="text-center"><h3>Attendance of Nagarsevaks</h3></div>
                                 <div id="visualization9">
