@@ -7345,4 +7345,9 @@ div .summary-titles {
   min-height: 60px;
 }
 
+.nagarsevak-short-info > tbody > tr > th,
+.nagarsevak-short-info > tbody > tr > td {
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

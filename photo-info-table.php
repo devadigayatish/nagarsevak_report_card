@@ -17,14 +17,14 @@ echo "<div>";
         // nagarsevak info part A
         $sql = "SELECT Party,Total_Questions,Avg_Attendance,Criminal_Records FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_A."' ";
         $result = mysqli_query($con,$sql);
-        echo "<table class='table table-bordered table-striped'>";
+        echo "<table class='table table-bordered table-striped nagarsevak-short-info'>";
         while ($row = mysqli_fetch_array($result))
         {//fetch tha data from the database
             echo "<tr><td>Prabhag No</td><td>" . $prabhag_num_A."</td></tr>";
-            echo "<tr><td>Party</td><td>" . $row['Party']."</td></tr>";
-            echo "<tr><td>Total Questions</td><td>" . $row['Total_Questions']."</td></tr>";
-            echo "<tr><td>Attendance</td><td>" . $row['Avg_Attendance']." % </td></tr>";
-            echo "<tr><td>Criminal Charges</td><td>" . $row['Criminal_Records']."</td></tr>";
+            echo "<tr><td>Political Party</td><td>" . $row['Party']."</td></tr>";
+            echo "<tr><td>No. of Questions asked in GB meetings</td><td>" . $row['Total_Questions']."</td></tr>";
+            echo "<tr><td>Attendance in GB meetings</td><td>" . $row['Avg_Attendance']." % </td></tr>";
+            echo "<tr><td>Criminal charges filed?</td><td>" . $row['Criminal_Records']."</td></tr>";
         }
         echo "</table>";
 
@@ -43,14 +43,14 @@ echo "<div>";
         // nagarsevak info part B
         $sql = "SELECT Party,Total_Questions,Avg_Attendance,Criminal_Records FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_B."' ";
         $result = mysqli_query($con,$sql);
-        echo "<table class='table table-bordered table-striped'>";
+        echo "<table class='table table-bordered table-striped nagarsevak-short-info'>";
         while ($row = mysqli_fetch_array($result))
         {//fetch tha data from the database
             echo "<tr><td>Prabhag No</td><td>" .$prabhag_num_B. "</td></tr>";
-            echo "<tr><td>Party</td><td>" . $row['Party']."</td></tr>";
-            echo "<tr><td>Total Questions</td><td>" . $row['Total_Questions']."</td></tr>";
-            echo "<tr><td>Attendance</td><td>" . $row['Avg_Attendance']." % </td></tr>";
-            echo "<tr><td>Criminal Charges</td><td>" . $row['Criminal_Records']."</td></tr>";
+            echo "<tr><td>Political Party</td><td>" . $row['Party']."</td></tr>";
+            echo "<tr><td>No. of Questions asked in GB meetings</td><td>" . $row['Total_Questions']."</td></tr>";
+            echo "<tr><td>Attendance in GB meetings</td><td>" . $row['Avg_Attendance']." % </td></tr>";
+            echo "<tr><td>Criminal charges filed?</td><td>" . $row['Criminal_Records']."</td></tr>";
         }
         echo "</table>";
     echo "</div>";
