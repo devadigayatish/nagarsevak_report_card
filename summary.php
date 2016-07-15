@@ -51,61 +51,8 @@ require_once('includes/functions.php');
             <div class="container">
                 <div class="row">
                     <div class="container">
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box ">
-                            <div class="text-center"><h3>Overall Expenditure Pattern</h3></div>
-                                <div id="visualization2" ></div>
-                                    <?php
-                                        $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC"; 
-                                            //query all records from the database
-                                        $result = mysqli_query($con,$query );  //execute the query
-                                        $num_results = $result->num_rows;      //get number of rows returned
-                                        $Details_of_work = array();
-                                        $Amount = array();
-                                        for($i=0; $i<$num_results;$i++)
-                                        {
-                                            $row = mysqli_fetch_assoc($result);
-                                            $Details_of_work[$i] = $row['Details_Of_Work'];
-                                            $Amount[$i] = $row['Amount'];
-                                        }
-                                        $combine_array = array_combine($Details_of_work, $Amount);
-                                        $total_Amount = array_sum($Amount);
-                                        $remaining_values = array_slice($Amount, 7);
-                                        $remaining_total = array_sum($remaining_values);
-                                        $chart_array = array(array());
-                                        for($i=0; $i<10; $i++)
-                                        {
-                                            $chart_array[$i][0] = $Details_of_work[$i];
-                                            $chart_array[$i][1] = $Amount[$i];
-                                        }
-                                        $chart_array[10][0] = "Others";
-                                        $chart_array[10][1] = $remaining_total;
-
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']});      
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization()
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['PL', 'Ratings'],
-                                                            <?php
-                                                                for($i=0; $i<=10; $i++)
-                                                                {
-                                                                    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.PieChart(document.getElementById('visualization2')).draw(data, {});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script>               
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Top 5 Works per Year</h3></div>
+                        <div class="col-md-12 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Top 5 Works per Year</h3></div>
                                 <div id="visualization8">
                                     <?php
                                         $query = "SELECT Details_Of_Work FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC ";
@@ -205,8 +152,105 @@ require_once('includes/functions.php');
                                         </script>
                                 </div>
                         </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box ">
+                            <div class="text-center summary-titles"><h3>Overall Expenditure Pattern</h3></div>
+                                <div id="visualization2" ></div>
+                                    <?php
+                                        $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC"; 
+                                            //query all records from the database
+                                        $result = mysqli_query($con,$query );  //execute the query
+                                        $num_results = $result->num_rows;      //get number of rows returned
+                                        $Details_of_work = array();
+                                        $Amount = array();
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Details_of_work[$i] = $row['Details_Of_Work'];
+                                            $Amount[$i] = $row['Amount'];
+                                        }
+                                        $combine_array = array_combine($Details_of_work, $Amount);
+                                        $total_Amount = array_sum($Amount);
+                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_total = array_sum($remaining_values);
+                                        $chart_array = array(array());
+                                        for($i=0; $i<10; $i++)
+                                        {
+                                            $chart_array[$i][0] = $Details_of_work[$i];
+                                            $chart_array[$i][1] = $Amount[$i];
+                                        }
+                                        $chart_array[10][0] = "Others";
+                                        $chart_array[10][1] = $remaining_total;
+
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});      
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization()
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['PL', 'Ratings'],
+                                                            <?php
+                                                                for($i=0; $i<=10; $i++)
+                                                                {
+                                                                    echo "['{$chart_array[$i][0]}', {$chart_array[$i][1]}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.PieChart(document.getElementById('visualization2')).draw(data, {});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                        </div>
+
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Expenditure Pattern by Male Nagarsevaks</h3></div>
+                            <div class="text-center summary-titles"><h3>Political Party-wise number of Nagarsevaks</h3></div>
+                                <div id="visualization16" ></div>
+                                    <?php
+                                        $query = "SELECT Party, COUNT(Party) AS No_of_Nagarsevak FROM nagarsevak GROUP BY Party";       //query all records from the database
+                                        $result = mysqli_query($con,$query );     //execute the query
+                                        $num_results = $result->num_rows;         //get number of rows returned
+                                        if( $num_results > 0)
+                                        { 
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']}); 
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization() 
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'No of Nagarsevaks'],
+                                                            <?php
+                                                                while( $row = mysqli_fetch_assoc($result) )
+                                                                {
+                                                                    extract($row);
+                                                                    echo "['{$Party}', {$No_of_Nagarsevak}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                                    <?php
+                                        }
+                                        else
+                                        {
+                                            echo "No related data found in the database.";
+                                        }
+                                    ?>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Expenditure Pattern by Male Nagarsevaks</h3></div>
                                 <div id="visualization4"></div>
                                     <?php
                                         $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No WHERE n.Gender = 'Male' GROUP BY n.Gender , w.Code ORDER BY SUM(w.Amount) DESC ";  //query all records from the database
@@ -257,7 +301,7 @@ require_once('includes/functions.php');
                                     </script>
                         </div>
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Expenditure Pattern by Female Nagarsevaks</h3></div>
+                            <div class="text-center summary-titles"><h3>Expenditure Pattern by Female Nagarsevaks</h3></div>
                                 <div id="visualization3"></div>
                                     <?php   
                                         $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount FROM 
@@ -311,234 +355,9 @@ require_once('includes/functions.php');
                                         google.setOnLoadCallback(drawVisualization);
                                     </script>
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Party wise number of Nagarsevaks</h3></div>
-                                <div id="visualization16" ></div>
-                                    <?php
-                                        $query = "SELECT Party, COUNT(Party) AS No_of_Nagarsevak FROM nagarsevak GROUP BY Party";       //query all records from the database
-                                        $result = mysqli_query($con,$query );     //execute the query
-                                        $num_results = $result->num_rows;         //get number of rows returned
-                                        if( $num_results > 0)
-                                        { 
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']}); 
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization() 
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['Party', 'No of Nagarsevaks'],
-                                                            <?php
-                                                                while( $row = mysqli_fetch_assoc($result) )
-                                                                {
-                                                                    extract($row);
-                                                                    echo "['{$Party}', {$No_of_Nagarsevak}],";
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization16')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script>
-                                    <?php
-                                        }
-                                        else
-                                        {
-                                            echo "No related data found in the database.";
-                                        }
-                                    ?>   
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Party wise Criminal Charges</h3></div>
-                                <div id="visualization7"></div>
-                                    <?php
-                                        $query = "SELECT Party, COUNT(Party) AS count FROM `nagarsevak` WHERE Criminal_Records = 'Yes' GROUP BY Party ";
-                                        //query all records from the database
-                                        $result = mysqli_query($con,$query );  //execute the query
-                                        $num_results = $result->num_rows;      //get number of rows returned
-                                        if( $num_results > 0){ 
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']});
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization()
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['Party', 'No of Nagarsevaks'],
-                                                            <?php
-                                                                while( $row = mysqli_fetch_assoc($result) )
-                                                                {
-                                                                    extract($row);
-                                                                    echo "['{$Party}', {$count}],";     
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script>
-                                    <?php
-                                        }
-                                        else
-                                        {
-                                            echo "No related data found in the database.";
-                                        }
-                                    ?>
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Party wise Attendance</h3></div>
-                                <div id="visualization5"></div>
-                                    <?php
-                                        $query = "SELECT Party ,SUM(Avg_Attendance) AS Avg_Attendance, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
-                                        //query all records from the database
-                                        $result = mysqli_query($con,$query );       //execute the query
-                                        $Party = array();
-                                        $final_attendance = array();
-                                        $num_results = $result->num_rows;
-                                        for($i=0; $i<$num_results;$i++)
-                                        {
-                                            $row = mysqli_fetch_assoc($result);
-                                            $Party[$i] = $row['Party'];
-                                            $final_attendance[$i] = round($row['Avg_Attendance']/$row['Total_Count'],2);
-                                        }
-                                        $print_array = array(array());
-                                        for($i=0; $i<$num_results; $i++)
-                                        {
-                                            $print_array[$i][0] = $Party[$i];
-                                            $print_array[$i][1] = $final_attendance[$i];
-                                        } 
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']});
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization() 
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['Party', 'Avg Attendance (%)'],
-                                                            <?php
-                                                                for($i=0; $i<$num_results; $i++)
-                                                                {
-                                                                    echo "['{$print_array[$i][0]}', {$print_array[$i][1]}],";
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{minValue:50, title: '% Attendance',titleTextStyle:{bold:'true',fontSize: 14}}});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script> 
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Party wise Questions asked.</h3></div>
-                                <div id="visualization6"></div>
-                                    <?php
-                                        $query = "SELECT Party ,SUM(Total_Questions) AS Total_Questions, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
-                                        //query all records from the database
-         
-                                        $result = mysqli_query($con,$query );      //execute the query
-                                        $Party = array();
-                                        $final_questions = array();
-                                        $num_results = $result->num_rows;
-                                        for($i=0; $i<$num_results;$i++)
-                                        {
-                                            $row = mysqli_fetch_assoc($result);
-                                            $Party[$i] = $row['Party'];
-                                            $final_questions[$i] = $row['Total_Questions'];
-                                        }
-                                        $print_array = array(array());
-                                        for($i=0; $i<$num_results; $i++)
-                                        {
-                                            $print_array[$i][0] = $Party[$i];
-                                            $print_array[$i][1] = $final_questions[$i];
-                                        }
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']});
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization() 
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['Party', 'Total Questions',],
-                                                            <?php
-                                                                for($i=0; $i<$num_results; $i++)
-                                                                {
-                                                                    echo "['{$print_array[$i][0]}', {$print_array[$i][1]}],";
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}}});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script>
-                        </div>
 
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Nagarsevaks that asked Qustions(Party Wise).</h3></div>
-                                <div id="visualization20"></div>
-                                    <?php
-                                        $query = "SELECT Party , COUNT(Nagarsevak_Name) AS No_of_nagarsevaks FROM `nagarsevak` WHERE Total_Questions > 0 GROUP BY Party";
-                                        //query all records from the database
-         
-                                        $result = mysqli_query($con,$query );      //execute the query
-                                        $Party = array();
-                                        $No_of_nagarsevaks = array();
-                                        $num_results = $result->num_rows;
-                                        for($i=0; $i<$num_results;$i++)
-                                        {
-                                            $row = mysqli_fetch_assoc($result);
-                                            $Party[$i] = $row['Party'];
-                                            $No_of_nagarsevaks[$i] = $row['No_of_nagarsevaks'];
-                                        }
-                                        $print_array = array(array());
-                                        for($i=0; $i<$num_results; $i++)
-                                        {
-                                            $print_array[$i][0] = $Party[$i];
-                                            $print_array[$i][1] = $final_questions[$i];
-                                        }
-                                    ?>
-                                    <script type="text/javascript">
-                                        google.load('visualization', '1', {packages: ['corechart']});
-                                        //load package
-                                    </script>
-                                    <script type="text/javascript">
-                                        function drawVisualization() 
-                                        {// Create and populate the data table.
-                                            var data = google.visualization.arrayToDataTable
-                                                        ([
-                                                            ['Party', 'Number of Nagarsevaks',],
-                                                            <?php
-                                                                for($i=0; $i<$num_results; $i++)
-                                                                {
-                                                                    echo "['{$Party[$i]}', {$No_of_nagarsevaks[$i]}],";
-                                                                }
-                                                            ?>
-                                                        ]);
-                                            // Create and draw the visualization.
-                                            new google.visualization.ColumnChart(document.getElementById('visualization20')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
-                                        }
-                                        google.setOnLoadCallback(drawVisualization);
-                                    </script>
-                        </div>
-
-
-
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>Attendance of Nagarsevaks</h3></div>
+                            <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings</h3></div>
                                 <div id="visualization9">
                                     <?php
                                         $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25 ";
@@ -591,7 +410,53 @@ require_once('includes/functions.php');
                                 </div>
                         </div>
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div class="text-center"><h3>No. of Questions asked by Nagarsevaks</h3></div>
+                            <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings (Party-wise)</h3></div>
+                                <div id="visualization5"></div>
+                                    <?php
+                                        $query = "SELECT Party ,SUM(Avg_Attendance) AS Avg_Attendance, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
+                                        //query all records from the database
+                                        $result = mysqli_query($con,$query );       //execute the query
+                                        $Party = array();
+                                        $final_attendance = array();
+                                        $num_results = $result->num_rows;
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Party[$i] = $row['Party'];
+                                            $final_attendance[$i] = round($row['Avg_Attendance']/$row['Total_Count'],2);
+                                        }
+                                        $print_array = array(array());
+                                        for($i=0; $i<$num_results; $i++)
+                                        {
+                                            $print_array[$i][0] = $Party[$i];
+                                            $print_array[$i][1] = $final_attendance[$i];
+                                        } 
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization() 
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'Avg Attendance (%)'],
+                                                            <?php
+                                                                for($i=0; $i<$num_results; $i++)
+                                                                {
+                                                                    echo "['{$print_array[$i][0]}', {$print_array[$i][1]}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization5')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{minValue:50, title: '% Attendance',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script> 
+                        </div>
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings</h3></div>
                                 <div id="visualization10">
                                     <?php
                                         //query all records from the database
@@ -654,9 +519,147 @@ require_once('includes/functions.php');
                                 </div>
                         </div>
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings (Party-wise)</h3></div>
+                                <div id="visualization6"></div>
+                                    <?php
+                                        $query = "SELECT Party ,SUM(Total_Questions) AS Total_Questions, COUNT(Party) AS Total_Count FROM `nagarsevak`GROUP BY Party";
+                                        //query all records from the database
+         
+                                        $result = mysqli_query($con,$query );      //execute the query
+                                        $Party = array();
+                                        $final_questions = array();
+                                        $num_results = $result->num_rows;
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Party[$i] = $row['Party'];
+                                            $final_questions[$i] = $row['Total_Questions'];
+                                        }
+                                        $print_array = array(array());
+                                        for($i=0; $i<$num_results; $i++)
+                                        {
+                                            $print_array[$i][0] = $Party[$i];
+                                            $print_array[$i][1] = $final_questions[$i];
+                                        }
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization() 
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'Total Questions',],
+                                                            <?php
+                                                                for($i=0; $i<$num_results; $i++)
+                                                                {
+                                                                    echo "['{$print_array[$i][0]}', {$print_array[$i][1]}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization6')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Questions',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Nagarsevaks who asked Questions (Party-wise)</h3></div>
+                                <div id="visualization20"></div>
+                                    <?php
+                                        $query = "SELECT Party , COUNT(Nagarsevak_Name) AS No_of_nagarsevaks FROM `nagarsevak` WHERE Total_Questions > 0 GROUP BY Party";
+                                        //query all records from the database
+         
+                                        $result = mysqli_query($con,$query );      //execute the query
+                                        $Party = array();
+                                        $No_of_nagarsevaks = array();
+                                        $num_results = $result->num_rows;
+                                        for($i=0; $i<$num_results;$i++)
+                                        {
+                                            $row = mysqli_fetch_assoc($result);
+                                            $Party[$i] = $row['Party'];
+                                            $No_of_nagarsevaks[$i] = $row['No_of_nagarsevaks'];
+                                        }
+                                        $print_array = array(array());
+                                        for($i=0; $i<$num_results; $i++)
+                                        {
+                                            $print_array[$i][0] = $Party[$i];
+                                            $print_array[$i][1] = $final_questions[$i];
+                                        }
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization() 
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'Number of Nagarsevaks',],
+                                                            <?php
+                                                                for($i=0; $i<$num_results; $i++)
+                                                                {
+                                                                    echo "['{$Party[$i]}', {$No_of_nagarsevaks[$i]}],";
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization20')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                            <div class="text-center summary-titles"><h3>Nagarsevaks with Criminal Charges (Party-wise)</h3></div>
+                                <div id="visualization7"></div>
+                                    <?php
+                                        $query = "SELECT Party, COUNT(Party) AS count FROM `nagarsevak` WHERE Criminal_Records = 'Yes' GROUP BY Party ";
+                                        //query all records from the database
+                                        $result = mysqli_query($con,$query );  //execute the query
+                                        $num_results = $result->num_rows;      //get number of rows returned
+                                        if( $num_results > 0){ 
+                                    ?>
+                                    <script type="text/javascript">
+                                        google.load('visualization', '1', {packages: ['corechart']});
+                                        //load package
+                                    </script>
+                                    <script type="text/javascript">
+                                        function drawVisualization()
+                                        {// Create and populate the data table.
+                                            var data = google.visualization.arrayToDataTable
+                                                        ([
+                                                            ['Party', 'No of Nagarsevaks'],
+                                                            <?php
+                                                                while( $row = mysqli_fetch_assoc($result) )
+                                                                {
+                                                                    extract($row);
+                                                                    echo "['{$Party}', {$count}],";     
+                                                                }
+                                                            ?>
+                                                        ]);
+                                            // Create and draw the visualization.
+                                            new google.visualization.ColumnChart(document.getElementById('visualization7')).draw(data, {legend: {position: 'top',alignment:'center', textStyle: {color: 'black', fontSize: 12}},vAxis:{title: 'Number of Nagarsevaks',titleTextStyle:{bold:'true',fontSize: 14}}});
+                                        }
+                                        google.setOnLoadCallback(drawVisualization);
+                                    </script>
+                                    <?php
+                                        }
+                                        else
+                                        {
+                                            echo "No related data found in the database.";
+                                        }
+                                    ?>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization13" class="row">
                                 <?php
-                                    echo"<div class='text-center'><h3>MIN Attendance (Gender-wise)</h3></div>";
+                                    echo"<div class='text-center'><h3>Nagarsevaks with Least Attendance in GB Meetings</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MIN(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
@@ -666,7 +669,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_M['Party']."</td></tr>";
                                                 echo "<tr><td>Attendance</td><td>" . $row_M['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -678,7 +681,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_F['Party']."</td></tr>";
                                                 echo "<tr><td>Attendance</td><td>" . $row_F['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -690,7 +693,7 @@ require_once('includes/functions.php');
                         <div class="col-md-6 col-sm-6 table-bordered animate-box">
                             <div id="visualization11" class="row">
                                 <?php
-                                    echo"<div class='text-center'><h3>MAX Attendance (Gender-wise)</h3></div>";
+                                    echo"<div class='text-center'><h3>Nagarsevaks with Highest Attendance in GB Meetings</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Avg_Attendance ,URL ,Party FROM nagarsevak WHERE Avg_Attendance=(SELECT MAX(Avg_Attendance) FROM nagarsevak WHERE Gender = 'Male')";
@@ -700,7 +703,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_M['Party']."</td></tr>";
                                                 echo "<tr><td>Attendance</td><td>" . $row_M['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -712,7 +715,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_F['Party']."</td></tr>";
                                                 echo "<tr><td>Attendance</td><td>" . $row_F['Avg_Attendance']." % </td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -720,78 +723,10 @@ require_once('includes/functions.php');
                                 ?>
                             </div>   
                         </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div id="visualization15" class="row">
-                                <?php
-                                    echo"<div class='text-center'><h3>MIN Fund Utilisation (Gender-wise)</h3></div>";
-                                    echo "<div class='col-lg-12 col-md-4'>";
-                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                            $sql_M = "SELECT SUM(w.Amount) AS Amount, n.Nagarsevak_Name , n.Url , n.Party ,n.Prabhag_No
-                                            FROM work_details w INNER JOIN nagarsevak n ON w.Prabhag_No=n.Prabhag_No WHERE n.Gender = 'Male' GROUP BY w.Prabhag_No ORDER BY Amount ASC LIMIT 1";
-                                            $result_M = mysqli_query($con,$sql_M);
-                                            $row_M = mysqli_fetch_array($result_M);
-                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_M['Url']." ></div>" ;
-                                            echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
-                                            echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_M['Amount']."</td></tr>";
-                                            echo "</table>";
-                                        echo "</div>";
-                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                            $sql_F = "SELECT SUM(w.Amount) AS Amount, n.Nagarsevak_Name , n.Url , n.Party ,n.Prabhag_No FROM work_details w INNER JOIN nagarsevak n ON w.Prabhag_No=n.Prabhag_No WHERE n.Gender = 'Female' GROUP BY w.Prabhag_No ORDER BY Amount ASC LIMIT 1";
-                                            $result_F = mysqli_query($con,$sql_F);
-                                            $row_F = mysqli_fetch_array($result_F);
-                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_F['Url']." ></div>" ;
-                                            echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
-                                            echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_F['Amount']."</td></tr>";
-                                            echo "</table>";
-                                        echo "</div>";
-                                    echo "</div>";
-                                ?>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
-                            <div id="visualization14" class="row">
-                                <?php
-                                    echo"<div class='text-center'><h3>MAX Fund Utilisation (Gender-wise)</h3></div>";
-                                    echo "<div class='col-lg-12 col-md-4'>";
-                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                            $sql_M = "SELECT SUM(w.Amount) AS Amount, n.Nagarsevak_Name , n.Url , n.Party ,n.Prabhag_No
-                                            FROM work_details w INNER JOIN nagarsevak n ON w.Prabhag_No=n.Prabhag_No WHERE n.Gender = 'Male' GROUP BY w.Prabhag_No ORDER BY Amount DESC LIMIT 1";
-                                            $result_M = mysqli_query($con,$sql_M);
-                                            $row_M = mysqli_fetch_array($result_M);
-                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_M['Url']." ></div>" ;
-                                            echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
-                                            echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_M['Amount']."</td></tr>";
-                                            echo "</table>";
-                                        echo "</div>";
-                                        echo "<div class='col-lg-6 col-md-4 text-center'>";
-                                            $sql_F = "SELECT SUM(w.Amount) AS Amount, n.Nagarsevak_Name , n.Url , n.Party ,n.Prabhag_No FROM work_details w INNER JOIN nagarsevak n ON w.Prabhag_No=n.Prabhag_No WHERE n.Gender = 'Female' GROUP BY w.Prabhag_No ORDER BY Amount DESC LIMIT 1";
-                                            $result_F = mysqli_query($con,$sql_F);
-                                            $row_F = mysqli_fetch_array($result_F);
-                                            echo "<div class=''><img style='width:70px; height: 85px;' src=".SITE_URL.'assets/'. $row_F['Url']." ></div>" ;
-                                            echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
-                                            echo "<table class='table table-bordered table-striped'>";
-                                                echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
-                                                echo "<tr><td>Amount (Rs.)</td><td>" . $row_F['Amount']."</td></tr>";
-                                            echo "</table>";
-                                        echo "</div>";
-                                    echo "</div>";
-                                ?>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 table-bordered animate-box">
+                        <div class="col-md-6 col-md-offset-3 table-bordered animate-box">
                             <div id="visualization12" class="row">
                                 <?php
-                                    echo"<div class='text-center'><h3>MAX Questions Asked (Gender-wise)</h3></div>";
+                                    echo"<div class='text-center'><h3>Nagarsevaks who asked the Highest Questions in GB Meetings</h3></div>";
                                     echo "<div class='col-lg-12 col-md-4'>";
                                         echo "<div class='col-lg-6 col-md-4 text-center'>";
                                             $sql_M = "SELECT Prabhag_No , Nagarsevak_Name , Total_Questions ,URL ,Party FROM nagarsevak WHERE Total_Questions=(SELECT MAX(Total_Questions) FROM nagarsevak WHERE Gender = 'Male')";
@@ -801,7 +736,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_M['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_M['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_M['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_M['Party']."</td></tr>";
                                                 echo "<tr><td>Total Questions</td><td>" . $row_M['Total_Questions']."</td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -813,7 +748,7 @@ require_once('includes/functions.php');
                                             echo "<div class='nagarsevak-name'>". $row_F['Nagarsevak_Name']."</div>";
                                             echo "<table class='table table-bordered table-striped'>";
                                                 echo "<tr><td>Prabhag No</td><td>" .$row_F['Prabhag_No'] ."</td></tr>";
-                                                echo "<tr><td>Party</td><td>" . $row_F['Party']."</td></tr>";
+                                                echo "<tr><td>Political Party</td><td>" . $row_F['Party']."</td></tr>";
                                                 echo "<tr><td>Total Questions</td><td>" . $row_F['Total_Questions']."</td></tr>";
                                             echo "</table>";
                                         echo "</div>";
@@ -821,6 +756,7 @@ require_once('includes/functions.php');
                                 ?>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

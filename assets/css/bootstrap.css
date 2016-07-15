@@ -7341,4 +7341,8 @@ div .nagarsevak-name {
   font-weight: 400;
 }
 
+div .summary-titles {
+  min-height: 60px;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
