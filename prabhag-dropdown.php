@@ -29,7 +29,7 @@
         <option value='76'>Prabhag 76: Katraj Maulinagar</option>
     </optgroup>
     <optgroup label='Dhole Patil Road'>
-        <option value='20' selected="selected">Prabhag 20: Magarpatta City</option>
+        <option value='20'>Prabhag 20: Magarpatta City</option>
         <option value='21'>Prabhag 21: Koregaon Park</option>
         <option value='22'>Prabhag 22: Naidu Hospital</option>
         <option value='23'>Prabhag 23: Junabazaar Kumbharwada</option>
@@ -99,7 +99,7 @@
 
     </optgroup>
     <optgroup label='Yerawda - Sangamwadi'>
-        <option value='1'>Prabhag 1: Lohegaon Airport</option>
+        <option value='1' selected="selected">Prabhag 1: Lohegaon Airport</option>
         <option value='5'>Prabhag 5: Vishrantwadi Mhaske Vasti</option>
         <option value='14'>Prabhag 14: Deccan College</option>
         <option value='15'>Prabhag 15: Rajguru Road</option>
