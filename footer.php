@@ -17,7 +17,7 @@
                     <a href="https://github.com/devadigayatish/nagarsevak_report_card" target="_blank"><strong>Source Code</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="<?php echo SITE_URL ?>contributors.php"><strong>Contributors</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="<?php echo SITE_URL ?>disclaimer.php"><strong>Disclaimer</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="<?php echo SITE_URL ?>report-bug.php"><strong>Report Bug</strong></a>
+                    <a href="<?php echo SITE_URL ?>report-bug.php"><strong>Report Bug / Suggestions</strong></a>
                     </p>
                     <hr/>
                     <p style="font-size: 15px;">

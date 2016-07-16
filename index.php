@@ -188,12 +188,6 @@ require_once('includes/functions.php');
         <div id="fh5co-work-section" style="padding-top: 25px;">
 
             <div class="container">
-                <div class="row text-center">
-                    <h3>An Analysis of the Development Work undertaken every year by the Nagarsevaks of Pune City from the funds available through Nagarsevak Nidhi</h3>
-                </div>
-            </div>
-
-            <div class="container">
                 <div class="row">
                     <div class="container animate-box">
                         <div class="col-md-6 col-sm-6">
