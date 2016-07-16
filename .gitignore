@@ -1,4 +1,5 @@
 includes/db_connection.php
 includes/email-sender.php
 uploads/attachments/*
+uploads/original-rti-replies/*.pdf
 visitors.txt

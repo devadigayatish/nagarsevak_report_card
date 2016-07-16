@@ -18,6 +18,7 @@ echo "<div>";
         $sql = "SELECT Party,Total_Questions,Avg_Attendance,Criminal_Records FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_A."' ";
         $result = mysqli_query($con,$sql);
         echo "<table class='table table-bordered table-striped nagarsevak-short-info'>";
+        echo "<colgroup> <col style='width:70%;'> <col style='width:30%;'> </colgroup>";
         while ($row = mysqli_fetch_array($result))
         {//fetch tha data from the database
             echo "<tr><td>Prabhag No</td><td>" . $prabhag_num_A."</td></tr>";
@@ -44,6 +45,7 @@ echo "<div>";
         $sql = "SELECT Party,Total_Questions,Avg_Attendance,Criminal_Records FROM nagarsevak WHERE Prabhag_No = '".$prabhag_num_B."' ";
         $result = mysqli_query($con,$sql);
         echo "<table class='table table-bordered table-striped nagarsevak-short-info'>";
+        echo "<colgroup> <col style='width:70%;'> <col style='width:30%;'> </colgroup>";
         while ($row = mysqli_fetch_array($result))
         {//fetch tha data from the database
             echo "<tr><td>Prabhag No</td><td>" .$prabhag_num_B. "</td></tr>";
