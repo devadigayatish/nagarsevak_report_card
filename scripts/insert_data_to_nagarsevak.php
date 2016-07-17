@@ -16,7 +16,7 @@ $i=1;
 while(! feof($file_pointer))
 {
 	$read_csv_file = fgetcsv($file_pointer);
-	$row[$i]=array($read_csv_file[0], $read_csv_file[1], $read_csv_file[2], $read_csv_file[3], $read_csv_file[4],$read_csv_file[5], $read_csv_file[6], $read_csv_file[7], $read_csv_file[8], $read_csv_file[9],$read_csv_file[10], $read_csv_file[11], $read_csv_file[12]);
+	$row[$i]=array($read_csv_file[0], $read_csv_file[1], $read_csv_file[2], $read_csv_file[3], $read_csv_file[4],$read_csv_file[5], $read_csv_file[6], $read_csv_file[7], $read_csv_file[8], $read_csv_file[9],$read_csv_file[10], $read_csv_file[11]);
 	$i++;
 }
 
@@ -32,11 +32,10 @@ for ($j=1; $j <= sizeof($row)-1 ; $j++)
 	$fieldVal_Total_Questions = mysqli_real_escape_string($con,$row[$j][7]);
 	$fieldVal_Avg_Attendance = mysqli_real_escape_string($con,$row[$j][8]);
 	$fieldVal_Criminal_Records = mysqli_real_escape_string($con,$row[$j][9]);
-	$fieldVal_Original_RTI_Link = mysqli_real_escape_string($con,$row[$j][10]);
-	$fieldVal_Csv_Link = mysqli_real_escape_string($con,$row[$j][11]);
-	$fieldVal_Gender = mysqli_real_escape_string($con,$row[$j][12]);
+	$fieldVal_Csv_Link = mysqli_real_escape_string($con,$row[$j][10]);
+	$fieldVal_Gender = mysqli_real_escape_string($con,$row[$j][11]);
     
-	$sql_for_insert = "INSERT INTO nagarsevak (Prabhag_No,Nagarsevak_Name,Codes,Url,Prabhag_Name,Ward_ofc,Party,Total_Questions,Avg_Attendance,Criminal_Records,Original_RTI_Link,Csv_Link,Gender) VALUES('".$fieldVal_Prabhag_No."','".$fieldVal_Nagarsevak_Name."','".$fieldVal_Codes."','".$fieldVal_Url."','".$fieldVal_Prabhag_Name."','".$fieldVal_Ward_ofc."','".$fieldVal_Party."','".$fieldVal_Total_Questions."','".$fieldVal_Avg_Attendance."','".$fieldVal_Criminal_Records."','".$fieldVal_Original_RTI_Link."','".$fieldVal_Csv_Link."','".$fieldVal_Gender."')";
+	$sql_for_insert = "INSERT INTO nagarsevak (Prabhag_No,Nagarsevak_Name,Codes,Url,Prabhag_Name,Ward_ofc,Party,Total_Questions,Avg_Attendance,Criminal_Records,Csv_Link,Gender) VALUES('".$fieldVal_Prabhag_No."','".$fieldVal_Nagarsevak_Name."','".$fieldVal_Codes."','".$fieldVal_Url."','".$fieldVal_Prabhag_Name."','".$fieldVal_Ward_ofc."','".$fieldVal_Party."','".$fieldVal_Total_Questions."','".$fieldVal_Avg_Attendance."','".$fieldVal_Criminal_Records."','".$fieldVal_Csv_Link."','".$fieldVal_Gender."')";
 			
 	if(!mysqli_query($con, $sql_for_insert))
 	{

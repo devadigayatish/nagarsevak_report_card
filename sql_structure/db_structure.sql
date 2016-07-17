@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2016 at 07:23 AM
+-- Generation Time: Jul 17, 2016 at 05:45 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -81,7 +81,6 @@ CREATE TABLE IF NOT EXISTS `nagarsevak` (
   `Total_Questions` int(11) NOT NULL,
   `Avg_Attendance` float NOT NULL,
   `Criminal_Records` varchar(10) NOT NULL,
-  `Original_RTI_Link` varchar(100) NOT NULL,
   `Csv_Link` varchar(100) NOT NULL,
   `Gender` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

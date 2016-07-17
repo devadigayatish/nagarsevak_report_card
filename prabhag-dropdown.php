@@ -91,11 +91,11 @@
         <option value='56'>Prabhag 56: Sarasbaug Parvati</option>
     </optgroup>
     <optgroup label='Warje Karvenagar'>
-        <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
         <option value='30'>Prabhag 30: Popularnagar Malwadi</option>
         <option value='31'>Prabhag 31: Shivane - Warje - Ramnagar</option>
         <option value='32'>Prabhag 32: Karvenagar - Gosavivasti</option>
         <option value='33'>Prabhag 33: Dahanukar Colony</option>
+        <option value='35'>Prabhag 35: Deenanath Mangeshkar Hospital</option>
 
     </optgroup>
     <optgroup label='Yerawda - Sangamwadi'>
