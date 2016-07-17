@@ -69,5 +69,6 @@ This script reads each file from csv folder and inserts the records into "csv_da
 
 c) **insert_data_to_nagarsevak.php**  
 This script reads the csv file nagarsevak_info from information folder and inserts the data into "nagarsevak" table, calculates the total questions and average attendance of each nagarsevak and updates the "nagarsevak" table.  
+
 d) **create_final_table_dow.php**  
 This script reads the data from "csv_data" table and inserts into final table "work_details".  
