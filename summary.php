@@ -171,7 +171,7 @@ require_once('includes/functions.php');
                                         }
                                         $combine_array = array_combine($Details_of_work, $Amount);
                                         $total_Amount = array_sum($Amount);
-                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_values = array_slice($Amount, 10);
                                         $remaining_total = array_sum($remaining_values);
                                         $chart_array = array(array());
                                         for($i=0; $i<10; $i++)
@@ -266,7 +266,7 @@ require_once('includes/functions.php');
                                         }
                                         $combine_array = array_combine($Details_of_work, $Amount);
                                         $total_Amount = array_sum($Amount);
-                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_values = array_slice($Amount, 10);
                                         $remaining_total = array_sum($remaining_values);
                                         $chart_array = array(array());
                                         for($i=0; $i<10; $i++)
@@ -321,7 +321,7 @@ require_once('includes/functions.php');
                                         }
                                         $combine_array = array_combine($Details_of_work, $Amount);
                                         $total_Amount = array_sum($Amount);
-                                        $remaining_values = array_slice($Amount, 7);
+                                        $remaining_values = array_slice($Amount, 10);
                                         $remaining_total = array_sum($remaining_values);
                                         $chart_array = array(array());
                                         for($i=0; $i<10; $i++)
@@ -360,23 +360,23 @@ require_once('includes/functions.php');
                             <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings</h3></div>
                                 <div id="visualization9">
                                     <?php
-                                        $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25 ";
-                                        $query_26to50 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 26 AND 50 ";
-                                        $query_51to75 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 51 AND 75 ";
-                                        $query_76to100 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 76 AND 100 ";
+                                        $query_0to25 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 0 AND 25.00 ";
+                                        $query_25to50 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 25.01 AND 50.00 ";
+                                        $query_50to75 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 50.01 AND 75.00 ";
+                                        $query_75to100 = "SELECT COUNT(Avg_Attendance) FROM `nagarsevak` WHERE Avg_Attendance BETWEEN 75.01 AND 100 ";
 
                                         $result_0to25 = mysqli_query($con,$query_0to25 );//execute the query
-                                        $result_26to50 = mysqli_query($con,$query_26to50 );
-                                        $result_51to75 = mysqli_query($con,$query_51to75 );
-                                        $result_76to100 = mysqli_query($con,$query_76to100 );
+                                        $result_25to50 = mysqli_query($con,$query_25to50 );
+                                        $result_50to75 = mysqli_query($con,$query_50to75 );
+                                        $result_75to100 = mysqli_query($con,$query_75to100 );
 
                                         $row_0to25 = mysqli_fetch_assoc($result_0to25);
-                                        $row_26to50 = mysqli_fetch_assoc($result_26to50);
-                                        $row_51to75 = mysqli_fetch_assoc($result_51to75);
-                                        $row_76to100 = mysqli_fetch_assoc($result_76to100);
+                                        $row_25to50 = mysqli_fetch_assoc($result_25to50);
+                                        $row_50to75 = mysqli_fetch_assoc($result_50to75);
+                                        $row_75to100 = mysqli_fetch_assoc($result_75to100);
 
-                                        $print_array_0 = array('0' => '0%-25%', '1' => '26%-50%' , '2' => '51%-75%' , '3' =>'76%-100%');
-                                        $print_array_1= array('0' => $row_0to25['COUNT(Avg_Attendance)'] ,'1' =>$row_26to50['COUNT(Avg_Attendance)'] ,'2' => $row_51to75['COUNT(Avg_Attendance)'] , '3' => $row_76to100['COUNT(Avg_Attendance)']); 
+                                        $print_array_0 = array('0' => '0%-25%', '1' => '25%-50%' , '2' => '50%-75%' , '3' =>'75%-100%');
+                                        $print_array_1= array('0' => $row_0to25['COUNT(Avg_Attendance)'] ,'1' =>$row_25to50['COUNT(Avg_Attendance)'] ,'2' => $row_50to75['COUNT(Avg_Attendance)'] , '3' => $row_75to100['COUNT(Avg_Attendance)']);
 
                                         $final_array= array(array());
                                         for ($i=0; $i <4 ; $i++)
@@ -460,13 +460,13 @@ require_once('includes/functions.php');
                                 <div id="visualization10">
                                     <?php
                                         //query all records from the database
-                                        $query_0 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 0 ";
-                                        $query_1 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 1 ";
-                                        $query_2 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 2 ";
+                                        $query_0 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 0";
+                                        $query_1 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 1";
+                                        $query_2 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 2";
                                         $query_3 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 3";
                                         $query_4 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 4";
                                         $query_5 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions = 5";
-                                        $query_6 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions BETWEEN 6 AND 100 ";
+                                        $query_6 = "SELECT COUNT(Total_Questions) FROM `nagarsevak` WHERE Total_Questions > 5";
 
                                         $result_0 = mysqli_query($con,$query_0 );//execute the query
                                         $result_1 = mysqli_query($con,$query_1 );
@@ -484,7 +484,7 @@ require_once('includes/functions.php');
                                         $row_5 = mysqli_fetch_assoc($result_5);
                                         $row_6 = mysqli_fetch_assoc($result_6);
 
-                                        $print_array_0 = array('0' => '0', '1' => '1' , '2' => '2' , '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'6 - 100');
+                                        $print_array_0 = array('0' => '0', '1' => '1' , '2' => '2' , '3' =>'3', '4' =>'4', '5' =>'5', '6' =>'More than 5');
                                         $print_array_1= array('0' => $row_0['COUNT(Total_Questions)'] ,'1' =>$row_1['COUNT(Total_Questions)'] ,'2' => $row_2['COUNT(Total_Questions)'] , '3' => $row_3['COUNT(Total_Questions)'], '4' => $row_4['COUNT(Total_Questions)'], '5' => $row_5['COUNT(Total_Questions)'], '6' => $row_6['COUNT(Total_Questions)']);
 
                                         $final_array= array(array());
