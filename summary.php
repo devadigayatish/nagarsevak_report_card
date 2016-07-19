@@ -51,6 +51,23 @@ require_once('includes/functions.php');
             <div class="container">
                 <div class="row">
                     <div class="container">
+
+                        <div class="col-md-12 table-bordered animate-box ">
+                            <div class="text-center">
+                                <?php
+                                    $nagarsevak_count_query = "SELECT COUNT(Prabhag_No) AS Count FROM `nagarsevak`";
+                                    $nagarsevak_count_array = mysqli_query($con,$nagarsevak_count_query);
+                                    $nagarsevak_count = mysqli_fetch_array($nagarsevak_count_array)['Count'];
+                                    $query_overall_expense = "SELECT SUM(Amount) AS Amount FROM `work_details`";
+                                    $result_overall_expense = mysqli_query($con,$query_overall_expense );  //execute the query
+                                    $amount_overall_expense = round(mysqli_fetch_array($result_overall_expense)['Amount'],2);
+                                    $amount_avg_nagarsevak = round($amount_overall_expense / $nagarsevak_count,2);
+                                ?>
+                                <h3>Total Amount spent by All Nagarsevaks &nbsp;:&nbsp; Rs <?php echo $amount_overall_expense; ?></h3>
+                                <h3>Average Amount spent by Each Nagarsevak &nbsp;:&nbsp; Rs <?php echo $amount_avg_nagarsevak; ?></h3>
+                            </div>
+                        </div>
+
                         <div class="col-md-12 table-bordered animate-box">
                             <div class="text-center"><h3>Top 5 Works per Year</h3></div>
                                 <div id="visualization8">

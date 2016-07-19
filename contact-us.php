@@ -12,21 +12,6 @@ require_once('includes/functions.php');
     <?php
         require_once('header.php');
     ?>
-    <script>
-    function checkEmail()
-    {
-        var email = document.getElementById('txtEmail');
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        if (!filter.test(email.value))
-        {
-        alert('Please provide a valid email address');
-        email.focus;
-        return false;
-        }
-        
-    }
-    </script>
     </head>
     <body>
 
@@ -65,53 +50,43 @@ require_once('includes/functions.php');
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo SITE_URL;?>assets/images/home-image.jpg);"></div>
             </div>
 
-            <div id="fh5co-about" style="padding-top: 50px;">
-
-                
-                <div class="container animate-box">
+            <div id="fh5co-about" style="padding-top: 25px;">
+                <div class="container">
                     <div class="row row-bottom-padded-md">
-                        <div class="col-md-8">
-                            <h2><strong> REPORT BUG / GIVE SUGGESTIONS</strong></h2>
-                            <br>
-                            <p>
-                                Thanks for coming here !!!
-                                <br>
-                                We welcome your suggestions to improve this website. Let us know what more information you would like to see on this website. Also if you find any errors or bugs, kindly bring it to our notice. We would try to fix it as early as possible.
-                            </p>
-
-                            <?php
-                            require_once('includes/email-sender.php')
-                            ?>
-                            <form action="" method="post" enctype='multipart/form-data' onsubmit="return checkEmail();">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <input type="text" id="txtEmail"  name="email" required="" class="form-control" placeholder="Your Email ID">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" required="" class="form-control" id="" cols="30" rows="7" placeholder="Please give a detailed description about the issue or suggestion"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type='file' name='userFile'> 
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="submit" value="Submit" name="submit" class="btn btn-primary" />
-                                </div>
-                            </div>
-                            </form>          
+                        <div class="col-md-12 animate-box fadeInUp animated" style="padding-bottom: 25px;">
+                            <h3><strong> CONTACT US </strong></h3>
                         </div>
+
+                        <div class="col-md-6 col-sm-6 animate-box">
+                            <div class="text-center">
+                            <h3><strong><u> PARIVARTAN </u></strong></h3>
+                            <p>
+                                Email : parivartan.bharat@gmail.com
+                            </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-6 col-sm-6 animate-box">
+                            <div class="text-center">
+                            <h3><strong><u> STARTUP PARTNER PVT LTD </u></strong></h3>
+                            <p>
+                                6th Floor, A-Wing, <br>
+                                Manikchand Galleria,<br>
+                                Near Deep Bangla Chowk, Model Colony,<br>
+                                Shivaji Nagar, Pune - 411016<br>
+                            </p>
+                            <p>
+                                Email : info@startuppartner.co.in
+                            </p>
+                            </div>
+                        </div>
+
                     </div>
-                
                 </div>
             </div>
+
             <?php
-                require_once('footer.php');
-                
+                include'footer.php';
             ?>
         </div>
     </div>
