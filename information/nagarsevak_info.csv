@@ -24,7 +24,7 @@
 12B,PAWAR RAJU / DATTATRAY RAMCHANDRA,12B,images/photos/12B.jpg,Model Colony,Ghole Road ,MNS,0,0,Yes,csv/12B.csv,Male
 13A,SANE ASHA RAJESH,13A,images/photos/13A.jpg,Narveer Tanajiwadi,Ghole Road ,MNS,0,0,No,csv/13A.csv,Female
 13B,BHOSALE RESHMA ANIL,13B,images/photos/13B.jpg,Narveer Tanajiwadi,Ghole Road ,NCP,0,0,Yes,csv/13B.csv,Female
-14A,PARDESHI MEENA RAVI,14A,images/photos/14A.jpg,Deccan College,Yerawda - Sangamwadi ,RPI,0,0,No,csv/14A.csv,Female
+14A,BHAGYASHREE GAWALI,14A,images/photos/14A.jpg,Deccan College,Yerawda - Sangamwadi ,RPI,0,0,No,csv/14A.csv,Female
 14B,BHOSALE SANJAY SHASHIKANT,14B,images/photos/14B.jpg,Deccan College,Yerawda - Sangamwadi,SS,0,0,No,csv/14B.csv,Male
 15A,ARADE SHASHIKALA SUDAM,15A,images/photos/15A.jpg,Rajguru Road,Yerawda - Sangamwadi,INC,0,0,No,csv/15A.csv,Female
 15B,VITKAR KISHOR RAJARAM,15B,images/photos/15B.jpg,Rajguru Road,Yerawda - Sangamwadi,NCP,0,0,Yes,csv/15B.csv,Male
@@ -49,7 +49,7 @@
 25A,MANJALKAR NEETA AANAND,25A,images/photos/25A.jpg,Wadarwadi-Pandavnagar,Ghole Road ,SS,0,0,No,csv/25A.csv,Female
 25B,ALGUDE MUKARI ANNA,25B,images/photos/25B.jpg,Wadarwadi-Pandavnagar,Ghole Road ,INC,0,0,No,csv/25B.csv,Male
 26A,JADHAV ASHWINI TUKARAM,26A,images/photos/26A.jpg,MIT - Kelewadi,Kothrud ,INC,0,0,No,csv/26A.csv,Female
-26B,MANKAR DEEPAK MADHAV,26B,images/photos/26B.jpg,MIT - Kelewadi,Kothrud ,INC,0,0,Yes,csv/26B.csv,Male
+26B,MANKAR DEEPAK MADHAV,26B,images/photos/26B.jpg,MIT - Kelewadi,Kothrud ,NCP,0,0,Yes,csv/26B.csv,Male
 27A,MARATHE VAISHALI RAJENDRA,27A,images/photos/27A.jpg,Sutardara-Kishkindha Naga,Kothrud ,INC,0,0,Yes,csv/27A.csv,Female
 27B,KADAM RAMCHANDRA / CHANDUSHETH AATMARAM,27B,images/photos/27B.jpg,Sutardara-Kishkindha Naga,Kothrud ,INC,0,0,No,csv/27B.csv,Male
 28A,MARNE JAYASHREE GAJANAN,28A,images/photos/28A.jpg,ARDE - Mhatobanagar,Kothrud ,MNS,0,0,Yes,csv/28A.csv,Female
@@ -86,7 +86,7 @@
 43B,PAWAR RANJANA SHIVAJI,43B,images/photos/43B.jpg,Sadhana Vidyalay,Hadapsar ,NCP,0,0,No,csv/43B.csv,Female
 44A,BANKAR VAISHALI SUNIL,44A,images/photos/44A.jpg,Gliding Centre,Hadapsar ,NCP,0,0,No,csv/44A.csv,Female
 44B,DESHMUKH VIJAY,44B,images/photos/44B.jpg,Gliding Centre,Hadapsar ,SS,0,0,No,csv/44B.csv,Male
-45A,SAYYAD FARUK YASIN / FARUKBHAI INAMDAR,45A,images/photos/45A.jpg,Mohammadwadi,Hadapsar ,SS,0,0,Yes,csv/45A.csv,Male
+45A,SAYYAD FARUK YASIN / FARUKBHAI INAMDAR,45A,images/photos/45A.jpg,Mohammadwadi,Hadapsar ,NCP,0,0,Yes,csv/45A.csv,Male
 45B,WADKAR VIJAYA POPAT,45B,images/photos/45B.jpg,Mohammadwadi,Hadapsar ,INC,0,0,No,csv/45B.csv,Female
 46A,LONDHE SATISHBHAU VAMANRAO,46A,images/photos/46A.jpg,Wanavdi - Ramtekdi,Kondhwa Wanavdi ,INC,0,0,Yes,csv/46A.csv,Male
 46B,SHIVARKAR KAVITA CHANDRAKANT,46B,images/photos/46B.jpg,Wanavdi - Ramtekdi,Kondhwa Wanavdi ,INC,0,0,No,csv/46B.csv,Female
@@ -122,7 +122,7 @@
 61B,JAGTAP PRASHANT SUDAM,61B,images/photos/61B.jpg,Kedar Vasti - Azadnagar,Kondhwa Wanavdi ,NCP,0,0,No,csv/61B.csv,Male
 62A,THOSAR SANGITATAI RAJENDRA,62A,images/photos/62A.jpg,"Kondhwa Budruk, Gokulnagar",Kondhwa Wanavdi ,BJP,0,0,Yes,csv/62A.csv,Female
 62B,TILEKAR YOGESH PUNDALIK,62B,images/photos/62B.jpg,"Kondhwa Budruk, Gokulnagar",Kondhwa Wanavdi ,BJP,0,0,Yes,csv/62B.csv,Male
-63A,RAYIS RASHID SUNDAKE,63A,images/photos/63A.jpg,Bhagyodaynagar,Kondhwa Wanavdi ,SS,0,0,No,csv/63A.csv,Male
+63A,RAYIS RASHID SUNDAKE,63A,images/photos/63A.jpg,Bhagyodaynagar,Kondhwa Wanavdi ,INC,0,0,No,csv/63A.csv,Male
 63B,BABAR AARTI SAINATH,63B,images/photos/63B.jpg,Bhagyodaynagar,Kondhwa Wanavdi ,MNS,0,0,No,csv/63B.csv,Female
 64A,BHIMALE SHRINATH YASHWANT,64A,images/photos/64A.jpg,Salisbury Park,Bibvewadi,BJP,0,0,Yes,csv/64A.csv,Male
 64B,VAIRAGE KAVITA BHARAT,64B,images/photos/64B.jpg,Salisbury Park,Bibvewadi,BJP,0,0,No,csv/64B.csv,Female
@@ -132,8 +132,8 @@
 66B,CHAJED ABHAY BHAKCHAND,66B,images/photos/66B.jpg,Adinath Society,Sahakarnagar ,INC,0,0,No,csv/66B.csv,Male
 67A,BAGUL AABA / ULHAS VASANTRAO,67A,images/photos/67A.jpg,Aranyeshwar Taware Colony,Sahakarnagar ,INC,0,0,No,csv/67A.csv,Male
 67B,KADAM ASHWINI NITIN,67B,images/photos/67B.jpg,Aranyeshwar Taware Colony,Sahakarnagar ,NCP,0,0,No,csv/67B.csv,Female
-68A,JAGTAP USHA SUBHASH,68A,images/photos/68A.jpg,Sahakarnagar - Taljai,Sahakarnagar ,INC,0,0,Yes,csv/68A.csv,Female
-68B,JAGTAP SUBHASH DIGAMBAR,68B,images/photos/68B.jpg,Sahakarnagar - Taljai,Sahakarnagar ,INC,0,0,Yes,csv/68B.csv,Male
+68A,JAGTAP USHA SUBHASH,68A,images/photos/68A.jpg,Sahakarnagar - Taljai,Sahakarnagar ,NCP,0,0,Yes,csv/68A.csv,Female
+68B,JAGTAP SUBHASH DIGAMBAR,68B,images/photos/68B.jpg,Sahakarnagar - Taljai,Sahakarnagar ,NCP,0,0,Yes,csv/68B.csv,Male
 69A,TAPKIR VARSHA VILAS,69A,images/photos/69A.jpg,Dhankawadi Padmavati,Dhankawadi ,BJP,0,0,No,csv/69A.csv,Female
 69B,BHOSALE SHIVLAL NAMDEVRAO,69B,images/photos/69B.jpg,Dhankawadi Padmavati,Dhankawadi ,NCP,0,0,No,csv/69B.csv,Male
 70A,SHILIMKAR RAJENDRA YASHWANT,70A,images/photos/70A.jpg,Bibvewadi and KK Market,Bibvewadi,BJP,0,0,Yes,csv/70A.csv,Male
