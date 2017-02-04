@@ -187,8 +187,19 @@ require_once('includes/functions.php');
         <!-- end:header-top -->
         <div id="fh5co-work-section" style="padding-top: 25px;">
 
+
+
             <div class="container">
                 <div class="row">
+
+
+                    <div class="container">
+                    <div class="well">
+                        <div class="text-center"><strong>पुणे महानगर पालिका निवडणूक २०१७ च्या उमेदवारांचे शपथ पत्र  &nbsp;&nbsp;<a class="btn btn-primary" href="https://goo.gl/forms/xCunWwufnTc4H5w93" target="_blank">Click here</a></strong></div>
+                    </div>
+                    </div>
+
+
                     <div class="container animate-box">
                         <div class="col-md-6 col-sm-6">
                         <div class="text-center"><strong>Select Prabhag area on the map</strong></div>
