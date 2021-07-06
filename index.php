@@ -158,7 +158,7 @@ require_once('includes/functions.php');
                         <h1 id="fh5co-logo">
                             <img src="<?php echo SITE_URL ?>assets/images/logo/parivartan_logo_black.jpg" style="width: 150px; height: 50px; margin: 0px 15px 10px 0px;">
                             <a href="index.php">
-                                <span>Nagarsevak Report Card</span>
+                                <span>Nagarsevak Report Card 2</span>
                             </a>
                         </h1>
                         <!-- START #fh5co-menu-wrap -->
