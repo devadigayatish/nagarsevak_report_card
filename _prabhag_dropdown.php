@@ -49,14 +49,16 @@
         <option value='44'>Prabhag 44: Gliding Centre</option>
         <option value='45'>Prabhag 45: Mohammadwadi</option>
     </optgroup>
-    <optgroup label='Kasba Vishrambagwada'><option value='37'>Prabhag 37: Shaniwarwada</option>
+    <optgroup label='Kasba Vishrambagwada'>
+        <option value='37'>Prabhag 37: Shaniwarwada</option>
         <option value='38'>Prabhag 38: Kasba Peth</option>
         <option value='49'>Prabhag 49: Dr. Kotnis Hospital</option>
         <option value='50'>Prabhag 50: Mahatma Phule Mandai</option>
         <option value='51'>Prabhag 51: Tilak Smarak Mandir</option>
         <option value='58'>Prabhag 58: Mahatma Phule Smarak</option>
     </optgroup>
-    <optgroup label='Kondhwa Wanavdi'><option value='41'>Prabhag 41: Sopan Baug - Vikasnagar</option>
+    <optgroup label='Kondhwa Wanavdi'>
+        <option value='41'>Prabhag 41: Sopan Baug - Vikasnagar</option>
         <option value='46'>Prabhag 46: Wanavdi - Ramtekdi</option>
         <option value='61'>Prabhag 61: Kedar Vasti - Azadnagar</option>
         <option value='62'>Prabhag 62: Kondhwa Budruk, Gokulnagar</option>
