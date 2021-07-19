@@ -78,7 +78,7 @@
                                     <li class="<?=($file_name == "about-nagarsevak-report-card.php") ? "active" : ""; ?>">
                                         <a href="<?php echo SITE_URL ?>about-nagarsevak-report-card.php">About NRC</a>
                                     </li>
-                                    <li><a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html">About Parivartan</a></li>
+                                    <li><a target="_blank" href="http://www.parivartanbharat.org/about-us">About Parivartan</a></li>
                                 </ul>
                             </nav>
                         </div>

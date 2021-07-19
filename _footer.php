@@ -11,7 +11,7 @@
                                 </nav>
                                 <hr/>
                                 <p>
-                                    Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd.</strong></a> Content Provided by <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html"><strong>Parivartan.</strong></a>
+                                    Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd.</strong></a> Content Provided by <a target="_blank" href="http://www.parivartanbharat.org/about-us"><strong>Parivartan.</strong></a>
                                 </p>
                                 <p>
                                 <a href="https://github.com/devadigayatish/nagarsevak_report_card" target="_blank"><strong>Source Code</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;

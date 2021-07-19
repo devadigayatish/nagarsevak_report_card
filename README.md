@@ -53,10 +53,10 @@ This project is NOT Copyright protected. You're welcome to fork this project and
 
 1) Clone the project on your machine.  
 2) Inside the project folder, execute the following commands :  
-cp _config.php.sample _config.php
+cp _config.php.sample _config.php  
 cp includes/email-sender.php.sample includes/email-sender.php  
-cp visitors.txt.sample visitors.txt
-3) Update your database details in _config.php
+cp visitors.txt.sample visitors.txt  
+3) Update your database details in _config.php  
 4) Update your email sending related configuration in includes/email-sender.php  
 5) The main .xlsx files that contain sheets for each prabhag should be present in csv/main-files folder. After running the scripts, the output files will be created in csv folder.
 6) The php scripts should be run in following order :  
