@@ -7,7 +7,7 @@
                                 <a href="<?php echo SITE_URL ?>index.php" class="btn btn-primary"><strong>Home</strong></a>&nbsp;&nbsp;
                                 <a href="<?php echo SITE_URL ?>summary.php" class="btn btn-primary"><strong>Summary</strong></a>&nbsp;&nbsp;
                                 <a href="<?php echo SITE_URL ?>about-nagarsevak-report-card.php" class="btn btn-primary"><strong>About Nagarsevak Report Card</strong></a>&nbsp;&nbsp;
-                                <a target="_blank" href="http://parivartan-pune.blogspot.in/p/about-us.html" class="btn btn-primary"><strong>About Parivartan</strong></a>&nbsp;&nbsp;
+                                <a target="_blank" href="http://www.parivartanbharat.org/about-us" class="btn btn-primary"><strong>About Parivartan</strong></a>&nbsp;&nbsp;
                                 </nav>
                                 <hr/>
                                 <p>

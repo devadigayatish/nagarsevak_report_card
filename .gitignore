@@ -1,4 +1,4 @@
-includes/db_connection.php
+_config.php
 includes/email-sender.php
 uploads/attachments/*
 uploads/original-rti-replies/*.pdf
