@@ -38,7 +38,6 @@
         print_r_pre("---------------");
     }
 
-
     function import_code($con, $fp)
     {
         $table = "codes";

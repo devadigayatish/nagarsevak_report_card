@@ -62,6 +62,4 @@
 	}
 	// Zip archive will be created only after closing object
 	$zip->close();
-
-
 ?>
