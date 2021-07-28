@@ -13,7 +13,14 @@
         $filename = $list[$i];
         if(!is_dir($filename))
         {
-            if(!in_array($filename, ["Expenses Master.csv", "Codes.csv", "Attendance Master.csv", "QuestionsAsked Master.csv"]))
+            if(!in_array($filename, [
+                    "Expenses Master.csv", 
+                    "Personal Info Master.csv", 
+                    "Codes.csv", 
+                    "Attendance Master.csv", 
+                    "QuestionsAsked Master.csv"
+                ])
+            )
             {
                 $file = $dirCSV . "/" . $filename;
                 $fp = fopen($file,"r");
