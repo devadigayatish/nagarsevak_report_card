@@ -2,12 +2,12 @@
     require_once('./../_config.php');
     require_once './../includes/lib/PHPExcel.php';
 
-	$dirZIP = './../documents/data-files';
-	$dirCSV = './../documents/data-files/csv';
+	$dirZIP = './../uploads/data-files';
+	$dirCSV = './../uploads/data-files/csv';
 
     $fileType = 'Excel2007';
 
-    $inputFileName = './../documents/data-files/NRC21_master_file.xlsx';
+    $inputFileName = './../uploads/data-files/NRC21_master_file.xlsx';
 	print "Input file : ". str_replace("./../", "", $inputFileName) . "<br>";
 
 	$objPHPExcelReader = PHPExcel_IOFactory::createReader($fileType);

@@ -42,8 +42,8 @@
                 $info = $row;
             }
 
+            include("html/profile_info.php");
             if($basic && $info){
-                include("html/profile_info.php");
             }
         }
     }

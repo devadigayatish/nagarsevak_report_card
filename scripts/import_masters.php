@@ -1,7 +1,7 @@
 <?php
     require_once('./../_config.php');
 
-    $dirCSV = './../documents/data-files/csv';
+    $dirCSV = './../uploads/data-files/csv';
 
     $filename = $dirCSV . "/Expenses Master.csv";
     $fp = fopen($filename,"r");

@@ -1,7 +1,7 @@
 <?php
     require_once('./../_config.php');
 
-    $dirCSV = './../documents/data-files/csv';
+    $dirCSV = './../uploads/data-files/csv';
 
     $table = "work_details";
     $query = "TRUNCATE TABLE " . $table;
