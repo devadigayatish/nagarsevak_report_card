@@ -1,4 +1,4 @@
-<div class='col-sm-6 col-md-3'>
+<div class='<?=$config["class_name"]; ?>'>
     <div class='text-center'><h3>Prabhag No <?=$prabhag; ?></h3></div>
     <?php
         if($data){   ?>

@@ -29,24 +29,64 @@
 
             <div class="container-fluid">
                 <div class="col-lg-12 col-md-12 text-center animate-box" style="margin-top: 15px;">
-                    <?php include_once('_prabhag_dropdown.php'); ?>
-                    <div id="prabhag_no_info"></div>
-                    <div id="profile_info"></div>
+                    <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
+                    <select class="input-group-sm text-left" id="users" name="users" style="width:60%;" onchange="showUser(this.value)">
+                        <?php
+                            $query = "SELECT Ward_ofc FROM wardoffice GROUP BY Ward_ofc ORDER BY Ward_ofc";
+                            $result = mysqli_query($con, $query);
+                            if ($result->num_rows > 0) {
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    ?> <optgroup label='<?=$row["Ward_ofc"]; ?>'> <?php
+
+                                    $query = "SELECT Prabhag_No, Prabhag_Name FROM wardoffice 
+                                        WHERE Ward_ofc = '". $row["Ward_ofc"] ."' ORDER BY Prabhag_No, Prabhag_Name";
+                                    $res = mysqli_query($con, $query);
+                                    if ($res->num_rows > 0) {
+                                        while($r = mysqli_fetch_assoc($res)) {
+                                            ?> <option value='<?=$r["Prabhag_No"]; ?>'>Prabhag <?=$r["Prabhag_No"]; ?>: <?=$r["Prabhag_Name"]; ?></option> <?php
+                                        }
+                                    }
+                                    ?> </optgroup> <?php
+                                }
+                            }
+                        ?>
+                    </select>
+                    <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
+
+                    <div id="prabhag_no_info" class="row"></div>
+                    <div id="profile_info" class="row"></div>
                 </div>
             </div>
 
             <div class="container-fluid animate-box">
                 <div class='text-center'><h2><strong>UTILIZATION OF WARD LEVEL FUNDS</strong></h2></div>
-                <div id="details_of_work" class="row"></div>
+                <div id="details_of_work" class=""></div>
             </div>
 
             <div class="container-fluid animate-box">
-                <div id="details_of_work_chart" class="row"></div>
-            </div>
+                <div id="details_of_work_chart" class=""></div>
+            </div><br>
 
             <div class="container-fluid">
                 <div class="col-md-12 col-sm-12">
-                    <div id="downloaded_data" class="text-center animate-box"></div>
+                    <div id="downloaded-data" class="text-center animate-box">
+                        <div class='text-center'><h2>Download Data</h2></div>
+                        <div id='downloadList' class='row nav'>
+                            <a class='btn btn-primary' target='_self' rel='' 
+                                href='uploads/data-files/Nagarsevak_Full_Data.zip' 
+                                data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'
+                            >All Prabhags</a>&nbsp
+                            <a class='btn btn-primary' target='_self' rel='' 
+                                href='original-rti-replies.php' 
+                                data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'
+                            >Original RTI Replies</a>&nbsp
+
+                            <a class='btn btn-primary' target='_blank' rel='' 
+                                href='uploads/data-files/Nagarsevak_Contact_Info.pdf' 
+                                data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'
+                            >Nagarsevak Contact Info</a>&nbsp
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
