@@ -20,23 +20,31 @@
     {
         $prabhag_num = $_POST["i"];
 
-        $list = ["A", "B", "A", "B"]; //, "C", "D"];
+        $list = ["A", "B", "C", "D"];
 
         foreach($list as $lbl)
         {
+            $basic = $info = [];
+
             $prabhag = $prabhag_num . $lbl;
 
             $query = "SELECT Nagarsevak_Name, URL FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "'";
             $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_assoc($result);
-            $basic = $row;
+            if ($result->num_rows > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $basic = $row;
+            }
 
             $query = "SELECT Party, Total_Questions, Avg_Attendance, Criminal_Records FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "'";
             $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_assoc($result);
-            $info = $row;
+            if ($result->num_rows > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $info = $row;
+            }
 
             include("html/profile_info.php");
+            if($basic && $info){
+            }
         }
     }
 
@@ -44,7 +52,7 @@
     {
         $prabhag_num = $_POST["i"];
 
-        $list = ["A", "B", "A", "B"]; //, "C", "D"];
+        $list = ["A", "B", "C", "D"];
 
         foreach($list as $lbl)
         {
@@ -87,7 +95,7 @@
     {
         $prabhag_num = $_POST["i"];
 
-        $list = ["A", "B", "A", "B"]; //, "C", "D"];
+        $list = ["A", "B", "C", "D"];
 
         foreach($list as $lbl)
         {
@@ -146,7 +154,7 @@
     {
         $prabhag_num = $_POST["i"];
 
-        $list = ["A", "B", "A", "B"]; //, "C", "D"];
+        $list = ["A", "B", "C", "D"];
 
         include("html/downloaded_data.php");
     }

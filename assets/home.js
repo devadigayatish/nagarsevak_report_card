@@ -148,95 +148,73 @@ function showUser(str)
     }
 }
 
-var DATAPATH = "uploads/";
-var wardMAX = 76;
-var wardColumn = 'prabhag_no';
-
-var MBAttrib = '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> Contributors & <a href="https://www.mapbox.com/about/maps/">Mapbox</a>';
-var OsmIndia = L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {id: 'openstreetmap.1b68f018', attribution: MBAttrib});
-
-var map = L.map('map', {zoomControl: true,
+var map = L.map('map', {
+    zoomControl: true,
     scrollWheelZoom: false,
-    layers: [OsmIndia] //only add one! put the rest in the baselayers group
 }).setView([18.51, 73.86], 12);
 
-clickLayer = L.geoJson(null, {
-    onEachFeature:
-            function (feature, layer)
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+function style(feature) {
+    return {
+        weight: 1,
+        opacity: 1,
+        color: 'black',
+        dashArray: '0',
+        fillOpacity: 0.4,
+        fillColor: 'orange'
+    };
+}
+
+var geojson;
+
+$.get('uploads/pune-electoral-wards-more.geojson', [], function(data, status){
+    geojson = L.geoJson(data, {
+        style: style,
+        onEachFeature: onEachFeature
+    }).addTo(map);
+}, "json");
+
+function onEachFeature(feature, layer) {
+    var labelText = feature.properties['prabhag_number'] + ': ' + feature.properties['prabhag_name'];
+    layer.bindLabel(labelText).addTo(map);
+    layer.on({
+        click: function(e){
+            
+            $.each(layer._map._layers, function(i, it){
+                geojson.resetStyle(it);
+            });    
+
+            selectedLayer = e.target;
+
+            selectedLayer.setStyle({
+                weight: 1,
+                color: 'black',
+                dashArray: '0',
+                fillOpacity: 0.5,
+                fillColor:'yellow'
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                selectedLayer.bringToFront();
+            }
+
+            showUser(feature.properties['prabhag_number']);
+            var dropdown = document.getElementById("users");
+            for (var i = 0; i < dropdown.options.length; i++)
             {
-                var labelText = feature.properties['wardnum'] + ': ' + feature.properties['title'];
-                layer.bindLabel(labelText).addTo(map);
-                layer.setStyle({
-                    weight: 1,
-                    opacity: 1,
-                    color: 'black',
-                    dashArray: '0',
-                    fillOpacity: 0.4,
-                    fillColor: 'orange'
-                });
-
-                function highlightFeature(e)
+                if (parseInt(dropdown.options[i].value) == parseInt(feature.properties['prabhag_number']))
                 {
-                    var layer = e.target;
-                    layer.setStyle({
-                        weight: 2,
-                        color: '#fff',
-                        dashArray: '0',
-                        fillOpacity: 0.05
-                    });
-                    if (!L.Browser.ie && !L.Browser.opera)
-                    {
-                        layer.bringToFront();
-                    }
+                    dropdown.options[i].selected = true;
+                    break;
                 }
-
-                function resetHighlight(e)
-                {
-                    var layer = e.target;
-                    layer.setStyle({
-                        weight: 1,
-                        color: 'black',
-                        dashArray: '0',
-                        fillOpacity: 0.4
-                    });
-                }
-
-                function prabhagChange(e)
-                {
-                    showUser(feature.properties['wardnum']);
-                    // from http://stackoverflow.com/a/10029429/4355695
-                    var dropdown = document.getElementById("users");
-                    for (var i = 0; i < dropdown.options.length; i++)
-                    {
-                        if (parseInt(dropdown.options[i].value) == parseInt(feature.properties['wardnum']))
-                        {
-                            dropdown.options[i].selected = true;
-                            break;
-                        }
-                    }
-                    var layer = e.target;
-                    layer.setStyle({
-                        weight: 2,
-                        color: 'black',
-                        dashArray: '0',
-                        fillOpacity: 0.5,
-                        fillColor:'yellow'
-                    });
-                    if (!L.Browser.ie && !L.Browser.opera)
-                    {
-                        layer.bringToFront();
-                    }
-                }
-                layer.on({
-                    //mouseover: highlightFeature,
-                    // mouseout: resetHighlight,
-                    click: prabhagChange
-                });
-
-            } //END OF ON EACH FEATURE
-}); //END of wards geojson layer definition 
-omnivore.geojson(DATAPATH + 'pune-electoral-wards-more.geojson', null, clickLayer);
-clickLayer.addTo(map);
+            }
+        }
+    });
+}
 
 var selected_dropdown = document.getElementById("users");
 var strUser = selected_dropdown.options[selected_dropdown.selectedIndex].value;

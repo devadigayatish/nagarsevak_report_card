@@ -1,5 +1,5 @@
 <div class='col-sm-6 col-md-3 text-center'>
-    <img style='width:100px; height: 125px;' src="<?=SITE_URL.'assets/'. $basic['URL']; ?>">
+    <img style='width:100px; height: 125px;' src="<?=SITE_URL.'assets/images/photos/'. $prabhag . '.jpg'; ?>">
     <div class='nagarsevak-name'><?=$basic['Nagarsevak_Name']; ?></div>
 
     <table class='table table-bordered table-striped nagarsevak-short-info'>
