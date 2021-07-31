@@ -184,9 +184,13 @@ function onEachFeature(feature, layer) {
     layer.on({
         click: function(e){
             
-            var layer = e.target;
+            $.each(layer._map._layers, function(i, it){
+                geojson.resetStyle(it);
+            });    
 
-            layer.setStyle({
+            selectedLayer = e.target;
+
+            selectedLayer.setStyle({
                 weight: 1,
                 color: 'black',
                 dashArray: '0',
@@ -195,7 +199,7 @@ function onEachFeature(feature, layer) {
             });
 
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                layer.bringToFront();
+                selectedLayer.bringToFront();
             }
 
             showUser(feature.properties['prabhag_number']);
@@ -211,77 +215,6 @@ function onEachFeature(feature, layer) {
         }
     });
 }
-
-
-
-
-
-
-// clickLayer = L.geoJson(null, {
-//     onEachFeature:
-//             function (feature, layer)
-//             {
-//                 var labelText = feature.properties['prabhag_number'] + ': ' + feature.properties['prabhag_name'];
-//                 layer.bindLabel(labelText).addTo(map);
-//                 layer.setStyle({
-//                     weight: 1,
-//                     opacity: 1,
-//                     color: 'black',
-//                     dashArray: '0',
-//                     fillOpacity: 0.4,
-//                     fillColor: 'orange'
-//                 });
-
-//                 layer.on({
-//                     click: function prabhagChange(e)
-//                     {
-//                         // console.log(layer);
-//                         // e.resetStyle();
-
-//                         console.log($(e.target).parent());
-
-//                         // (e.layer).setStyle({
-//                         //     weight: 1,
-//                         //     opacity: 1,
-//                         //     color: 'black',
-//                         //     dashArray: '0',
-//                         //     fillOpacity: 0.4,
-//                         //     fillColor: 'orange'
-//                         // });
-
-                        
-                        
-//                         showUser(feature.properties['prabhag_number']);
-//                         // from http://stackoverflow.com/a/10029429/4355695
-//                         var dropdown = document.getElementById("users");
-//                         for (var i = 0; i < dropdown.options.length; i++)
-//                         {
-//                             if (parseInt(dropdown.options[i].value) == parseInt(feature.properties['prabhag_number']))
-//                             {
-//                                 dropdown.options[i].selected = true;
-//                                 break;
-//                             }
-//                         }
-    
-//                         var layerPart = e.target;
-//                         layerPart.setStyle({
-//                             weight: 2,
-//                             color: 'black',
-//                             dashArray: '0',
-//                             fillOpacity: 0.5,
-//                             fillColor:'yellow'
-//                         });
-//                         if (!L.Browser.ie && !L.Browser.opera)
-//                         {
-//                             layerPart.bringToFront();
-//                         }
-//                     }
-//                 });
-
-//             } //END OF ON EACH FEATURE
-// }); //END of wards geojson layer definition 
-// omnivore.geojson(DATAPATH + 'pune-electoral-wards-more.geojson', null, clickLayer);
-// clickLayer.addTo(map);
 
 var selected_dropdown = document.getElementById("users");
 var strUser = selected_dropdown.options[selected_dropdown.selectedIndex].value;
