@@ -89,7 +89,7 @@
                             $result = mysqli_query($con, $query);
                             $row_M = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_M['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_M["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_M['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_M['Prabhag_No']; ?></td></tr>
@@ -105,7 +105,7 @@
                             $result = mysqli_query($con, $query);
                             $row_F = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_F['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_F["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_F['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_F['Prabhag_No']; ?></td></tr>
@@ -126,7 +126,7 @@
                             $result = mysqli_query($con, $query);
                             $row_M = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_M['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_M["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_M['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_M['Prabhag_No']; ?></td></tr>
@@ -142,7 +142,7 @@
                             $result = mysqli_query($con, $query);
                             $row_F = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_F['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_F["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_F['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_F['Prabhag_No']; ?></td></tr>
@@ -163,7 +163,7 @@
                             $result = mysqli_query($con, $query);
                             $row_M = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_M['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_M["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_M['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_M['Prabhag_No']; ?></td></tr>
@@ -179,7 +179,7 @@
                             $result = mysqli_query($con, $query);
                             $row_F = mysqli_fetch_array($result);
                         ?>
-                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/'. $row_F['URL']; ?>"></div>
+                        <div class=''><img style='width:70px; height: 85px;' src="<?=SITE_URL.'assets/images/photos/'. $row_F["Prabhag_No"] . '.jpg'; ?>"></div>
                         <div class='nagarsevak-name'><?=$row_F['Nagarsevak_Name']; ?></div>
                         <table class='table table-bordered table-striped'>
                             <tr><td>Prabhag No</td><td><?=$row_F['Prabhag_No']; ?></td></tr>

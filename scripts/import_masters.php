@@ -84,8 +84,6 @@
             }
             $op_data["Party"] = $data_row[6];
             $op_data["Criminal_Records"] = $data_row[7];
-            $op_data["Total_Questions"] = $data_row[8];
-            $op_data["Avg_Attendance"] = $data_row[9];
 
             if(!array_filter($op_data)){
                 continue;
@@ -205,13 +203,14 @@
                 continue;
             }
             
+            $total_attendance_per = [];
             foreach ($yrs as $key => $value) {
                 $op_data = [];
                 $op_data["Prabhag_No"] = $data_row[1];
                 $op_data["Year"] = $value;
                 $op_data["GB_Attendance"] = $data_row[$key + 2];
                 $op_data["GB_Meetings"] = $total_meetings[$key];
-                $op_data["Atendance_Percentage"] = str_replace("%", "", $data_row[$key + 6]);
+                $total_attendance_per[] = $op_data["Atendance_Percentage"] = str_replace("%", "", $data_row[$key + 6]);
 
                 $array_keys = $array_values = [];
                 foreach ($op_data as $key => $value) {
@@ -225,6 +224,13 @@
                 echo $query . "<br>";
                 print_r_pre($result);
             }
+
+            $Avg_Attendance = array_sum($total_attendance_per)/400;
+            $query = "UPDATE " . 'nagarsevak' . " SET Avg_Attendance = {$Avg_Attendance} WHERE Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
+            $result = mysqli_query($con, $query);
+
+            echo $query . "<br>";
+            print_r_pre($result);
         }
     }
 
@@ -254,9 +260,10 @@
             
             $table = "attendance";
 
+            $total_que = [];
             foreach ($yrs as $key => $value) {
                 $op_data = [];
-                $op_data["Questions"] = $data_row[$key + 2];
+                $total_que[] = $op_data["Questions"] = $data_row[$key + 2];
 
                 $set_data = [];
                 foreach ($op_data as $k => $val) {
@@ -272,7 +279,14 @@
 
                 echo $query . "<br>";
                 print_r_pre($result);
-            } 
+            }
+            
+            $Total_Questions = array_sum($total_que);
+            $query = "UPDATE " . 'nagarsevak' . " SET Total_Questions = {$Total_Questions} WHERE Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
+            $result = mysqli_query($con, $query);
+
+            echo $query . "<br>";
+            print_r_pre($result);
         }
     }
 ?>
