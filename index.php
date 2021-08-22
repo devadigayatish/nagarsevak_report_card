@@ -1,6 +1,7 @@
 <?php require_once('_config.php'); ?>
 
 <?php ob_start(); ?>
+<style>.detailsOfWork, .workType{display:none;}</style>
 <link rel="stylesheet" href="<?php echo SITE_URL; ?>assets/css/leaflet.css" />
 <link rel="stylesheet"href="<?php echo SITE_URL; ?>assets/css/leaflet.label.css" />
 <?php 

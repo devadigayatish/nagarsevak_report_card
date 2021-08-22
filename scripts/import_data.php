@@ -14,9 +14,8 @@
         if(!is_dir($filename))
         {
             if(!in_array($filename, [
-                    "Expenses Master.csv", 
-                    "Personal Info Master.csv", 
                     "Codes.csv", 
+                    "Expenses Master.csv", 
                     "Attendance Master.csv", 
                     "QuestionsAsked Master.csv"
                 ])
@@ -34,6 +33,7 @@
             }
         }
     }
+    echo "Done.." . mt_rand();
 
     function import_work_details($con, $fp)
     {
@@ -44,7 +44,9 @@
         {
             $data_row = fgetcsv($fp);
 
-            if(++$index <= 2 || !$data_row){
+            $index++;
+
+            if($index <= 3 || !$data_row[5]){
                 continue;
             }
 
@@ -73,8 +75,8 @@
             $query = "INSERT INTO " . $table . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
             $result = mysqli_query($con, $query);
 
-            echo $query . "<br>";
-            print_r_pre($result);
+            // echo $query . "<br>";
+            // print_r_pre($result);
         }
     }
 ?>

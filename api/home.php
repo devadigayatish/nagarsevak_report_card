@@ -21,7 +21,7 @@
         
         if ($result->num_rows > 0) {
             while($row = mysqli_fetch_assoc($result)){
-                $letters[] = str_split($row["Prabhag_No"])[1];
+                $letters[] = $row["Prabhag_No"][strlen($row["Prabhag_No"])-1];
             }
         }
 
@@ -115,7 +115,10 @@
                 }
 
                 for ($i=0; $i < count($year); $i++) { 
-                    $query = "SELECT Year, Details_Of_Work, Amount FROM work_details WHERE Prabhag_No = '".$prabhag."' && Year = '".$year[$i]."'";
+                    $query = "SELECT Year, Details_Of_Work, Code, Amount,
+                        (SELECT Work_Type FROM `codes` as tbl WHERE tbl.Code = work_details.Code) as Work_Type
+                    FROM work_details WHERE Prabhag_No = '".$prabhag."' && Year = '".$year[$i]."'";
+
                     $result = mysqli_query($con, $query);
                     if ($result->num_rows > 0) {
                         while($row = mysqli_fetch_assoc($result)){

@@ -72,3 +72,7 @@ This script reads the csv file nagarsevak_info from information folder and inser
 
 d) **create_final_table_dow.php**  
 This script reads the data from "csv_data" table and inserts into final table "work_details".  
+
+
+
+http://localhost/nagarsevak_report_card/scripts/convert_excel_to_csv.php
