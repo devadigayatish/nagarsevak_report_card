@@ -73,6 +73,11 @@ This script reads the csv file nagarsevak_info from information folder and inser
 d) **create_final_table_dow.php**  
 This script reads the data from "csv_data" table and inserts into final table "work_details".  
 
-
-
-http://localhost/nagarsevak_report_card/scripts/convert_excel_to_csv.php
+**New code installation**
+- Create DB with updated_db_structure.sql
+- Add latest "NRC21 master file.xlsx" in uploads/data-files with name - "NRC21 master file.xlsx"
+- Run follwing scripts in sequence
+    - scripts/convert_excel_to_csv.php
+    - scripts/import_master.php
+    - scripts/import_data.php
+Be sure to have Read/Write permission for uploads and uploads/csv folder

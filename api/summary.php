@@ -6,19 +6,46 @@
     $function_name = $q;
     echo call_user_func_array($function_name, array($con));
 
+    function political_party_wise_number_of_nagarsevaks($con)
+    {
+        $query = "SELECT Party, COUNT(Party) AS No_of_Nagarsevak FROM nagarsevak GROUP BY Party";
+        $result = mysqli_query($con, $query);
+
+        if( $result->num_rows > 0)
+        {
+            $json_data = [];
+            $json_data[] = ['Party', 'No of Nagarsevaks'];
+
+            while( $row = mysqli_fetch_assoc($result) ){
+                $json_data[] = [
+                    $row["Party"],
+                    (float)$row["No_of_Nagarsevak"],
+                ];
+            }
+            return json_encode($json_data);
+        }
+        else
+        {
+            return json_encode([]);
+        }
+    }
+
     function top_5_works_per_year($con)
     {
+        // $details_of_work_data = [];
+
         $details_of_work = [];
-        $query = "SELECT Details_Of_Work FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
+        $query = "SELECT * FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_assoc($result)) {
-            $details_of_work[] = $row['Details_Of_Work'];
+            // $details_of_work_data[] = $row;
+            $details_of_work[] = $row['Code'];
         }
 
         $amount = [];
         for ($i=0; $i < count($details_of_work); $i++) { 
             $amount[$i] = [];
-            $query = "SELECT SUM(Amount) AS Amount FROM `work_details` WHERE Details_Of_Work = '" . $details_of_work[$i] . "' GROUP BY Year";
+            $query = "SELECT Year, SUM(Amount) AS Amount FROM `work_details` WHERE Code = '" . $details_of_work[$i] . "' GROUP BY Year";
             $result = mysqli_query($con, $query);
             while($row = mysqli_fetch_assoc($result)) {
                 $amount[$i][] = $row['Amount'];
@@ -35,7 +62,7 @@
         }
 
         $json_data = [];
-        $prepend = ['Year', '2012-2013', '2013-2014', '2014-2015', '2015-2016'];
+        $prepend = ['Year', '2017-2018', '2018-2019', '2019-2020', '2020-2021'];
 
         $row = $details_of_work;
         array_unshift($row, array_shift($prepend));
@@ -47,7 +74,6 @@
             array_unshift($row, array_shift($prepend));
             $json_data[] = $row;
         }
-
         return json_encode($json_data);
     }
 
@@ -55,10 +81,10 @@
     {
         $details_of_work = [];
         $amount = [];
-        $query = "SELECT Details_Of_Work, SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC";
+        $query = "SELECT Code, SUM(Amount) AS Amount FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC";
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_assoc($result)) {
-            $details_of_work[] = $row['Details_Of_Work'];
+            $details_of_work[] = $row['Code'];
             $amount[] = $row['Amount'];
         }
 
@@ -85,35 +111,11 @@
         return json_encode($json_data);
     }
 
-    function political_party_wise_number_of_nagarsevaks($con)
-    {
-        $query = "SELECT Party, COUNT(Party) AS No_of_Nagarsevak FROM nagarsevak GROUP BY Party";
-        $result = mysqli_query($con, $query);
-
-        if( $result->num_rows > 0)
-        {
-            $json_data = [];
-            $json_data[] = ['Party', 'No of Nagarsevaks'];
-
-            while( $row = mysqli_fetch_assoc($result) ){
-                $json_data[] = [
-                    $row["Party"],
-                    (float)$row["No_of_Nagarsevak"],
-                ];
-            }
-            return json_encode($json_data);
-        }
-        else
-        {
-            return json_encode([]);
-        }
-    }
-
     function expenditure_pattern_by_male_nagarsevaks($con)
     {
-        $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount 
+        $query = "SELECT w.Code as Details_Of_Work, SUM(w.Amount) AS Amount 
             FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No 
-            WHERE n.Gender = 'Male' 
+            WHERE n.Gender = 'M' 
             GROUP BY n.Gender , w.Code 
             ORDER BY SUM(w.Amount) DESC";
         $result = mysqli_query($con, $query);
@@ -155,9 +157,9 @@
 
     function expenditure_pattern_by_female_nagarsevaks($con)
     {
-        $query = "SELECT w.Details_Of_Work, SUM(w.Amount) AS Amount 
+        $query = "SELECT w.Code as Details_Of_Work, SUM(w.Amount) AS Amount 
             FROM `nagarsevak` n INNER JOIN work_details w ON w.Prabhag_No = n.Prabhag_No 
-            WHERE n.Gender = 'Female' 
+            WHERE n.Gender = 'F' 
             GROUP BY n.Gender , w.Code 
             ORDER BY SUM(w.Amount) DESC";
         $result = mysqli_query($con, $query);

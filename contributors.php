@@ -30,6 +30,12 @@
                     <li>Role    : Helped fixing some issues. Structured the code.</li>
                     <li>Email   : m.s.kajale@gmail.com</li>
                 </ul>
+                <h3 class="contributor-name"> Gaurav Deshpande </h3>
+                <ul class="contributor-description">
+                    <li>Profile : Freelancer</li>
+                    <li>Role    : Developer for this project. </li>
+                    <li>Email   : gauravd292@gmail.com</li>
+                </ul>
             </div>
         </div>
     </div>

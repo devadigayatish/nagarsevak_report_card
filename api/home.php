@@ -74,8 +74,7 @@
 
             $prabhag = $prabhag_num . $lbl;
 
-            $query = "SELECT Prabhag_No, Nagarsevak_Name, Party, Total_Questions, Avg_Attendance, Criminal_Records 
-            FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "' ORDER BY Prabhag_No";
+            $query = "SELECT Prabhag_No, Nagarsevak_Name, Party, Total_Questions, Avg_Attendance, Criminal_Records, Municipal_Committee FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "' ORDER BY Prabhag_No";
             $result = mysqli_query($con, $query);
             if ($result->num_rows > 0) {
                 while($row = mysqli_fetch_assoc($result)){
@@ -158,7 +157,7 @@
             $details_of_work = [];
             $amount = [];
 
-            $query = "SELECT Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` 
+            $query = "SELECT Code as Details_Of_Work ,SUM(Amount) AS Amount FROM `work_details` 
                 WHERE Prabhag_No = '" . $prabhag . "' GROUP BY `Code` ORDER BY `Amount` DESC";
             $result = mysqli_query($con, $query);
 

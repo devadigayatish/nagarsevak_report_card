@@ -99,16 +99,21 @@
             $op_data["Codes"] = $data_row[1];
             $op_data["Prabhag_Name"] = $data_row[2];
             $op_data["Nagarsevak_Name"] = $data_row[3];
-            $op_data["Party"] = $data_row[4];
+            $op_data["Party"] = $data_row[5];
+            $op_data["Gender"] = $data_row[4];
+            $op_data["Municipal_Committee"] = $data_row[6];
 
-            $array_keys = $array_values = [];
-            foreach ($op_data as $key => $value) {
-                $array_keys[] = $key;
-                $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
+            if($op_data["Nagarsevak_Name"])
+            {
+                $array_keys = $array_values = [];
+                foreach ($op_data as $key => $value) {
+                    $array_keys[] = $key;
+                    $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
+                }
+
+                $query = "INSERT INTO " . $tbl_nagarsevak . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
+                $result = mysqli_query($con, $query);
             }
-
-            $query = "INSERT INTO " . $tbl_nagarsevak . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
-            $result = mysqli_query($con, $query);
         }
     }
 
@@ -127,7 +132,7 @@
             if(!$data_row[0] || $index <= 2) continue;
 
             $tbl_nagarsevak = "nagarsevak";
-            $query = "UPDATE " . $tbl_nagarsevak . " SET Avg_Attendance = ". (float)$data_row[15] 
+            $query = "UPDATE " . $tbl_nagarsevak . " SET Avg_Attendance = ". (float)$data_row[17] 
                 ." WHERE Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
             $result = mysqli_query($con, $query);
         }

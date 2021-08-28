@@ -11,56 +11,7 @@
 
 google.charts.load('current', { packages: ['corechart'] });
 
-google.setOnLoadCallback(top_5_works_per_year);
-
-function top_5_works_per_year()
-{
-    $.get("api/summary.php?q=top_5_works_per_year", function (response, status) {
-        let res_data = JSON.parse(response);
-        
-        var data = google.visualization.arrayToDataTable(res_data);
-
-        var options = {
-            legend: {
-                position: 'top',
-                maxLines: 5,
-                textStyle: {
-                    color: 'black',
-                    fontSize: 12
-                }
-            },
-            vAxis: {
-                title: 'Amount Spent Rs',
-                titleTextStyle: {
-                    bold: 'true',
-                    fontSize: 14
-                }
-            }
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('top_5_works_per_year'));
-        chart.draw(data, options);
-    });
-}
-
-google.setOnLoadCallback(overall_expenditure_pattern);
-
-function overall_expenditure_pattern()
-{
-    $.get("api/summary.php?q=overall_expenditure_pattern", function (response, status) {
-        let res_data = JSON.parse(response);
-        
-        var data = google.visualization.arrayToDataTable(res_data);
-
-        var options = {};
-
-        var chart = new google.visualization.PieChart(document.getElementById('overall_expenditure_pattern'));
-        chart.draw(data, options);
-    });
-}
-
 google.setOnLoadCallback(political_party_wise_number_of_nagarsevaks);
-
 function political_party_wise_number_of_nagarsevaks()
 {
     $.get("api/summary.php?q=political_party_wise_number_of_nagarsevaks", function (response, status) {
@@ -98,8 +49,53 @@ function political_party_wise_number_of_nagarsevaks()
     });
 }
 
-google.setOnLoadCallback(expenditure_pattern_by_male_nagarsevaks);
+google.setOnLoadCallback(top_5_works_per_year);
+function top_5_works_per_year()
+{
+    $.get("api/summary.php?q=top_5_works_per_year", function (response, status) {
+        let res_data = JSON.parse(response);
+        
+        var data = google.visualization.arrayToDataTable(res_data);
 
+        var options = {
+            legend: {
+                position: 'top',
+                maxLines: 5,
+                textStyle: {
+                    color: 'black',
+                    fontSize: 12
+                }
+            },
+            vAxis: {
+                title: 'Amount Spent Rs',
+                titleTextStyle: {
+                    bold: 'true',
+                    fontSize: 14
+                }
+            }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('top_5_works_per_year'));
+        chart.draw(data, options);
+    });
+}
+
+google.setOnLoadCallback(overall_expenditure_pattern);
+function overall_expenditure_pattern()
+{
+    $.get("api/summary.php?q=overall_expenditure_pattern", function (response, status) {
+        let res_data = JSON.parse(response);
+        
+        var data = google.visualization.arrayToDataTable(res_data);
+
+        var options = {};
+
+        var chart = new google.visualization.PieChart(document.getElementById('overall_expenditure_pattern'));
+        chart.draw(data, options);
+    });
+}
+
+google.setOnLoadCallback(expenditure_pattern_by_male_nagarsevaks);
 function expenditure_pattern_by_male_nagarsevaks()
 {
     $.get("api/summary.php?q=expenditure_pattern_by_male_nagarsevaks", function (response, status) {
@@ -122,7 +118,6 @@ function expenditure_pattern_by_male_nagarsevaks()
 }
 
 google.setOnLoadCallback(expenditure_pattern_by_female_nagarsevaks);
-
 function expenditure_pattern_by_female_nagarsevaks()
 {
     $.get("api/summary.php?q=expenditure_pattern_by_female_nagarsevaks", function (response, status) {
@@ -145,7 +140,6 @@ function expenditure_pattern_by_female_nagarsevaks()
 }
 
 google.setOnLoadCallback(attendance_of_nagarsevaks_in_gb_meetings);
-
 function attendance_of_nagarsevaks_in_gb_meetings()
 {
     $.get("api/summary.php?q=attendance_of_nagarsevaks_in_gb_meetings", function (response, status) {
@@ -184,7 +178,6 @@ function attendance_of_nagarsevaks_in_gb_meetings()
 }
 
 google.setOnLoadCallback(attendance_of_nagarsevaks_in_gb_meetings__party_wise_);
-
 function attendance_of_nagarsevaks_in_gb_meetings__party_wise_()
 {
     $.get("api/summary.php?q=attendance_of_nagarsevaks_in_gb_meetings__party_wise_", function (response, status) {
@@ -224,7 +217,6 @@ function attendance_of_nagarsevaks_in_gb_meetings__party_wise_()
 }
 
 google.setOnLoadCallback(number_of_questions_asked_by_nagarsevaks_in_gb_meetings);
-
 function number_of_questions_asked_by_nagarsevaks_in_gb_meetings()
 {
     $.get("api/summary.php?q=number_of_questions_asked_by_nagarsevaks_in_gb_meetings", function (response, status) {
@@ -264,7 +256,6 @@ function number_of_questions_asked_by_nagarsevaks_in_gb_meetings()
 }
 
 google.setOnLoadCallback(number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_);
-
 function number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_()
 {
     $.get("api/summary.php?q=number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_", function (response, status) {
@@ -303,8 +294,8 @@ function number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_()
     });
 }
 
-google.setOnLoadCallback(nagarsevaks_who_asked_questions__party_wise_);
 
+google.setOnLoadCallback(nagarsevaks_who_asked_questions__party_wise_);
 function nagarsevaks_who_asked_questions__party_wise_()
 {
     $.get("api/summary.php?q=nagarsevaks_who_asked_questions__party_wise_", function (response, status) {
@@ -343,7 +334,6 @@ function nagarsevaks_who_asked_questions__party_wise_()
 }
 
 google.setOnLoadCallback(nagarsevaks_with_criminal_charges__party_wise_);
-
 function nagarsevaks_with_criminal_charges__party_wise_()
 {
     $.get("api/summary.php?q=nagarsevaks_with_criminal_charges__party_wise_", function (response, status) {
@@ -376,7 +366,7 @@ function nagarsevaks_with_criminal_charges__party_wise_()
         }
         else
         {
-            document.getElementById('nagarsevaks_with_criminal_charges__party_wise_').innerHTML = "No related data found in the database.";
+            document.getElementById('nagarsevaks_with_criminal_charges__party_wise_').innerHTML = "<h3 style='text-align:center; height:170px;'> <br><br>Data not provided by Govt.</h3>";
         }
     });
 }
