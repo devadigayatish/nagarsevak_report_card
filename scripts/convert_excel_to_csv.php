@@ -7,7 +7,7 @@
 
     $fileType = 'Excel2007';
 
-    $inputFileName = './../uploads/data-files/NRC21_master_file.xlsx';
+    $inputFileName = './../uploads/data-files/NRC21 master file.xlsx';
 	print "Input file : ". str_replace("./../", "", $inputFileName) . "<br>";
 
 	$objPHPExcelReader = PHPExcel_IOFactory::createReader($fileType);

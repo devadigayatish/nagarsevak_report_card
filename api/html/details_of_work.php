@@ -1,4 +1,4 @@
-<div class='col-sm-6 col-md-3'>
+<div class='<?=$config["class_name"]; ?>'>
     <div class='text-center'><h3>Prabhag No <?=$prabhag; ?></h3></div>
     <?php
         if($data){   ?>
@@ -27,8 +27,12 @@
                                     {  ?>
                                         
                                         <tr>
-                                            <td><?=$row['Details_Of_Work']; ?></td>
-                                            <td><?=$row['Amount']; ?></td>
+                                            <td>
+                                                <!-- <span class="detailsOfWork"><?=$row['Details_Of_Work']; ?></span>
+                                                <span class="workType"><?=$row['Work_Type']; ?></span> -->
+                                                <span class="code" data-toggle="tooltip" data-placement="top" title="<?=$row['Work_Type']; ?>"><?=$row['Code']; ?></span>
+                                            </td>
+                                            <td align="right"><?=$row['Amount']; ?></td>
                                         </tr>
 
                                         <?php
@@ -45,7 +49,7 @@
                         </tr>
                         <tr>
                             <td><strong>Total Amount</strong></td>
-                            <td><strong><?=$total_amt; ?></strong></td>
+                            <td align="right"><strong><?=$total_amt; ?></strong></td>
                         </tr>
                     </tfoot>
                 </table>

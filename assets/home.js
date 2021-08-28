@@ -1,6 +1,7 @@
+
 function draw_chart(data, element, showDatalabels, showLegends) {
     if(!data) {
-        return $("#" + element).html('No data found');
+        return $("#" + element).html("<div class='text-center'><h3><strong>No data found</strong></h3></div>");
     }
     if (!showDatalabels) {
         showDatalabels = true;
@@ -27,7 +28,7 @@ function draw_chart(data, element, showDatalabels, showLegends) {
     }
     if (data.length === 0 || flag === false) {
         $("#" + element).empty();
-        $("#" + element).html("No data found");
+        $("#" + element).html("<div class='text-center'><h3><strong>No data found</strong></h3></div>");
         return false;
     }
     collection = [];
@@ -117,6 +118,8 @@ function showUser(str)
 
         $.post("api/home.php?q=details_of_work", {"i" : str}, function (response, status) {
             document.getElementById('details_of_work').innerHTML = response;
+
+            $(document).find('span.code').tooltip();
         });
 
         $.post("api/home.php?q=details_of_work_chart", { "i": str }, function (response, status) {
@@ -140,11 +143,7 @@ function showUser(str)
                 let target = "data_" + (i + 1);
                 draw_chart(data_list[i], target);
             });
-        });
-        
-        $.post("api/home.php?q=downloaded_data", {"i" : str}, function (response, status) {
-            document.getElementById('downloaded_data').innerHTML = response;
-        });
+        });        
     }
 }
 
@@ -234,4 +233,3 @@ function nextPrabhag(i)
     showUser(id);
 }
 nextPrabhag(0);
-

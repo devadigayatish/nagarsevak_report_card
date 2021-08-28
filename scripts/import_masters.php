@@ -3,137 +3,11 @@
 
     $dirCSV = './../uploads/data-files/csv';
 
-    $filename = $dirCSV . "/Expenses Master.csv";
-    $fp = fopen($filename,"r");
-    if($fp){
-        print_r_pre($filename);
-        fclose($fp);
-        print_r_pre("---------------");
-    }
-
-    $filename = $dirCSV . "/Personal Info Master.csv";
-    $fp = fopen($filename,"r");
-    if($fp){
-        print_r_pre($filename);
-        import_personal_info($con, $fp);
-        fclose($fp);
-        print_r_pre("---------------");
-    }
-
+    // codes
     $filename = $dirCSV . "/Codes.csv";
     $fp = fopen($filename,"r");
-    if($fp){
-        print_r_pre($filename);
-        import_code($con, $fp);
-        fclose($fp);
-        print_r_pre("---------------");
-    }
-
-    $filename = $dirCSV . "/Attendance Master.csv";
-    $fp = fopen($filename,"r");
-    if($fp){
-        print_r_pre($filename);
-        import_attendance($con, $fp);
-        fclose($fp);
-        print_r_pre("---------------");
-    }
-
-    $filename = $dirCSV . "/QuestionsAsked Master.csv";
-    $fp = fopen($filename,"r");
-    if($fp){
-        print_r_pre($filename);
-        import_que_asked($con, $fp);
-        fclose($fp);
-        print_r_pre("---------------");
-    }
-
-    function import_personal_info($con, $fp)
-    {
-        $table = "nagarsevak";
-        $query = "TRUNCATE TABLE " . $table;
-        $result = mysqli_query($con, $query);
-
-        $table_wardoffice = "wardoffice";
-        $query = "TRUNCATE TABLE " . $table_wardoffice;
-        $result = mysqli_query($con, $query);
-
-        $Last_Prabhag_No = 0;
-
-        $index = 0;
-        while(!feof($fp))
-        {
-            $data_row = fgetcsv($fp);
-
-            if(++$index == 1 || !$data_row){
-                continue;
-            }
-            
-            $data_row[0] = str_replace(" Ward Office", "", $data_row[0]);
-
-            $op_data = [];
-            $op_data["Ward_ofc"] = $data_row[0];
-            $op_data["Prabhag_Name"] = $data_row[1];
-            $op_data["Prabhag_No"] = $data_row[2] . $data_row[3];
-            $op_data["Codes"] = $data_row[2] . $data_row[3];
-            $op_data["Nagarsevak_Name"] = $data_row[4];
-            if($data_row[5] && $data_row[5] == "M"){
-                $op_data["Gender"] = "Male";
-            }
-            elseif($data_row[5] && $data_row[5] == "F"){
-                $op_data["Gender"] = "Female";
-            }
-            $op_data["Party"] = $data_row[6];
-            $op_data["Criminal_Records"] = $data_row[7];
-            $op_data["Total_Questions"] = $data_row[8];
-            $op_data["Avg_Attendance"] = $data_row[9];
-
-            if(!array_filter($op_data)){
-                continue;
-            }
-
-            $array_keys = $array_values = [];
-            foreach ($op_data as $key => $value) {
-                $array_keys[] = $key;
-                $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
-            }
-
-            $query = "INSERT INTO " . $table . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
-            $result = mysqli_query($con, $query);
-
-            echo $query . "<br>";
-            print_r_pre($result);
-
-            if($Last_Prabhag_No != $data_row[2]){
-
-                $op_data = [];
-                $op_data["Ward_ofc"] = $data_row[0];
-                $op_data["Prabhag_Name"] = $data_row[1];
-                $op_data["Prabhag_No"] = $data_row[2];
-
-                if(!array_filter($op_data)){
-                    continue;
-                }
-
-                $array_keys = $array_values = [];
-                foreach ($op_data as $key => $value) {
-                    $array_keys[] = $key;
-                    $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
-                }
-
-                $query = "INSERT INTO " . $table_wardoffice . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
-                $result = mysqli_query($con, $query);
-
-                echo "-----" . "<br>";
-                echo $query . "<br>";
-                print_r_pre($result);
-
-                $Last_Prabhag_No = $data_row[2];
-            }
-        }
-    }
-
-    function import_code($con, $fp)
-    {
+    if($fp && 1){
+                
         $table = "codes";
         $query = "TRUNCATE TABLE " . $table;
         $result = mysqli_query($con, $query);
@@ -164,18 +38,27 @@
             $query = "INSERT INTO " . $table . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
             $result = mysqli_query($con, $query);
 
-            echo $query . "<br>";
-            print_r_pre($result);
+            // echo $query . "<br>";
+            // print_r_pre($result);
         }
+
+        fclose($fp);
+        print_r_pre("---------------");
     }
 
-    function import_attendance($con, $fp)
-    {
-        $table = "attendance";
-        $query = "TRUNCATE TABLE " . $table;
+    // ward / prabhag / nagarsevak
+    $filename = $dirCSV . "/Attendance Master.csv";
+    $fp = fopen($filename,"r");
+    if($fp && 1){
+
+        $table_wardoffice = "wardoffice";
+        $query = "TRUNCATE TABLE " . $table_wardoffice;
         $result = mysqli_query($con, $query);
 
-        $total_meetings = [];
+        $tbl_nagarsevak = "nagarsevak";
+        $query = "TRUNCATE TABLE " . $tbl_nagarsevak;
+        $result = mysqli_query($con, $query);
+
         $index = 0;
         while(!feof($fp))
         {
@@ -183,53 +66,62 @@
 
             $index++;
 
-            $yrs = [
-                "2017 - 2018",	
-                "2018 - 2019",	
-                "2019 - 2020",	
-                "2020 - 2021",
-            ];
+            if(!$data_row[0] || $index <= 2) continue;
 
-            if($index == 1){
-                $total_meetings = [];
-                foreach ($yrs as $key => $value) {
-                    $total_meetings[] = $data_row[$key + 6];
+            $Prabhag_No = (int)$data_row[1];
+
+            $query = "SELECT Prabhag_No FROM {$table_wardoffice} WHERE Prabhag_No = {$Prabhag_No}";
+            $result = mysqli_query($con, $query);
+            if(!($result->num_rows))
+            {
+                $data_row[0] = str_replace(" Ward Office", "", $data_row[0]);
+
+                $op_data = [];
+                $op_data["Ward_ofc"] = $data_row[0];
+                $op_data["Prabhag_No"] = $Prabhag_No;
+                $op_data["Prabhag_Name"] = $data_row[2];
+                if(array_filter($op_data))
+                {
+                    $array_keys = $array_values = [];
+                    foreach ($op_data as $key => $value) {
+                        $array_keys[] = $key;
+                        $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
+                    }
+
+                    $query = "INSERT INTO " . $table_wardoffice . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
+                    $result = mysqli_query($con, $query);
                 }
             }
 
-            if($index <= 2){
-                continue;
-            }
+            $op_data = [];
+            $op_data["Ward_ofc"] = $data_row[0];
+            $op_data["Prabhag_No"] = $data_row[1];
+            $op_data["Codes"] = $data_row[1];
+            $op_data["Prabhag_Name"] = $data_row[2];
+            $op_data["Nagarsevak_Name"] = $data_row[3];
+            $op_data["Party"] = $data_row[5];
+            $op_data["Gender"] = $data_row[4];
+            $op_data["Municipal_Committee"] = $data_row[6];
 
-            if(!$data_row || !array_filter($data_row)){
-                continue;
-            }
-            
-            foreach ($yrs as $key => $value) {
-                $op_data = [];
-                $op_data["Prabhag_No"] = $data_row[1];
-                $op_data["Year"] = $value;
-                $op_data["GB_Attendance"] = $data_row[$key + 2];
-                $op_data["GB_Meetings"] = $total_meetings[$key];
-                $op_data["Atendance_Percentage"] = str_replace("%", "", $data_row[$key + 6]);
-
+            if($op_data["Nagarsevak_Name"])
+            {
                 $array_keys = $array_values = [];
                 foreach ($op_data as $key => $value) {
                     $array_keys[] = $key;
                     $array_values[] = '"' . mysqli_real_escape_string($con, $value) . '"';
                 }
 
-                $query = "INSERT INTO " . $table . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
+                $query = "INSERT INTO " . $tbl_nagarsevak . " (". implode(",", $array_keys) .") VALUES(". implode(",", $array_values) .")";
                 $result = mysqli_query($con, $query);
-
-                echo $query . "<br>";
-                print_r_pre($result);
             }
         }
     }
 
-    function import_que_asked($con, $fp)
-    {
+    // attendance
+    $filename = $dirCSV . "/Attendance Master.csv";
+    $fp = fopen($filename,"r");
+    if($fp && 1){
+
         $index = 0;
         while(!feof($fp))
         {
@@ -237,42 +129,35 @@
 
             $index++;
 
-            $yrs = [
-                "2017 - 2018",	
-                "2018 - 2019",	
-                "2019 - 2020",	
-                "2020 - 2021",
-            ];
+            if(!$data_row[0] || $index <= 2) continue;
 
-            if($index <= 2){
-                continue;
-            }
-
-            if(!$data_row || !array_filter($data_row)){
-                continue;
-            }
-            
-            $table = "attendance";
-
-            foreach ($yrs as $key => $value) {
-                $op_data = [];
-                $op_data["Questions"] = $data_row[$key + 2];
-
-                $set_data = [];
-                foreach ($op_data as $k => $val) {
-                    $set_data[] = $k . ' = "' . mysqli_real_escape_string($con, $val) . '"';
-                }
-
-                $where = [];
-                $where[] = "Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
-                $where[] = "Year = '" . mysqli_real_escape_string($con, $value) . "'";
-
-                $query = "UPDATE " . $table . " SET ". implode(", ", $set_data) ." WHERE ". implode(" AND ", $where);
-                $result = mysqli_query($con, $query);
-
-                echo $query . "<br>";
-                print_r_pre($result);
-            } 
+            $tbl_nagarsevak = "nagarsevak";
+            $query = "UPDATE " . $tbl_nagarsevak . " SET Avg_Attendance = ". (float)$data_row[17] 
+                ." WHERE Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
+            $result = mysqli_query($con, $query);
         }
     }
+
+    // questions
+    $filename = $dirCSV . "/QuestionsAsked Master.csv";
+    $fp = fopen($filename,"r");
+    if($fp && 1){
+
+        $index = 0;
+        while(!feof($fp))
+        {
+            $data_row = fgetcsv($fp);
+
+            $index++;
+
+            if(!$data_row[0] || $index <= 2) continue;
+
+            $tbl_nagarsevak = "nagarsevak";
+            $query = "UPDATE " . $tbl_nagarsevak . " SET Total_Questions = ". (float)$data_row[9] 
+                ." WHERE Prabhag_No = '" . mysqli_real_escape_string($con, $data_row[1]) . "'";
+            $result = mysqli_query($con, $query);
+        }
+    }
+
+    echo "Done.." . mt_rand();
 ?>
