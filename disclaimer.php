@@ -6,16 +6,16 @@
             <div class="col-md-12 animate-box fadeInUp animated">
                 <h3><strong> DISCLAIMER </strong></h3>
                 <p>
-                    Although information and contents on this portal have been put with care and diligence, Startup Partner Pvt Ltd and Parivartan does not take responsibility on how this information is used or the consequences of its use. In case of any inconsistency/confusion, the user should contact the concerned Department/Officer of Pune Municipal Corporation for further clarifications.
+                    Although information and contents on this portal have been put with care and diligence, Parivartan does not take responsibility on how this information is used or the consequences of its use. In case of any inconsistency/confusion, the user should contact the concerned Department/Officer of Pune Municipal Corporation for further clarifications.
                 </p>
                 <hr>
                 <h3><strong> TERMS And CONDITIONS </strong></h3>
                 <p>
-                    This Website is designed, developed, hosted and maintained by Startup Partner Pvt Ltd. The content of this website is provided by Parivartan NGO and it is for information purposes only, enabling the public at large to have a quick and an easy access to information. Parivartan has obtained this data from various departments of Pune Municipal Corporation through Right to Information Act (RTI) 2005.
+                    This Website is designed, developed, hosted and maintained by Parivartan NGO and it is for information purposes only, enabling the public at large to have a quick and an easy access to information. Parivartan has obtained this data from various departments of Pune Municipal Corporation through Right to Information Act (RTI) 2005.
                     <br>
                     Efforts have been made to ensure the accuracy and correctness of the content on this website. However, the same should not be interpreted as a statement of law or used for any legal purposes. In case of any ambiguity or doubts, users are advised to verify / check with the concerned Department(s) and / or other source(s), and obtain appropriate professional advice.
                     <br>
-                    Under no circumstances Startup Partner Pvt Ltd will be liable for any expense, loss or damage including, without limitation, indirect or consequential loss or damage or any expense, loss or damage whatsoever arising from use, or loss of use, of data, arising out of or in connection with the use of this website.
+                    Under no circumstances Parivartan will be liable for any expense, loss or damage including, without limitation, indirect or consequential loss or damage or any expense, loss or damage whatsoever arising from use, or loss of use, of data, arising out of or in connection with the use of this website.
                     <br>
                     These terms and conditions shall be governed by and interpreted in accordance with the Indian Laws. Any dispute arising under these terms and conditions shall be subject to the jurisdiction of the courts of India.
                 </p>
