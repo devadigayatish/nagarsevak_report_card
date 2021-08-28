@@ -35,7 +35,7 @@
         // $details_of_work_data = [];
 
         $details_of_work = [];
-        $query = "SELECT * FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
+        $query = "SELECT Code FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_assoc($result)) {
             // $details_of_work_data[] = $row;
