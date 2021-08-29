@@ -1154,3 +1154,10 @@ figure {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+@media screen and (max-width: 1199px){
+  .fh5co-nav-toggle {
+      margin-top: 7em;
+  }
+}

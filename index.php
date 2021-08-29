@@ -15,11 +15,11 @@
 <div id="fh5co-work-section" style="padding-top: 25px;">
     <div class="container-fluid">
         <div class="row">
-            <div class="container">
+            <!-- <div class="container">
                 <div class="well">
                     <div class="text-center"><strong>पुणे महानगर पालिका निवडणूक २०१७ च्या उमेदवारांचे शपथ पत्र  &nbsp;&nbsp;<a class="btn btn-primary" href="https://goo.gl/forms/xCunWwufnTc4H5w93" target="_blank">Click here</a></strong></div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="container animate-box">
                 <div class="col-lg-12 col-md-12">
@@ -65,6 +65,7 @@
             </div>
 
             <div class="container-fluid animate-box">
+            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
                 <div id="details_of_work_chart" class=""></div>
             </div><br>
 

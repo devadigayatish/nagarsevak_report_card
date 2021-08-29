@@ -3,3 +3,4 @@ includes/email-sender.php
 uploads/attachments/*
 uploads/original-rti-replies/*.pdf
 visitors.txt
+uploads/data-files/Nagarsevak_Full_Data.zip

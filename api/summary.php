@@ -35,20 +35,38 @@
         // $details_of_work_data = [];
 
         $details_of_work = [];
-        $query = "SELECT * FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
+        $query = "SELECT Code, SUM(Amount) FROM `work_details` GROUP BY Code ORDER BY SUM(Amount) DESC LIMIT 5";
         $result = mysqli_query($con, $query);
         while($row = mysqli_fetch_assoc($result)) {
+            // print_r_pre($row);
             // $details_of_work_data[] = $row;
             $details_of_work[] = $row['Code'];
         }
 
+        $yrs = ['2017 - 2018', '2018 - 2019', '2019 - 2020', '2020 - 2021'];
+
         $amount = [];
         for ($i=0; $i < count($details_of_work); $i++) { 
             $amount[$i] = [];
-            $query = "SELECT Year, SUM(Amount) AS Amount FROM `work_details` WHERE Code = '" . $details_of_work[$i] . "' GROUP BY Year";
+            $query = "SELECT Year, SUM(Amount) AS Amount FROM `work_details` 
+                        WHERE  Code = '" . $details_of_work[$i] . "' GROUP BY Year";
+
             $result = mysqli_query($con, $query);
-            while($row = mysqli_fetch_assoc($result)) {
-                $amount[$i][] = $row['Amount'];
+            if($result->num_rows > 0){
+                $data = [];
+                while($row = mysqli_fetch_assoc($result)) {
+                    $data[$row["Year"]] = $row['Amount'];
+                }
+                $key_array = array_keys($data);
+
+                foreach($yrs as $yr){
+                    if(in_array($yr, $key_array)){
+                        $amount[$i][] = $data[$yr];
+                    }
+                    else{
+                        $amount[$i][] = 0;
+                    }
+                }
             }
         }
         

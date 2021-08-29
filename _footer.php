@@ -11,14 +11,11 @@
                                 </nav>
                                 <hr/>
                                 <p>
-                                    Website designed, developed, hosted and maintained by <a target="_blank" href="http://startuppartner.co.in/about.html"><strong>Startup Partner Pvt Ltd.</strong></a> Content Provided by <a target="_blank" href="http://www.parivartanbharat.org/about-us"><strong>Parivartan.</strong></a>
-                                </p>
-                                <p>
                                 <a href="https://github.com/devadigayatish/nagarsevak_report_card" target="_blank"><strong>Source Code</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
                                 <a href="<?php echo SITE_URL ?>contributors.php"><strong>Contributors</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
                                 <a href="<?php echo SITE_URL ?>disclaimer.php"><strong>Disclaimer</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                <a href="<?php echo SITE_URL ?>contact-us.php"><strong>Contact Us</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                                <a href="<?php echo SITE_URL ?>report-bug.php"><strong>Report Bug / Suggestions</strong></a>
+                                <a href="<?php echo SITE_URL ?>contact-us.php"><strong>Contact Us</strong></a>&nbsp;&nbsp;
+                                <!-- <a href="<?php echo SITE_URL ?>report-bug.php"><strong>Report Bug / Suggestions</strong></a> -->
                                 </p>
                                 <hr/>
                                 <p style="font-size: 15px;">
