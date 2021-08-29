@@ -2,7 +2,10 @@
     <?php
         $url = 'assets/images/photos/'. $row["Prabhag_No"] . '.jpg';
         if(!file_get_contents(SITE_URL . $url)){
-            $url = 'assets/images/profile_pic.png';
+            $url = 'assets/images/photos/'. $row["Prabhag_No"] . '.jpeg';
+            if(!file_get_contents(SITE_URL . $url)){
+                $url = 'assets/images/profile_pic.png';
+            }
         }
     ?>
     <img style='width:100px; height: 125px;' src="<?=SITE_URL . $url; ?>">

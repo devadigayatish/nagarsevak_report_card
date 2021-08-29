@@ -65,6 +65,7 @@
             </div>
 
             <div class="container-fluid animate-box">
+            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
                 <div id="details_of_work_chart" class=""></div>
             </div><br>
 

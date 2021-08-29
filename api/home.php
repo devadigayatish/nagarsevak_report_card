@@ -132,6 +132,10 @@
                 $total_amt = $row['Amount'];
             }
 
+            $query = "SELECT Prabhag_No, Nagarsevak_Name, Party FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "'";
+            $result = mysqli_query($con, $query);
+            $person_info = mysqli_fetch_assoc($result);
+
             include("html/details_of_work.php");
         }
     }
@@ -196,6 +200,10 @@
                     ];
                 }
             }
+
+            $query = "SELECT Prabhag_No, Nagarsevak_Name, Party FROM nagarsevak WHERE Prabhag_No = '" . $prabhag . "'";
+            $result = mysqli_query($con, $query);
+            $person_info = mysqli_fetch_assoc($result);
 
             include("html/details_of_work_chart.php");
         }
