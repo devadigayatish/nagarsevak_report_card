@@ -113,6 +113,8 @@
                     $year[] = $row['Year'];
                 }
 
+                sort($year);
+
                 for ($i=0; $i < count($year); $i++) { 
                     $query = "SELECT Year, Details_Of_Work, Code, Amount,
                         (SELECT Work_Type FROM `codes` as tbl WHERE tbl.Code = work_details.Code) as Work_Type
