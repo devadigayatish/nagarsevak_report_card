@@ -139,6 +139,33 @@ function expenditure_pattern_by_female_nagarsevaks()
     });
 }
 
+google.setOnLoadCallback(expenditure_pattern_party_wise);
+function expenditure_pattern_party_wise()
+{
+    $.get("api/summary.php?q=expenditure_pattern_party_wise", function (response, status) {
+        let res_data = JSON.parse(response);
+        if (res_data.length)
+        {
+            $.each(res_data, function(i, item){
+                draw_chart("party_"+ item["party"], item.data);
+            });
+        }
+    });
+}
+
+function draw_chart(element_id, res_data)
+{
+    if (res_data.length)
+    {
+        var data = google.visualization.arrayToDataTable(res_data);
+
+        var options = {};
+
+        var chart = new google.visualization.PieChart(document.getElementById(element_id));
+        chart.draw(data, options);
+    }
+}
+
 google.setOnLoadCallback(attendance_of_nagarsevaks_in_gb_meetings);
 function attendance_of_nagarsevaks_in_gb_meetings()
 {
