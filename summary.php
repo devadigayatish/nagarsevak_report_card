@@ -3,7 +3,7 @@
 <div id="fh5co-work-section" style="padding-top: 50px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 table-bordered animate-box ">
+            <div class="col-md-12 table-bordered animate-box-1 ">
                 <div class="text-center">
                     <?php
                         $query = "SELECT COUNT(Prabhag_No) AS Count FROM `nagarsevak`";
@@ -24,42 +24,59 @@
                 </div>
             </div>
 
-            <div class="col-md-12 col-sm-12 table-bordered animate-box">
+            <div class="col-md-12 col-sm-12 table-bordered animate-box-1">
                 <div class="text-center"><h3>Political Party-wise number of Nagarsevaks</h3></div>
                 <div id="political_party_wise_number_of_nagarsevaks"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Top 5 Works per Year</h3></div>
                 <div id="top_5_works_per_year"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box ">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1 ">
                 <div class="text-center"><h3>Overall Expenditure Pattern</h3></div>
                 <div id="overall_expenditure_pattern"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Expenditure Pattern by Male Nagarsevaks</h3></div>
                 <div id="expenditure_pattern_by_male_nagarsevaks"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Expenditure Pattern by Female Nagarsevaks</h3></div>
                 <div id="expenditure_pattern_by_female_nagarsevaks"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <?php
+                $data = [];
+                $query = "SELECT Party FROM nagarsevak WHERE nagarsevak.Party <> ''
+                    GROUP BY nagarsevak.Party ORDER BY nagarsevak.Party ASC";
+                $result = mysqli_query($con, $query);
+                while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
+                            <div class="text-center"><h3>Expenditure Pattern by <?=$row['Party']; ?> Nagarsevaks</h3></div>
+                            <div id='party_<?=$row['Party']; ?>' style='text-align:center; height:200px;'>
+                                <h3> <br><br>No related data found.</h3>
+                            </div>
+                        </div>
+                    <?php
+                }
+            ?>
+
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings</h3></div>
                 <div id="attendance_of_nagarsevaks_in_gb_meetings"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings (Party-wise)</h3></div>
                 <div id="attendance_of_nagarsevaks_in_gb_meetings__party_wise_"></div>
             </div>
             
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks with Least Attendance in GB Meetings</h3></div>
                 <div id="nagarsevaks_with_least_attendance_in_gb_meetings" class="row">
                     <?php
@@ -100,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks with Highest Attendance in GB Meetings</h3></div>
                 <div id="nagarsevaks_with_highest_attendance_in_gb_meetings" class="row">
                     <?php
@@ -141,17 +158,17 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings</h3></div>
                 <div id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings (Party-wise)</h3></div>
                 <div id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Lowest Questions in GB Meetings</h3></div>
                 <div id="nagarsevaks_who_asked_the_lowest_questions_in_gb_meetings" class="row">
                     <?php
@@ -192,7 +209,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Highest Questions in GB Meetings</h3></div>
                 <div id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
                     <?php
@@ -233,12 +250,12 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Nagarsevaks who asked Questions (Party-wise)</h3></div>
                 <div id="nagarsevaks_who_asked_questions__party_wise_"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box">
+            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Nagarsevaks with Criminal Charges (Party-wise)</h3></div>
                 <div id="nagarsevaks_with_criminal_charges__party_wise_"></div>
             </div>
@@ -248,7 +265,7 @@
 
 <?php ob_start(); ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="<?php echo SITE_URL ?>assets/summary.js"></script>
+<script src="<?php echo SITE_URL ?>assets/summary.js?_<?=mt_rand(); ?>"></script>
 <?php 
     $contentData = ob_get_contents(); 
     ob_end_clean ();

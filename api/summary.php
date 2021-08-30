@@ -217,6 +217,61 @@
         }
     }
 
+    function expenditure_pattern_party_wise($con)
+    {
+        $data = [];
+
+        $details_of_work = [];
+        $amount = [];
+        $query = "SELECT Party, Code, SUM(Amount) AS Amount FROM `work_details`
+            LEFT JOIN nagarsevak ON nagarsevak.Prabhag_No = work_details.Prabhag_No 
+            WHERE nagarsevak.Party <> ''
+            GROUP BY nagarsevak.Party, work_details.Code ORDER BY SUM(Amount) DESC";
+        $result = mysqli_query($con, $query);
+        while($row = mysqli_fetch_assoc($result)) {
+            $data[$row['Party']][] = $row;
+        }
+
+        $response = [];
+        foreach($data as $party => $data_row)
+        {
+
+            $details_of_work = [];
+            $amount = [];
+
+            foreach ($data_row as $key => $row) {
+                $details_of_work[] = $row['Code'];
+                $amount[] = $row['Amount'];
+            }
+
+            $combine_array = array_combine($details_of_work, $amount);
+            $total_amount = array_sum($amount);
+            $remaining_values = array_slice($amount, 10);
+            $remaining_total = array_sum($remaining_values);
+            $chart_array = array();
+            for($i = 0; $i < 10; $i++)
+            {
+                $chart_array[$i][0] = $details_of_work[$i];
+                $chart_array[$i][1] = (float)$amount[$i];
+            }
+            $chart_array[10][0] = "Others";
+            $chart_array[10][1] = (float)$remaining_total;
+
+            $json_data = [];
+            $json_data[] = ['PL', 'Ratings'];
+            for($i=0; $i<=10; $i++)
+            {
+                $json_data[] = $chart_array[$i];
+            }
+            $response[] = [
+                "party" => $party,
+                "data" => $json_data
+            ];
+        }
+
+        return json_encode($response);
+    }
+
     function attendance_of_nagarsevaks_in_gb_meetings($con)
     {
         $percentage_list = ['0%-25%', '25%-50%', '50%-75%', '75%-100%'];
