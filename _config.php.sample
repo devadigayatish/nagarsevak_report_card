@@ -26,4 +26,27 @@
         print_r($data);
         echo "</pre>";
     }
+
+    function moneyFormatIndia($string = ""){
+        $amount = [];
+
+        list($str_int, $str_point) = explode(".", $string);
+
+        $str = strrev($str_int);
+        for ($i=0; $i < strlen($str); $i++) { 
+
+            $amount[] = $str[$i];
+
+            if(($i+1) == 3){
+                $amount[] = ",";
+            }
+            elseif(($i+1) >= 5  && ($i+1)%2 !== 0){
+                $amount[] = ",";
+            }
+        }
+        $amount = array_reverse($amount);
+        if($amount[0] == ",") $amount[0] = "";
+        $amount = implode("", $amount) . "." . $str_point;
+        return $amount;
+    }
 ?>
