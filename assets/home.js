@@ -66,7 +66,7 @@ function draw_chart(data, element, showDatalabels, showLegends) {
                 },
                 allowPointSelect: true,
                 cursor: "pointer",
-                size:'100%',
+                // size:'100%',
                 dataLabels: {
                     enabled: showDatalabels,
                     format: '{point.percentage:.1f} %',
@@ -78,7 +78,7 @@ function draw_chart(data, element, showDatalabels, showLegends) {
             enabled: showLegends,
             layout: 'vertical',
             //  align: 'center',
-                width: 320,
+                // width: 320,
                 
             //  verticalAlign: 'middle',
             //  useHTML: true,
@@ -93,7 +93,7 @@ function draw_chart(data, element, showDatalabels, showLegends) {
                 colorByPoint: true,
                 data: collection
             }
-        ]
+        ],
     });
 
     return false;

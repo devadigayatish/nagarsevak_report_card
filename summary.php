@@ -26,27 +26,27 @@
 
             <div class="col-md-12 col-sm-12 table-bordered animate-box-1">
                 <div class="text-center"><h3>Political Party-wise number of Nagarsevaks</h3></div>
-                <div id="political_party_wise_number_of_nagarsevaks"></div>
+                <div class="table-responsive" id="political_party_wise_number_of_nagarsevaks"></div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Top 5 Works per Year</h3></div>
-                <div id="top_5_works_per_year"></div>
+                <div class="table-responsive" id="top_5_works_per_year"></div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1 ">
                 <div class="text-center"><h3>Overall Expenditure Pattern</h3></div>
-                <div id="overall_expenditure_pattern"></div>
+                <div class="table-responsive" id="overall_expenditure_pattern"></div>
             </div>
 
             <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Expenditure Pattern by Male Nagarsevaks</h3></div>
-                <div id="expenditure_pattern_by_male_nagarsevaks"></div>
+                <div class="table-responsive" id="expenditure_pattern_by_male_nagarsevaks"></div>
             </div>
 
             <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center"><h3>Expenditure Pattern by Female Nagarsevaks</h3></div>
-                <div id="expenditure_pattern_by_female_nagarsevaks"></div>
+                <div class="table-responsive" id="expenditure_pattern_by_female_nagarsevaks"></div>
             </div>
 
             <?php
@@ -58,7 +58,7 @@
                     ?>
                         <div class="col-md-4 col-sm-6 table-bordered animate-box-1">
                             <div class="text-center"><h3>Expenditure Pattern by <?=$row['Party']; ?> Nagarsevaks</h3></div>
-                            <div id='party_<?=$row['Party']; ?>' style='text-align:center; height:200px;'>
+                            <div class="table-responsive" id='party_<?=$row['Party']; ?>' style='text-align:center; height:200px;'>
                                 <h3> <br><br>No related data found.</h3>
                             </div>
                         </div>
@@ -68,17 +68,17 @@
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings</h3></div>
-                <div id="attendance_of_nagarsevaks_in_gb_meetings"></div>
+                <div class="table-responsive" id="attendance_of_nagarsevaks_in_gb_meetings"></div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Attendance of Nagarsevaks in GB Meetings (Party-wise)</h3></div>
-                <div id="attendance_of_nagarsevaks_in_gb_meetings__party_wise_"></div>
+                <div class="table-responsive" id="attendance_of_nagarsevaks_in_gb_meetings__party_wise_"></div>
             </div>
             
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks with Least Attendance in GB Meetings</h3></div>
-                <div id="nagarsevaks_with_least_attendance_in_gb_meetings" class="row">
+                <div class="table-responsive" id="nagarsevaks_with_least_attendance_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Avg_Attendance, Party FROM nagarsevak 
@@ -88,10 +88,9 @@
                             $data[] = $row;
                         }
                     ?>
-                    <div class="col-md-12">
+                    <div class="">
                         <table class='table table-bordered table-striped nagarsevak-short-info'>
                             <tr>
-                                <td>Sr. No.</td>
                                 <td>Prabhag No.</td>
                                 <td>Name</td>
                                 <td>Political Party</td>
@@ -102,7 +101,6 @@
                                     foreach($data as $k => $row){
                                         ?>
                                             <tr>
-                                                <td><?=$k+1; ?></td>
                                                 <td><?=$row["Prabhag_No"]; ?></td>
                                                 <td><?=$row["Nagarsevak_Name"]; ?></td>
                                                 <td><?=$row['Party']; ?></td>
@@ -119,7 +117,7 @@
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks with Highest Attendance in GB Meetings</h3></div>
-                <div id="nagarsevaks_with_highest_attendance_in_gb_meetings" class="row">
+                <div class="table-responsive" id="nagarsevaks_with_highest_attendance_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Avg_Attendance, Party FROM nagarsevak 
@@ -129,10 +127,9 @@
                             $data[] = $row;
                         }
                     ?>
-                    <div class="col-md-12">
+                    <div class="">
                         <table class='table table-bordered table-striped nagarsevak-short-info'>
                             <tr>
-                                <td>Sr. No.</td>
                                 <td>Prabhag No.</td>
                                 <td>Name</td>
                                 <td>Political Party</td>
@@ -143,7 +140,6 @@
                                     foreach($data as $k => $row){
                                         ?>
                                             <tr>
-                                                <td><?=$k+1; ?></td>
                                                 <td><?=$row["Prabhag_No"]; ?></td>
                                                 <td><?=$row["Nagarsevak_Name"]; ?></td>
                                                 <td><?=$row['Party']; ?></td>
@@ -160,17 +156,17 @@
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings</h3></div>
-                <div id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings"></div>
+                <div class="table-responsive" id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings"></div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Number of Questions asked by Nagarsevaks in GB Meetings (Party-wise)</h3></div>
-                <div id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_"></div>
+                <div class="table-responsive" id="number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_"></div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Lowest Questions in GB Meetings</h3></div>
-                <div id="nagarsevaks_who_asked_the_lowest_questions_in_gb_meetings" class="row">
+                <div class="table-responsive" id="nagarsevaks_who_asked_the_lowest_questions_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Total_Questions, Party FROM nagarsevak 
@@ -180,10 +176,9 @@
                             $data[] = $row;
                         }
                     ?>
-                    <div class="col-md-12">
+                    <div class="">
                         <table class='table table-bordered table-striped nagarsevak-short-info'>
                             <tr>
-                                <td>Sr. No.</td>
                                 <td>Prabhag No.</td>
                                 <td>Name</td>
                                 <td>Political Party</td>
@@ -194,7 +189,6 @@
                                     foreach($data as $k => $row){
                                         ?>
                                             <tr>
-                                                <td><?=$k+1; ?></td>
                                                 <td><?=$row["Prabhag_No"]; ?></td>
                                                 <td><?=$row["Nagarsevak_Name"]; ?></td>
                                                 <td><?=$row['Party']; ?></td>
@@ -211,7 +205,7 @@
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Highest Questions in GB Meetings</h3></div>
-                <div id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
+                <div class="table-responsive" id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Total_Questions, Party FROM nagarsevak 
@@ -221,10 +215,9 @@
                             $data[] = $row;
                         }
                     ?>
-                    <div class="col-md-12">
+                    <div class="">
                         <table class='table table-bordered table-striped nagarsevak-short-info'>
                             <tr>
-                                <td>Sr. No.</td>
                                 <td>Prabhag No.</td>
                                 <td>Name</td>
                                 <td>Political Party</td>
@@ -235,7 +228,6 @@
                                     foreach($data as $k => $row){
                                         ?>
                                             <tr>
-                                                <td><?=$k+1; ?></td>
                                                 <td><?=$row["Prabhag_No"]; ?></td>
                                                 <td><?=$row["Nagarsevak_Name"]; ?></td>
                                                 <td><?=$row['Party']; ?></td>

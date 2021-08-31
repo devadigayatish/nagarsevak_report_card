@@ -2,7 +2,7 @@
     <div class='text-center'><h3><?=$prabhag . " - " . $person_info["Nagarsevak_Name"] . " (". $person_info["Party"] .")"; ?></h3></div>
     <?php
         if($data){   ?>
-            
+            <div class="table-responsive">
                 <table class='table-bordered table-condensed'>
                     <colgroup>
                         <col style='width:70%;'>
@@ -56,6 +56,7 @@
                         </tr>
                     </tfoot>
                 </table>
+            </div>
     <?php
         }
         else{   ?>
