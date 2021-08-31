@@ -166,17 +166,17 @@
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Highest Questions in GB Meetings</h3></div>
-                <div class="table-responsive" id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
+                <div class="" id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Total_Questions, Party FROM nagarsevak 
-                            WHERE Total_Questions > 25 ORDER BY Total_Questions DESC";
+                            WHERE Total_Questions >= 55 ORDER BY Total_Questions DESC";
                         $result = mysqli_query($con, $query);
                         while($row = mysqli_fetch_assoc($result)) {
                             $data[] = $row;
                         }
                     ?>
-                    <div class="">
+                    <div class="table-responsive">
                         <table class='table table-bordered table-striped nagarsevak-short-info'>
                             <tr>
                                 <td>Prabhag No.</td>
@@ -200,17 +200,55 @@
                             ?>
                         </table>
                     </div>
+                    <?php
+                        $data = [];
+                        $query = "SELECT count(Prabhag_No) as cnt FROM nagarsevak WHERE Total_Questions = 0";
+                        $result = mysqli_query($con, $query);
+                        $row = mysqli_fetch_assoc($result);
+                    ?>
+                    <div class="text-center">Nagarsevaks who asked the 0 Questions : <strong><?=$row["cnt"]; ?></strong></div>
                 </div>
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
-                <div class="text-center summary-titles"><h3>Nagarsevaks who asked Questions (Party-wise)</h3></div>
+                <div class="text-center summary-titles"><h3>Percentage of Nagarsevaks who asked Questions (Party-wise)</h3></div>
                 <div id="nagarsevaks_who_asked_questions__party_wise_"></div>
             </div>
 
-            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
+            <!-- <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Nagarsevaks with Criminal Charges (Party-wise)</h3></div>
                 <div id="nagarsevaks_with_criminal_charges__party_wise_"></div>
+            </div> -->
+
+            <div class="col-sm-12 col-md-6 table-bordered animate-box-1">
+                <div class="text-center summary-titles"><h3>Overall Expenditure</h3></div>
+                <div class="table-responsive">
+                    <table class='table table-bordered table-striped nagarsevak-short-info'>
+                        <tr>
+                            <th>Work Type</th>
+                            <th>Total Amount</th>
+                            <th>Percentage</th>
+                        </tr>
+                        <?php
+                            $query = "SELECT Code, SUM(Amount) as amt FROM work_details GROUP BY Code ORDER BY Code";
+                            $result = mysqli_query($con, $query);
+                            if ($result->num_rows > 0) {
+                                while($row = mysqli_fetch_assoc($result)){
+                                    // $data[] = $row;
+                                    ?>
+
+                                    <tr>
+                                        <td><?=$row["Code"]; ?></td>
+                                        <td align="right"><?=moneyFormatIndia($row["amt"]); ?></td>
+                                        <td align="right"><?=round(($row["amt"] / $amount_overall_expense), 2) * 100; ?> %</td>
+                                    </tr>
+
+                                    <?php
+                                }
+                            }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -218,7 +256,7 @@
 
 <?php ob_start(); ?>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="<?php echo SITE_URL ?>assets/summary.js?_<?=mt_rand(); ?>"></script>
+<script src="<?php echo SITE_URL ?>assets/summary.js"></script>
 <?php 
     $contentData = ob_get_contents(); 
     ob_end_clean ();

@@ -60,3 +60,13 @@ cp visitors.txt.sample visitors.txt
     - scripts/import_master.php
     - scripts/import_data.php
 Be sure to have Read/Write permission for uploads and uploads/csv folder
+
+
+/*
+
+avg att of all nagarsevak
+(city-wide avg)
+que
+about
+
+*/

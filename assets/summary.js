@@ -342,7 +342,7 @@ function nagarsevaks_who_asked_questions__party_wise_()
                     }
                 },
                 vAxis: {
-                    title: 'Number of Nagarsevaks',
+                    title: 'Percentage of Nagarsevaks',
                     titleTextStyle: {
                         bold: 'true',
                         fontSize: 14

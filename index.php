@@ -33,14 +33,14 @@
                     <a class="btn btn-primary" value="previous" onClick="nextPrabhag(-1)">Previous</a>&nbsp;
                     <select class="input-group-sm text-left" id="users" name="users" style="width:60%;" onchange="showUser(this.value)">
                         <?php
-                            $query = "SELECT Ward_ofc FROM wardoffice GROUP BY Ward_ofc ORDER BY Ward_ofc";
-                            $result = mysqli_query($con, $query);
-                            if ($result->num_rows > 0) {
-                                while($row = mysqli_fetch_assoc($result)) {
-                                    ?> <optgroup label='<?=$row["Ward_ofc"]; ?>'> <?php
+                            // $query = "SELECT Ward_ofc FROM wardoffice GROUP BY Ward_ofc ORDER BY Ward_ofc";
+                            // $result = mysqli_query($con, $query);
+                            // if ($result->num_rows > 0) {
+                            //     while($row = mysqli_fetch_assoc($result)) { // Ward_ofc = '". $row["Ward_ofc"] ."'
+                                    ?> <!-- <optgroup label='<?=$row["Ward_ofc"]; ?>'> --> <?php
 
                                     $query = "SELECT Prabhag_No, Prabhag_Name FROM wardoffice 
-                                        WHERE Ward_ofc = '". $row["Ward_ofc"] ."' ORDER BY Prabhag_No, Prabhag_Name";
+                                        WHERE 1 ORDER BY Prabhag_No, Prabhag_Name";
                                     $res = mysqli_query($con, $query);
                                     if ($res->num_rows > 0) {
                                         while($r = mysqli_fetch_assoc($res)) {
@@ -48,8 +48,8 @@
                                         }
                                     }
                                     ?> </optgroup> <?php
-                                }
-                            }
+                            //     }
+                            // }
                         ?>
                     </select>
                     <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
@@ -81,12 +81,7 @@
                             <a class='btn btn-primary' target='_self' rel='' 
                                 href='original-rti-replies.php' 
                                 data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'
-                            >Original RTI Replies</a>&nbsp
-
-                            <a class='btn btn-primary' target='_blank' rel='' 
-                                href='uploads/data-files/Nagarsevak_Contact_Info.pdf' 
-                                data-slimstat-clicked='false' data-slimstat-type='2' data-slimstat-tracking='false' data-slimstat-callback='false' data-slimstat-async='false'
-                            >Nagarsevak Contact Info</a>&nbsp
+                            >Original RTI Replies</a>
                         </div>
                     </div>
                 </div>

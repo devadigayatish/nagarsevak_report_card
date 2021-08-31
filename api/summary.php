@@ -388,19 +388,19 @@
 
     function nagarsevaks_who_asked_questions__party_wise_($con)
     {
-        $query = "SELECT Party, COUNT(Nagarsevak_Name) AS No_of_nagarsevaks FROM `nagarsevak` WHERE Total_Questions > 0 GROUP BY Party";
+        $query = "SELECT Party, (COUNT(Nagarsevak_Name)/(SELECT COUNT(id) FROM nagarsevak tbl WHERE tbl.Party = nagarsevak.Party)) AS No_of_nagarsevaks FROM `nagarsevak` WHERE Total_Questions > 0 GROUP BY Party";
         $result = mysqli_query($con, $query);
         
         $final = [];
         while($row = mysqli_fetch_assoc($result)) {
             $final[] = [
                 $row['Party'],
-                (float)$row['No_of_nagarsevaks']
+                (float)$row['No_of_nagarsevaks']*100
             ];
         }
 
         $json_data = [];
-        $json_data[] = ['Party', 'Number of Nagarsevaks'];
+        $json_data[] = ['Party', 'Percentage of Nagarsevaks'];
         for($i=0; $i < count($final); $i++)
         {
             $json_data[] = $final[$i];
