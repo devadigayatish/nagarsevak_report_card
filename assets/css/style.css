@@ -1161,3 +1161,12 @@ figure {
       margin-top: 7em;
   }
 }
+@media screen and (max-width: 563px){
+  #fh5co-logo img{
+      display:block;
+      margin: 0px auto 20px !important;
+  }
+}
+.animate-box-1 .table-responsive{
+  overflow-y: hidden;
+}

@@ -165,51 +165,12 @@
             </div>
 
             <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
-                <div class='text-center'><h3>Nagarsevaks who asked the Lowest Questions in GB Meetings</h3></div>
-                <div class="table-responsive" id="nagarsevaks_who_asked_the_lowest_questions_in_gb_meetings" class="row">
-                    <?php
-                        $data = [];
-                        $query = "SELECT Prabhag_No, Nagarsevak_Name, Total_Questions, Party FROM nagarsevak 
-                            WHERE Total_Questions > 0 ORDER BY Total_Questions DESC";
-                        $result = mysqli_query($con, $query);
-                        while($row = mysqli_fetch_assoc($result)) {
-                            $data[] = $row;
-                        }
-                    ?>
-                    <div class="">
-                        <table class='table table-bordered table-striped nagarsevak-short-info'>
-                            <tr>
-                                <td>Prabhag No.</td>
-                                <td>Name</td>
-                                <td>Political Party</td>
-                                <td>Total Questions</td>
-                            </tr>
-                            <?php
-                                if($data){
-                                    foreach($data as $k => $row){
-                                        ?>
-                                            <tr>
-                                                <td><?=$row["Prabhag_No"]; ?></td>
-                                                <td><?=$row["Nagarsevak_Name"]; ?></td>
-                                                <td><?=$row['Party']; ?></td>
-                                                <td><?=$row['Total_Questions']; ?></td>
-                                            </tr>
-                                        <?php
-                                    }
-                                }
-                            ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 table-bordered animate-box-1">
                 <div class='text-center'><h3>Nagarsevaks who asked the Highest Questions in GB Meetings</h3></div>
                 <div class="table-responsive" id="nagarsevaks_who_asked_the_highest_questions_in_gb_meetings" class="row">
                     <?php
                         $data = [];
                         $query = "SELECT Prabhag_No, Nagarsevak_Name, Total_Questions, Party FROM nagarsevak 
-                            WHERE Total_Questions > 0 ORDER BY Total_Questions DESC";
+                            WHERE Total_Questions > 25 ORDER BY Total_Questions DESC";
                         $result = mysqli_query($con, $query);
                         while($row = mysqli_fetch_assoc($result)) {
                             $data[] = $row;
