@@ -266,7 +266,7 @@ function number_of_questions_asked_by_nagarsevaks_in_gb_meetings()
                 },
                 vAxis: {
                     minValue: 50,
-                    title: '% Attendance',
+                    title: 'Nagarsevak',
                     titleTextStyle: {
                         bold: 'true',
                         fontSize: 14
@@ -305,7 +305,7 @@ function number_of_questions_asked_by_nagarsevaks_in_gb_meetings__party_wise_()
                 },
                 vAxis: {
                     minValue: 50,
-                    title: '% Attendance',
+                    title: 'Questions',
                     titleTextStyle: {
                         bold: 'true',
                         fontSize: 14
@@ -344,7 +344,7 @@ function nagarsevaks_who_asked_questions__party_wise_()
                     }
                 },
                 vAxis: {
-                    title: 'Percentage of Nagarsevaks',
+                    title: '% Nagarsevaks',
                     titleTextStyle: {
                         bold: 'true',
                         fontSize: 14
