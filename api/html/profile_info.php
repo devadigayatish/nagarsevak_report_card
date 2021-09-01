@@ -15,9 +15,33 @@
         <colgroup> <col style='width:60%;'> <col style='width:40%;'> </colgroup>
         <tr><td>Prabhag No</td><td><?=$row["Prabhag_No"]; ?></td></tr>
         <tr><td>Political Party</td><td><?=$row['Party']; ?></td></tr>
-        <tr><td>No. of Questions asked in GB meetings</td><td><?=$row['Total_Questions']; ?></td></tr>
-        <tr><td>Attendance in GB meetings</td><td><?=$row['Avg_Attendance']; ?> % </td></tr>
-        <tr><td>Municipal Committee</td><td><?php echo $row['Municipal_Committee']; ?></td></tr>
+        <tr>
+            <td>No. of Questions asked in GB meetings</td>
+            <td>
+                <?php
+                    $query = "SELECT (SUM(Total_Questions)/(SELECT COUNT(id) FROM nagarsevak)) as cw_avg FROM nagarsevak";
+                    $result = mysqli_query($con, $query);
+                    $cw_row = mysqli_fetch_assoc($result);
+                ?>
+                <?=$row['Total_Questions']; ?> 
+                <div style="margin-top:10px;">(City-wide avg is <?=round($cw_row["cw_avg"], 2); ?>)</d>
+            </td>
+        </tr>
+        <!-- (city-wide avg) -->
+        <tr>
+            <td>Attendance in GB meetings</td>
+            <td>
+                <?php
+                    $query = "SELECT (SUM(Avg_Attendance)/(SELECT COUNT(id) FROM nagarsevak)) as cw_avg FROM nagarsevak";
+                    $result = mysqli_query($con, $query);
+                    $cw_row = mysqli_fetch_assoc($result);
+                ?>
+                <?=$row['Avg_Attendance']; ?> % 
+                <div style="margin-top:10px;">(City-wide avg is <?=round($cw_row["cw_avg"], 2); ?>)</d>
+            </td>
+        </tr>
+        <!-- (city-wide avg) -->
+        <tr><td>Served on any Municipal Committee?</td><td><?php echo $row['Municipal_Committee'] ? $row['Municipal_Committee'] : "None"; ?></td></tr>
         <tr><td>Criminal charges filed?</td><td><?php echo "Data not provided by Govt."; // $row['Criminal_Records']; ?></td></tr>
     </table>
 </div>

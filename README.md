@@ -59,4 +59,5 @@ cp visitors.txt.sample visitors.txt
     - scripts/convert_excel_to_csv.php
     - scripts/import_master.php
     - scripts/import_data.php
+    - scripts/update_codes.php
 Be sure to have Read/Write permission for uploads and uploads/csv folder
