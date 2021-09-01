@@ -58,15 +58,15 @@
                     <div id="profile_info" class="row"></div>
                 </div>
             </div>
+            
+            <div class="container-fluid animate-box">
+            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
+                <div id="details_of_work_chart" class=""></div>
+            </div><br>
 
             <div class="container-fluid animate-box">
                 <div class='text-center'><h2><strong>UTILIZATION OF WARD LEVEL FUNDS</strong></h2></div>
                 <div id="details_of_work" class=""></div>
-            </div>
-
-            <div class="container-fluid animate-box">
-            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
-                <div id="details_of_work_chart" class=""></div>
             </div><br>
 
             <div class="container-fluid">
