@@ -1164,7 +1164,7 @@ figure {
 @media screen and (max-width: 563px){
   #fh5co-logo img{
       display:block;
-      margin: 0px auto 20px !important;
+      margin: 0px auto 15px !important;
   }
 }
 .animate-box-1 .table-responsive{
