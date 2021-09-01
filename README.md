@@ -27,10 +27,10 @@ We all have got our report cards since school and college. Even in the corporate
 ##Contributors
 
     Gaurav Deshpande (gauravd292@gmail.com), Freelancer, Lead Developer for version 2 of the project
-    Sharvari Gaikwad (sharvari.v.gaikwad@gmail.com), Software Engineer. Lead developer version 1 of this project
-    Yatish Devadiga (devadigayatish@gmail.com), Software Engineer. Technical guide for this project.
-    Nikhil Sheth (nikhil.js@gmail.com), Helped with Mapbox work.
-    Mahesh Kajale (m.s.kajale@gmail.com), Helped fixing some issues. Structured the code.
+    Sharvari Gaikwad (sharvari.v.gaikwad@gmail.com), Software Engineer. Lead developer for version 1 of this project
+    Yatish Devadiga (devadigayatish@gmail.com), Software Engineer. Technical guide for this project
+    Nikhil Sheth (nikhil.js@gmail.com), Helped with Mapbox work
+    Nimita Kulkarni (knimita@gmail.com), Helped with Mapbox work
 
 ##About Parivartan
 
