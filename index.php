@@ -26,7 +26,7 @@
                     <div class="text-center"><strong>Select Prabhag area on the map</strong></div>
                     <div id="map"></div>
                 </div>
-            </div>
+            </div><br>
 
             <div class="container-fluid">
                 <div class="col-lg-12 col-md-12 text-center animate-box" style="margin-top: 15px;">
@@ -54,19 +54,21 @@
                     </select>
                     <a class="btn btn-primary"  value="next" onClick="nextPrabhag(1)">Next</a>
 
-                    <div id="prabhag_no_info" class="row"></div>
+                    <br><br>
+
+                    <div id="prabhag_no_info" class="row"></div><br><br>
                     <div id="profile_info" class="row"></div>
                 </div>
-            </div>
+            </div><br>
+            
+            <div class="container-fluid animate-box">
+            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
+                <div id="details_of_work_chart" class=""></div>
+            </div><br>
 
             <div class="container-fluid animate-box">
                 <div class='text-center'><h2><strong>UTILIZATION OF WARD LEVEL FUNDS</strong></h2></div>
                 <div id="details_of_work" class=""></div>
-            </div>
-
-            <div class="container-fluid animate-box">
-            <div class='text-center'><h2><strong>TOP WORKS</strong></h2></div>
-                <div id="details_of_work_chart" class=""></div>
             </div><br>
 
             <div class="container-fluid">
