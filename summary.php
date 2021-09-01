@@ -220,27 +220,34 @@
                 <div id="nagarsevaks_with_criminal_charges__party_wise_"></div>
             </div> -->
 
+            <div class="clearfix"></div>
+            
             <div class="col-sm-12 col-md-6 table-bordered animate-box-1">
                 <div class="text-center summary-titles"><h3>Overall Expenditure</h3></div>
                 <div class="table-responsive">
                     <table class='table table-bordered table-striped nagarsevak-short-info'>
                         <tr>
+                            <th>Sr.No.</th>
                             <th>Work Type</th>
                             <th>Total Amount</th>
                             <th>Percentage</th>
                         </tr>
                         <?php
-                            $query = "SELECT Code, SUM(Amount) as amt FROM work_details GROUP BY Code ORDER BY Code";
+                            $query = "SELECT Code, (SELECT Work_Type FROM codes WHERE codes.Code = work_details.Code) as Work_Type, SUM(Amount) as amt FROM work_details GROUP BY work_details.Code ORDER BY (SUM(Amount)/{$amount_overall_expense}) DESC";
                             $result = mysqli_query($con, $query);
+                            $index = 1;
                             if ($result->num_rows > 0) {
                                 while($row = mysqli_fetch_assoc($result)){
                                     // $data[] = $row;
                                     ?>
 
                                     <tr>
-                                        <td><?=$row["Code"]; ?></td>
+                                        <td><?=$index++; ?></td>
+                                        <td>
+                                        <span class="code" data-toggle="tooltip" data-placement="top" title="<?=$row['Work_Type']; ?>"><?=$row['Code']; ?></span>
+                                        </td>
                                         <td align="right"><?=moneyFormatIndia($row["amt"]); ?></td>
-                                        <td align="right"><?=round(($row["amt"] / $amount_overall_expense), 2) * 100; ?> %</td>
+                                        <td align="right"><?=round(($row["amt"] / $amount_overall_expense) * 100, 2); ?> %</td>
                                     </tr>
 
                                     <?php

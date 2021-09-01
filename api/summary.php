@@ -400,7 +400,7 @@
         }
 
         $json_data = [];
-        $json_data[] = ['Party', 'Percentage of Nagarsevaks'];
+        $json_data[] = ['Party', 'Nagarsevaks (%)'];
         for($i=0; $i < count($final); $i++)
         {
             $json_data[] = $final[$i];

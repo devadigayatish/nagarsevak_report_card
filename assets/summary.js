@@ -9,6 +9,8 @@
 //     console.log(t);
 // });
 
+$(document).find('span.code').tooltip();
+
 google.charts.load('current', { packages: ['corechart'] });
 
 google.setOnLoadCallback(political_party_wise_number_of_nagarsevaks);
@@ -388,12 +390,12 @@ function nagarsevaks_with_criminal_charges__party_wise_()
                 }
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('nagarsevaks_with_criminal_charges__party_wise_'));
+            // var chart = new google.visualization.ColumnChart(document.getElementById('nagarsevaks_with_criminal_charges__party_wise_'));
             chart.draw(data, options);
         }
         else
         {
-            document.getElementById('nagarsevaks_with_criminal_charges__party_wise_').innerHTML = "<h3 style='text-align:center; height:170px;'> <br><br>Data not provided by Govt.</h3>";
+            // document.getElementById('nagarsevaks_with_criminal_charges__party_wise_').innerHTML = "<h3 style='text-align:center; height:170px;'> <br><br>Data not provided by Govt.</h3>";
         }
     });
 }
