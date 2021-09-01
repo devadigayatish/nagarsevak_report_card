@@ -24,11 +24,11 @@
                     <li>Role    : Helped with Mapbox work</li>
                     <li>Email   : nikhil.js@gmail.com</li>
                 </ul>
-                <h3 class="contributor-name"> Mahesh Kajale </h3>
+                <h3 class="contributor-name"> Nimita Kulkarni </h3>
                 <ul class="contributor-description">
                     <li>Profile : Software Engineer</li>
-                    <li>Role    : Helped fixing some issues. Structured the code.</li>
-                    <li>Email   : m.s.kajale@gmail.com</li>
+                    <li>Role    : Helped with mapbox work</li>
+                    <li>Email   : knimita@gmail.com</li>
                 </ul>
             </div>
         </div>
