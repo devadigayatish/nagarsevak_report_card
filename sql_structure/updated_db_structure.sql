@@ -135,3 +135,17 @@ ALTER TABLE `wardoffice`
 ALTER TABLE `work_details`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
+
+
+CREATE TABLE `visitors` (
+  `id` int(11) NOT NULL,
+  `ip_data` varchar(100) NOT NULL,
+  `created_on` timestamp NULL DEFAULT NULL,
+  `updated_on` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `visitors`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `visitors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
